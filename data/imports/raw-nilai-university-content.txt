@@ -1,0 +1,67 @@
+UNIVERSITY_NAME: Nilai University
+SHORT_CODE: NILAI
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION STUDIES
+Foundation in Business 17,000
+Foundation in Science 17,000
+
+BUSINESS, HOSPITALITY & HUMANITIES
+B.A (Hons) in Accounting and Finance 63,000
+B.A (Hons) in Business and Hospitality Management 60,000
+B.B.A. (Hons) 60,000
+B.B.A. (Hons) Finance 60,000
+Bachelor of Finance (Honours) (Financial Technology) 60,000
+B.B.A. (Hons) Human Resource Management 60,000
+B.B.A. (Hons) International Business 60,000
+B.B.A. (Hons) Management 60,000
+B.B.A. (Hons) Marketing 60,000
+Diploma in Accounting 33,300
+Diploma in Business Administration 33,300
+
+ENGINEERING, SCIENCE & TECHNOLOGY
+Advanced Diploma in Aircraft Engineering Technology 27,880
+Diploma in Aircraft Maintenance Engineering 56,900
+Diploma in Information Technology 33,000
+Diploma in Computer Science 33,000
+Bachelor in Software Engineering (Hons) 60,000
+Bachelor of Information Technology (Hons) (Internet Engineering and Cloud Computing) 60,000
+Bachelor of Computer Science (Hons) (Data Science) 60,000
+Bachelor of Information Technology (Hons) 60,000
+Diploma in Biotechnology 34,200
+Bachelor of Science (Hons) Biotechnology 60,000
+
+HEALTH SCIENCES
+Diploma in Nursing 45,732
+Bachelor of Science (Hons) in Nursing 72,884
+
+HOSPITALITY & CULINARY
+Diploma in Culinary Arts 40,500
+Diploma in Hotel Management 40,500
+
+LANGUAGE PROGRAMS
+Intensive English Programme (IEP) 3,200
+
+POSTGRADUATE PROGRAMMES - BUSINESS
+Master of Business Administration 31,200
+Master of Business Administration (Marketing) 25,200
+Master of Business Administration (Banking and Finance) 25,200
+Master of Business Administration (Human Resource Management) 25,200
+Master of Business Administration (Fully Online) 25,200
+
+POSTGRADUATE PROGRAMMES - TECHNOLOGY
+Master of Information Technology 25,200
+Master of Applied Sciences 16,000
+Master of Engineering Science 25,200
+
+DOCTORAL PROGRAMMES
+Doctor of Philosophy in Education (PhDED) 42,000
+Doctor of Philosophy in Management (PhDMG) 49,800
+Doctor of Business Administration 62,400
+
+RAW_CONTENT_END

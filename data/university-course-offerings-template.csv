@@ -1,0 +1,4 @@
+course_id,course_name,level,fees,currency,duration_years,semesters,intake,credits,description,image
+BSC-COMP-SCI,Bachelor of Computer Science,Bachelor,30000,MYR,3,6,September|February,120,Core computing and software engineering fundamentals,assets/courses/computer-science.jpg
+DIP-BUS-ADM,Diploma in Business Administration,Diploma,19000,MYR,2,4,September,90,Foundation in management finance and operations,assets/courses/diploma-business.jpg
+MSC-DATA-SCI,Master of Data Science,Masters,35000,MYR,1.5,3,February,42,Advanced analytics machine learning and AI applications,assets/courses/master-data-science.jpg

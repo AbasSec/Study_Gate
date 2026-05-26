@@ -1,0 +1,202 @@
+UNIVERSITY_NAME: Lincoln University Malaysia
+SHORT_CODE: LINCOLN
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FACULTY OF MEDICINE
+PhD in Medical Anatomy 34400
+Doctor of Philosophy (PhD) in Medical Physiology 34400
+Doctor of Philosophy in Medical Sciences 34400
+Master in Medical Ultrasound 21500
+Master of Medical Sciences 21500
+Master of Science in Public Health (by Research) 21500
+Master of Science in Public Health (by Research) 21500
+Post Graduate Diploma in Wound Care Management 21500
+Doctor of Medicine (MD) 301000
+Bachelor of Cardiopulmonary and Perfusion Technology (Honours) 51600
+Bachelor of Medical Imaging (Hons) 51600
+
+FACULTY OF DENTISTRY
+Doctor of Philosophy in Dentistry 34400
+Master of Science in Dentistry 30100
+Doctor of Dental Surgery (DDS) 301000
+
+FACULTY OF PHARMACY
+Doctor of Philosophy (Ph.D.) in Pharmacy 34400
+Master of Pharmacy 21500
+Bachelor of Pharmacy with Honours 51600
+Bachelor in Cosmetic Science (Honours) 51600
+Diploma in Pharmacy 25800
+Diploma in Pharmacy (ODL) 25800
+
+FACULTY OF NURSING
+Doctor of Philosophy (PhD) in Nursing 34400
+Master of Science in Healthcare 21500
+Master in Nursing 21500
+Master in Nursing (Education) 21500
+Master in Nursing (Midwifery) 21500
+Master of Nursing (Public Health) 21500
+Master of Nursing (Public Health) - ODL 21500
+Post Basic Renal Care Nursing 8600
+Post Basic Certificate in Teaching Methodology For Nurses 8600
+Bachelor of Nursing (Public Health) (Honours) 51600
+Bachelor of Nursing Sciences (Honours) (ODL) 51600
+Bachelor of Nursing Sciences (Hons) 51600
+Diploma in Nursing 25800
+
+FACULTY OF SCIENCES
+PhD in Health Sciences 34400
+Doctor of Philosophy (Ph.D.) in Traditional Chinese Medicine 34400
+Doctor of Philosophy in Agriculture 34400
+Doctor of Philosophy in Applied Sciences 34400
+Doctor of Philosophy in Nutrition 34400
+Doctor of Philosophy in Physiotherapy 34400
+Master of Agriculture 21500
+Master of Physiotherapy (By Research) 21500
+Master of Science in Applied Geology 21500
+Master of Science in Biotechnology 21500
+Master of Science in Biotechnology (by research) 21500
+Master of Science in Microbiology 21500
+Master of Science in Nutrition 21500
+Master of Traditional Chinese Medicine 21500
+Bachelor of Biomedical Sciences (Honours) 38700
+Bachelor of Biotechnology (Honours) 38700
+Bachelor of Homeopathic Medical Science 38700
+Bachelor of Physiotherapy (Honours) 38700
+Bachelor of Science in Agriculture (Hons) 38700
+Bachelor of Science in Sports and Fitness 38700
+Bachelor of Ayurvedic Medicine 38700
+Diploma in Medical and Health Sciences 25800
+Diploma in Traditional Chinese Medicine 25800
+Diploma in Physiotherapy 25800
+
+FACULTY OF ENGINEERING
+Doctor of Philosophy (Engineering) 34400
+Master in Construction Management 21500
+Master of Engineering 21500
+Master of Mechanical Engineering 21500
+Master of Science in Civil Engineering 21500
+Master of Science in Electrical & Electronics Engineering 21500
+Master of Water Resource Management 21500
+Master of Science in Telecommunication Engineering 21500
+Bachelor of Civil Engineering Technology with Honours 38700
+Bachelor of Electrical and Electronics EngineeringTechnology With Honours 38700
+Bachelor of Mechanical Engineering Technology Aeronautics (Hons) 38700
+Bachelor of Mechanical Engineering Technology with Honours 38700
+Bachelor of Mechatronics Engineering Technology with Honours 38700
+Diploma in Aeronautical Engineering Technology (Aircraft Maintenance) 25800
+Diploma in Electrical & Electronic Engineering 21500
+Diploma in Electrical and Electronic Engineering (ODL) 25800
+
+FACULTY OF SOCIAL SCIENCES ARTS AND HUMANITIES
+Doctor of Philosophy (PhD) in Social Sciences 30100
+Doctor of Philosophy in Creative Arts and Design 30100
+Doctor of Philosophy in Education 30100
+Doctor of Philosophy in English 30100
+Doctor of Philosophy in Mass Communication 30100
+Doctor of Philosophy in Psychology 30100
+Doctor of Philosophy in Social Sciences (ODL) 30100
+Master of Arts in Teaching of English as Second Language (MATESL) 17200
+Master of Communication 17200
+Master of Education (By research) 17200
+Master of Education 17200
+Master of International Relations (By research) 17200
+Master of International Relations and Policies 17200
+Master of Mass Communication 17200
+Master of Science (Psychology) 17200
+Master of Social Work 17200
+Postgraduate Diploma in Education 17200
+Postgraduate Diploma In Teaching 17200
+Bachelor of Arts in Mass Communication (Honours) 30100
+Bachelor of Early Childhood Education 30100
+Bachelor of Education (Teaching of English as a Second Language -TESL) 30100
+Bachelor of Psychology (Honours) 30100
+Bachelor in Fashion Design Management (Honours) 30100
+Bachelor of Islamic Studies (Hons) 30100
+Bachelor of Education (Honours) 30100
+Diploma in Early Childhood Education 25800
+Diploma in Psychology 25800
+Diploma in Teaching English as a Second Language 25800
+
+FACULTY OF AI COMPUTING AND MULTIMEDIA
+PHD in Information Technology 30100
+Doctor of Philosophy (PhD) in Computer Science 30100
+Doctor of Philosophy in Data Science 30100
+Doctor of Philosophy in Cybersecurity 30100
+Master of Computer Science 17200
+Master of Computer Science (ODL) 17200
+Master of Science (Data Science and Analytics) 17200
+Bachelor of Arts (HONOURS) in Creative Multimedia Technology 30100
+Bachelor of Computer Science (Honours) (Artificial Intelligence) 30100
+Bachelor of Computer Science (HONS) (Network Technology and Cybersecurity) 30100
+Bachelor of Information Technology (Honours) (Data Analytics) 30100
+Bachelor of Information Technology (Honours) (Internet Technology and Cloud Computing) 30100
+Bachelor of Information Technology (Honours) 30100
+Bachelor of Computer Science with E-Commerce 30100
+Bachelor in Digital Film Technology (Honours) 30100
+Diploma in Computer Science 21500
+Diploma in Multimedia Applications 21500
+
+FACULTY OF BUSINESS
+Doctor of Business Administration 30100
+Doctor of Philosophy (PhD) in Accounting 30100
+Doctor of Philosophy (PhD) in Accounting (ODL) 30100
+Doctor of Philosophy (PhD) in Industrial Management 30100
+Doctor of Philosophy (PhD) in Management 30100
+Doctor of Philosophy (PhD) in Management (ODL) 30100
+Doctor of Philosophy (PhD) in Strategic Management 30100
+Doctor of Philosophy in Business Administration 30100
+Master in Business Administration (Global Business) 17200
+Master in Management (By Research) 17200
+Master in Railway Infrastructure Management 17200
+Master of Accounting and Finance 17200
+Master of Business Administration 17200
+Master of Business Administration (ODL Mode) 17200
+Master of Business Administration in Healthcare Management 17200
+Master of Business Administration in Human Resource Management 17200
+Master of Business Administration in Project Management 17200
+Master of Business Information Systems 17200
+Master of Economics 17200
+Master of Islamic Banking 17200
+Master of Public Administration 17200
+Bachelor (Honours) in Business Administration (ODL) 30100
+Bachelor (HONS) in Business Administration 30100
+Bachelor of Accountancy 30100
+Bachelor of Business Administration in Accounting 30100
+Bachelor of Business Administration in Human Resource Management 30100
+Bachelor of Business Entrepreneurship 30100
+Bachelor of Business Information Systems 30100
+Bachelor of Management (Oil and Gas) 30100
+BBA in Airline and Airport Management 30100
+Diploma in Accounting 25800
+Diploma in Accounting (ODL) 25800
+Diploma in Business Administration 21500
+Diploma in Business Administration (ODL) 25800
+
+FACULTY OF HOSPITALITY
+Doctor of Philosophy (PH.D.) in Tourism and Hospitality Management 30100
+Master in Tourism Management 17200
+Master of Business Administration in Hospitality Management 17200
+Master of Business Administration in Hospitality Management (ODL) 17200
+Bachelor in Tourism Management 30100
+Bachelor of Science (Hons) in Hospitality Management 30100
+Bachelor of Science (Hons) in Hospitality Management (ODL) 30100
+Diploma in Culinary Arts 25800
+Diploma in Hotel Management 21500
+Diploma in Hotel Management (ODL) 25800
+
+FOUNDATION PROGRAMMES
+Foundation in Arts 12900
+Foundation in Business and Computing 12900
+Foundation in Arts (ODL) 12900
+Foundation in Science (ODL) 12900
+Foundation in Science 12900
+
+AMERICAN DEGREE TRANSFER PROGRAMS
+American Degree Transfer Programme (ARTS) 38700
+
+RAW_CONTENT_END

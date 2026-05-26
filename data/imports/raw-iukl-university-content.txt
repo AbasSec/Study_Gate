@@ -1,0 +1,71 @@
+UNIVERSITY_NAME: Infrastructure University Kuala Lumpur
+SHORT_CODE: IUKL
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION PROGRAMS
+Foundation in Arts 14490
+Foundation in Science 16920
+
+DIPLOMA PROGRAMS
+Diploma in Architecture 47000
+Diploma in Landscape Architecture 34780
+Diploma in Quantity Surveying 33725
+Diploma in Automotive Engineering 31200
+Diploma in Agricultural Science (Plantation Management) 29900
+Diploma in Civil Engineering 31850
+Diploma in Electrical & Electronics Engineering 29925
+Diploma in Mechanical Engineering 30550
+Diploma in Accounting 30875
+Diploma in Business Administration 29250
+Diploma in Corporate Communication 31200
+Diploma in English for Professional Communication 30225
+Diploma in Information Technology 29900
+Diploma in Sports Management 23850
+
+BACHELOR'S DEGREE PROGRAMS
+Bachelor of Technology (Hons) in Automotive 64800
+Bachelor of Electronics Engineering with Honours 77625
+Bachelor of Civil Engineering with Honours 88200
+Bachelor of Mechanical Engineering with Honours 77625
+Bachelor of Agricultural Science (Plantation Management) (Hons) 62115
+Bachelor of Computer Science (Hons) 62400
+Bachelor of Software Engineering 62400
+Bachelor of Technology (Hons) in Electro-Mechanical 69660
+Bachelor of Science (Architectural Studies) 84180
+Bachelor of Landscape Architecture 71875
+Bachelor of Quantity Surveying (Hons) 65190
+Bachelor of Technology (Hons) in Construction Management 64800
+BA (Hons) TESOL 51000
+Bachelor of Accountancy (Hons) 63940
+Bachelor of Business Administration (Hons) 55200
+Bachelor of Business Administration (Hons) in E-Commerce 55200
+Bachelor of Communication (Hons) in Corporate Communication 54900
+Bachelor of Communication (Hons) in Integrated Marketing Communication 51850
+Bachelor of Science (Hons) in Logistics and Supply Chain Management 62220
+BA (Hons) English for Professional Communication 54000
+Bachelor of Science (Hons) in Economics and Finance 62220
+
+POSTGRADUATE PROGRAMS - MASTER'S
+Master of Science in Built Environment (By Research) 33960
+Master in Electronics Engineering (By Research) 36800
+Master of Civil Engineering (By Research) 36800
+Master of Architecture 39000
+Master of Business Administration 34230
+Master in Communication 31280
+Master in Information Technology 31800
+Master of Arts in Teaching English to Speakers of Other Languages (MA TESOL) 28560
+Master of Science in Water Resources 31200
+
+POSTGRADUATE PROGRAMS - DOCTORATE
+Doctor of Philosophy in Business Administration 37800
+Doctor of Philosophy in Civil Engineering 53490
+Doctor of Philosophy in Communication 36240
+Doctor of Philosophy in Education 28800
+Doctor of Philosophy in Information Technology 36240
+
+RAW_CONTENT_END

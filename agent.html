@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Portal | StudyGate International</title>
+
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/mobile-fixes.css">
+</head>
+<body class="admin-body">
+    <!-- Login Screen -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo-wrapper">
+                    <img src="assets/images/logo.png" alt="StudyGate International Logo" class="login-logo site-logo-img">
+                </div>
+                <h1>Agent Portal</h1>
+                <p>Sign in to your agent dashboard</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="login-form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required placeholder="agent@horizons.edu" autocomplete="email">
+                </div>
+
+                <div class="login-form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password" autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full login-submit-btn">
+                    <span>Sign In</span>
+                </button>
+
+                <div class="login-error" id="loginError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Agent Dashboard -->
+    <div class="admin-container" id="agentContainer" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <img src="assets/images/logo.png" alt="Logo" class="site-logo-img">
+                <span>Agent Portal</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="stats">
+                    <span class="nav-icon"><i class="bi bi-graph-up"></i></span>
+                    Overview
+                </a>
+                <a href="#" class="nav-item" data-section="referral">
+                    <span class="nav-icon"><i class="bi bi-link-45deg"></i></span>
+                    Referral Link
+                </a>
+                <a href="#" class="nav-item" data-section="submitApplication">
+                    <span class="nav-icon"><i class="bi bi-plus-circle"></i></span>
+                    Submit Application
+                </a>
+                <a href="#" class="nav-item" data-section="students">
+                    <span class="nav-icon"><i class="bi bi-people"></i></span>
+                    My Students
+                    <span class="badge" id="studentsBadge">0</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" target="_blank" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-globe"></i></span>
+                    View Website
+                </a>
+                <button id="logoutBtn" class="nav-item logout">
+                    <span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle sidebar" style="display:none;">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h2 id="sectionTitle">Overview</h2>
+                <div class="header-actions">
+                    <button class="theme-toggle admin-theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+                        <i class="bi bi-moon"></i>
+                    </button>
+                    <span id="agentEmail">agent@email.com</span>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+                <!-- Stats Section (Overview) -->
+                <section id="statsSection" class="content-section active">
+                    <!-- Partner Portal Hero -->
+                    <div class="agent-hero">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h3>Partner Dashboard</h3>
+                                <p id="agentHeroSubtitle">Track referrals, manage student applications, and grow your network</p>
+                            </div>
+                            <button class="btn btn-primary hero-cta" onclick="switchSection('submitApplication')">
+                                <i class="bi bi-plus-lg"></i> Submit Student Application
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Referral Performance Zone -->
+                    <div class="agent-referral-zone">
+                        <div class="zone-header">
+                            <h4>Referral Performance</h4>
+                            <span class="zone-hint">Real-time tracking of your referral links</span>
+                        </div>
+                        <div class="referral-module">
+                            <div class="referral-link-card">
+                                <div class="link-header">
+                                    <div>
+                                        <h5>Your Referral Link</h5>
+                                        <p class="link-hint">Share to track referred students</p>
+                                    </div>
+                                </div>
+                                <p class="referral-code-display referral-code">—</p>
+                                <div class="referral-url-wrap">
+                                    <input type="text" class="referral-url-input" readonly placeholder="Referral URL">
+                                    <button class="btn btn-primary copy-referral-btn" onclick="copyReferralUrl(event)">
+                                        <i class="bi bi-clipboard"></i> Copy
+                                    </button>
+                                </div>
+                                <p class="copy-confirmation" style="display:none; color: var(--admin-success); margin-top: 12px; font-size: 0.9rem;">✓ Copied to clipboard!</p>
+                            </div>
+                            <div class="referral-stats">
+                                <div class="referral-stat">
+                                    <div class="stat-icon"><i class="bi bi-eye"></i></div>
+                                    <div class="stat-info">
+                                        <h3 id="statVisits">0</h3>
+                                        <p>Link Visits</p>
+                                    </div>
+                                </div>
+                                <div class="referral-stat">
+                                    <div class="stat-icon"><i class="bi bi-whatsapp"></i></div>
+                                    <div class="stat-info">
+                                        <h3 id="statClicks">0</h3>
+                                        <p>WhatsApp Clicks</p>
+                                    </div>
+                                </div>
+                                <div class="referral-stat">
+                                    <div class="stat-icon"><i class="bi bi-person-check"></i></div>
+                                    <div class="stat-info">
+                                        <h3 id="statStudents">0</h3>
+                                        <p>Applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Referral Performance Chart -->
+                    <div class="referral-funnel-chart">
+                        <div class="chart-container">
+                            <h4>Referral Performance Funnel</h4>
+                            <div class="circular-chart">
+                                <svg id="referralFunnelChart" viewBox="0 0 200 200"></svg>
+                                <div class="chart-center-label">
+                                    <div class="chart-center-value" id="funnelConversion">0%</div>
+                                    <p>Conversion</p>
+                                </div>
+                            </div>
+                            <div class="chart-legend" id="funnelLegend"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions Zone -->
+                    <div class="agent-actions-zone">
+                        <h4 class="zone-header-simple">Quick Actions</h4>
+                        <div class="quick-actions-grid">
+                            <button class="quick-action-card" onclick="switchSection('submitApplication')">
+                                <div class="action-icon"><i class="bi bi-plus-circle"></i></div>
+                                <div class="action-text">
+                                    <h5>Submit Application</h5>
+                                    <p>Manually add a student</p>
+                                </div>
+                                <i class="bi bi-chevron-right action-arrow"></i>
+                            </button>
+                            <button class="quick-action-card" onclick="switchSection('students')">
+                                <div class="action-icon"><i class="bi bi-people"></i></div>
+                                <div class="action-text">
+                                    <h5>View My Students</h5>
+                                    <p>Track application status</p>
+                                </div>
+                                <i class="bi bi-chevron-right action-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Referral Link Section (dedicated view) -->
+                <section id="referralSection" class="content-section">
+                    <div class="section-header-agent">
+                        <h3>Referral Link Management</h3>
+                        <button class="btn btn-outline" onclick="switchSection('stats')">← Back to Dashboard</button>
+                    </div>
+                    <div class="referral-detail-card">
+                        <div class="referral-detail-header">
+                            <div>
+                                <h4>Your Referral Link</h4>
+                                <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 4px;">Share to track referred students and monitor your performance</p>
+                            </div>
+                        </div>
+                        <p class="referral-code-display referral-code">—</p>
+                        <div class="referral-url-wrap">
+                            <input type="text" class="referral-url-input" readonly>
+                            <button class="btn btn-primary copy-referral-btn" onclick="copyReferralUrl()">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                        </div>
+                        <p class="copy-confirmation" style="display:none; color: var(--admin-success); margin-top: 12px;">Copied to clipboard!</p>
+                        <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+                            <button class="btn btn-primary" onclick="switchSection('submitApplication')" style="width: 100%;">
+                                <i class="bi bi-plus-lg"></i> Submit Student Application
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Submit Application Section -->
+                <section id="submitApplicationSection" class="content-section">
+                    <div class="section-header-admin">
+                        <h3>Submit Student Application</h3>
+                        <button class="btn btn-outline" onclick="switchSection('referral')">← Back</button>
+                    </div>
+                    <div class="agent-app-form-container">
+                        <div class="agent-app-form">
+                            <h4>Student Information</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    <input type="text" id="agentAppStudentName" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" id="agentAppStudentEmail" placeholder="student@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Country *</label>
+                                    <input type="text" id="agentAppStudentCountry" placeholder="United Kingdom" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" id="agentAppStudentPhone" placeholder="+44 7700 900000">
+                                </div>
+                            </div>
+
+                            <h4 style="margin-top: 28px;">Preferred Program</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>University</label>
+                                    <select id="agentAppUniversity">
+                                        <option value="">Select University...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Course/Program</label>
+                                    <select id="agentAppCourse">
+                                        <option value="">Select Course...</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Additional Notes</label>
+                                <textarea id="agentAppNotes" placeholder="Any additional information about the student..." style="min-height: 120px;"></textarea>
+                            </div>
+
+                            <h4 style="margin-top: 28px;">Required Documents</h4>
+                            <div style="padding: 12px; background-color: var(--color-warning-container); border-left: 4px solid var(--color-warning); border-radius: 4px; margin-bottom: 20px;">
+                                <p style="margin: 0; color: var(--color-on-warning-container); font-size: 0.9rem;">
+                                    <strong>Document Upload Note:</strong> Spark Plan does not support file uploads. Please keep student documents (passport, certificates) on file locally. Documents can be reviewed and verified during the enrollment confirmation process.
+                                </p>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; margin-top: 28px;">
+                                <button class="btn btn-primary" onclick="submitAgentApplication()">
+                                    Submit Application
+                                </button>
+                                <button class="btn btn-outline" onclick="switchSection('referral')">Cancel</button>
+                            </div>
+
+                            <div id="agentAppError" style="color: var(--color-error); margin-top: 16px; padding: 12px; background: rgba(239, 68, 68, 0.1); border-radius: 8px; display: none;"></div>
+                            <div id="agentAppSuccess" style="color: var(--admin-success); margin-top: 16px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; display: none;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Students Section -->
+                <section id="studentsSection" class="content-section">
+                    <div class="section-header-admin">
+                        <h3>My Students</h3>
+                    </div>
+                    <div class="table-container">
+                        <table id="studentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Country</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-check-compat.js"></script>
+
+    <script src="js/translations.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/database-init.js"></script>
+    <script src="js/agent.js"></script>
+    <script src="js/site-logo.js"></script>
+</body>
+</html>
+

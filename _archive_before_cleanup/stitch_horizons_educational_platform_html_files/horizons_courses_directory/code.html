@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Courses | Horizons</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .active-filter {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#eff4ff",
+                      "on-surface": "#0b1c30",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "secondary-fixed-dim": "#4edea3",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary-container": "#00201d",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary": "#000000",
+                      "surface-bright": "#f8f9ff",
+                      "outline": "#76777d",
+                      "background": "#f8f9ff",
+                      "on-primary-fixed": "#131b2e",
+                      "outline-variant": "#c6c6cd",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface": "#f8f9ff",
+                      "primary-fixed": "#dae2fd",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#00714d",
+                      "on-primary-container": "#7c839b",
+                      "surface-tint": "#565e74",
+                      "inverse-surface": "#213145",
+                      "on-tertiary-container": "#0c9488",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-primary": "#bec6e0",
+                      "primary-container": "#131b2e",
+                      "secondary": "#006c49",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#002113",
+                      "surface-dim": "#cbdbf5",
+                      "primary": "#000000",
+                      "on-tertiary-fixed": "#00201d",
+                      "surface-variant": "#d3e4fe",
+                      "on-background": "#0b1c30",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "primary-fixed-dim": "#bec6e0",
+                      "tertiary-fixed": "#89f5e7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "section-gap": "120px",
+                      "gutter-desktop": "24px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "gutter-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"],
+                      "status-pill": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-base">
+<span class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight">Horizons</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Universities</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold text-label-md font-label-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-high/50 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high/50 rounded-full transition-all duration-300">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+<button class="hidden lg:block px-6 py-2.5 rounded-full text-label-md font-bold border border-outline-variant hover:bg-surface-container-high/50 transition-all duration-300">Login</button>
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-full text-label-md font-bold hover:translate-y-[-2px] transition-all duration-200">Apply Now</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<!-- Hero Search Section -->
+<section class="py-16 md:py-24 flex flex-col items-center text-center space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container text-on-secondary-container text-status-pill font-status-pill">
+<span class="material-symbols-outlined text-[18px]">school</span>
+                Discover Your Future
+            </div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg max-w-4xl">Explore over 15,000 academic programs worldwide.</h1>
+<p class="text-on-surface-variant text-body-lg max-w-2xl">Refine your academic journey by searching through our curated database of world-class courses from top-tier global institutions.</p>
+<!-- Global Search Box -->
+<div class="w-full max-w-3xl mt-8">
+<div class="relative flex items-center p-2 bg-surface-container-lowest rounded-2xl shadow-xl border border-outline-variant/30">
+<span class="material-symbols-outlined ml-4 text-on-surface-variant">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 px-4 py-4 text-body-lg" placeholder="Search courses (e.g. Data Science, International Law...)" type="text"/>
+<button class="hidden md:block px-8 py-3.5 bg-primary text-on-primary rounded-xl font-bold transition-all hover:opacity-90 active:scale-95">Find Courses</button>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-gutter-desktop">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="sticky top-28 space-y-8 bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/30 shadow-sm">
+<div>
+<h3 class="font-headline-sm text-[18px] mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">filter_list</span> Filters
+                        </h3>
+<div class="space-y-6">
+<!-- Degree Level -->
+<div>
+<p class="text-label-md font-bold uppercase tracking-wider text-on-surface-variant mb-3">Degree Level</p>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Bachelors</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Masters</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">PhD</span>
+</label>
+</div>
+</div>
+<!-- Category -->
+<div>
+<p class="text-label-md font-bold uppercase tracking-wider text-on-surface-variant mb-3">Field of Study</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full border border-outline-variant text-label-md bg-surface-container-high/50 hover:bg-surface-container transition-all">Engineering</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant text-label-md active-filter">Computer Science</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant text-label-md bg-surface-container-high/50">Medicine</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant text-label-md bg-surface-container-high/50">Business</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant text-label-md bg-surface-container-high/50">Arts</button>
+</div>
+</div>
+<!-- Study Mode -->
+<div>
+<p class="text-label-md font-bold uppercase tracking-wider text-on-surface-variant mb-3">Study Mode</p>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 border-outline-variant text-primary focus:ring-primary" name="mode" type="radio"/>
+<span class="text-body-md">Full-time</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 border-outline-variant text-primary focus:ring-primary" name="mode" type="radio"/>
+<span class="text-body-md">Part-time</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 border-outline-variant text-primary focus:ring-primary" name="mode" type="radio"/>
+<span class="text-body-md">Online / Distance</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 border border-primary text-primary rounded-xl font-bold text-label-md hover:bg-primary/5 transition-colors">Clear All Filters</button>
+</div>
+</aside>
+<!-- Course Grid -->
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-8">
+<p class="text-on-surface-variant"><span class="font-bold text-on-surface">1,248</span> Courses found</p>
+<div class="flex items-center gap-2">
+<span class="text-label-md font-medium">Sort by:</span>
+<select class="bg-transparent border-none text-label-md font-bold focus:ring-0 cursor-pointer">
+<option>Relevance</option>
+<option>Most Popular</option>
+<option>A-Z</option>
+</select>
+</div>
+</div>
+<!-- Bento-ish Grid of Course Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<!-- Card 1 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Computer Science Concept" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A clean, high-end photograph of a modern software engineering laboratory. Several sleek, silver laptops are arranged on minimalist white desks under soft, diffused studio lighting. The background features a large glass wall reflecting a sophisticated urban campus. The atmosphere is academic and technologically advanced, with a focused, premium professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbtJPJkP0CVj9QuMwM4HYImJMYDFIy2Gm5dPaDc3NnMDmqV2nEDtcarLxfdb1_PhUnurmNCpngd3K-bKGdJ7IbB8jHF9bK7ma6sCLR9QacFPoUnlhHFxeernZiml6IbnGpQa06j6qtPXYtX2EDdPZkVjB13E5MCLsWYYkgcGKA6IGgSZ8AXgID1keGTECwyHpjLTAq-EscIYJBw8PLod3aamOtz82bszsqV-zyaudkdoigIu_BCvMaTSC-On8l6mFdxW7bdDBsShVD"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-full text-status-pill font-status-pill text-on-surface">Engineering</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-status-pill font-status-pill">Bachelors</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Computer Science &amp; AI</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-3">Master the fundamentals of computational theory, machine learning, and advanced software architecture in this globally recognized program.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded-xl w-fit">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">location_city</span>
+<span class="text-label-md font-semibold text-on-tertiary-container">Offered by 12 Universities</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-outline-variant/20">
+<button class="flex-grow py-3 bg-primary text-on-primary rounded-xl font-bold text-label-md transition-all hover:translate-y-[-2px]">View Universities</button>
+<button class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Business Management" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional business setting featuring a sophisticated conference room with a large wooden table and premium leather chairs. Sunlight streams through floor-to-ceiling windows, highlighting architectural details. The lighting is bright and airy, creating a high-key, prestigious atmosphere. The overall style is corporate, clean, and representative of elite international education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqI7gcKlLxhsL83Zn3HFDsxxZ3VyvX3cQWbtN-pyNfRnACs35BscSYJfXI3zLakNliIVV7dsjhz-6aAbZAVXgs6TvoHrYeZijS51gXvUUM-Imb-7JJHL68C2ihLf0jn-bolpGW8EeMX63Oq7MloL6sPLPRqvUXfY1Nfwp_nh9IvzB7PoTt0skL2N1Ua8aE_DW3p9mIEz5qO2SGN_PMwNN4j6L2jH2pYTz8T2_mY0Z37f3ORdvw3-d9tI2wcZoPEMNojGS38mNNuV5"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-full text-status-pill font-status-pill text-on-surface">Business</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-status-pill font-status-pill">Masters</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Global Business Administration</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-3">A leadership-focused MBA designed for the next generation of international executives, covering global markets and sustainable innovation.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded-xl w-fit">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">location_city</span>
+<span class="text-label-md font-semibold text-on-tertiary-container">Offered by 8 Universities</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-outline-variant/20">
+<button class="flex-grow py-3 bg-primary text-on-primary rounded-xl font-bold text-label-md transition-all hover:translate-y-[-2px]">View Universities</button>
+<button class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 group">
+<div class="h-48 relative overflow-hidden">
+<img alt="Biomedical Science" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A pristine and ultra-modern medical research facility. High-tech laboratory equipment like microscopes and centrifuges are arranged on sparkling clean counters. The lighting is a mix of cool blue accents and bright clinical white. The setting is sterile, professional, and sophisticated, reflecting a world-class academic environment for advanced life sciences." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9CyIFVC4Rf7mkGGiEq6qXbHnXQ0a6Wo0qPRnNTIqJvyahVuzfcytJKbb8hGAeDpYTvMCFSrh3eX835y40zGdl6uo98EbdhcMDknSidLY1C1QjeV9aPGRY41TUiTrXGtRUf92Eju7ueygOTHkUxjbEvSq-K2WzQxKGsOl2_lPQZKBWJU7DDpF6-i6WmqIgaERdMVCQwa30YPcRWgWd-FFda2HhbUafCKhxxCBPhJUd5j2dO2hiULWFLAnJWBZJz18M6Iv75_A4hZ30"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-full text-status-pill font-status-pill text-on-surface">Medicine</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-status-pill font-status-pill">PhD</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">Biomedical Engineering</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-3">Advancing human health through innovative engineering solutions, from prosthetic design to tissue engineering and molecular imaging.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded-xl w-fit">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">location_city</span>
+<span class="text-label-md font-semibold text-on-tertiary-container">Offered by 5 Universities</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-outline-variant/20">
+<button class="flex-grow py-3 bg-primary text-on-primary rounded-xl font-bold text-label-md transition-all hover:translate-y-[-2px]">View Universities</button>
+<button class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl border border-outline-variant/30 overflow-hidden hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 group">
+<div class="h-48 relative overflow-hidden">
+<img alt="International Relations" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A grand library interior with towering shelves of antique and modern books, representing depth of knowledge. In the foreground, a large classic globe sits on a marble pedestal. The lighting is warm and intellectual, with soft golden rays filtering through high arched windows. The scene exudes an aura of global influence, diplomacy, and prestigious institutional heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFz3nQpfWegbGVwW1S6X7YjZPvHMgtOgVxV9N41WUN_OaNe8uiuiPSgHRrC3GeSaX-Xr2bBqi9IznLq2ekxEWQITIOyda-ya-Dt_kEj-Kebzk3YHFRlau1D6f6i4kgPCWTx7F8tayUN_U_ofTO9OZeSPRkJajncia7deUYtk8zJeCiUJvD-boOCMjBkjfMutGLXzKt1-80l0kel7MttOzDoLKL3Xe6qNO-g8UrXbn7-lN7wa_-OZzONpVJ7xb_X29YEuaMDptfPJ9a"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low/90 backdrop-blur-md rounded-full text-status-pill font-status-pill text-on-surface">Arts</span>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-status-pill font-status-pill">Masters</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-[20px] text-on-surface group-hover:text-primary transition-colors">International Relations</h3>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 line-clamp-3">Examine the complex dynamics of global politics, diplomacy, and international law in a rapidly changing world order.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded-xl w-fit">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">location_city</span>
+<span class="text-label-md font-semibold text-on-tertiary-container">Offered by 15 Universities</span>
+</div>
+<div class="flex gap-3 pt-4 border-t border-outline-variant/20">
+<button class="flex-grow py-3 bg-primary text-on-primary rounded-xl font-bold text-label-md transition-all hover:translate-y-[-2px]">View Universities</button>
+<button class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-full font-bold">1</button>
+<button class="w-10 h-10 hover:bg-surface-container rounded-full font-bold">2</button>
+<button class="w-10 h-10 hover:bg-surface-container rounded-full font-bold">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 hover:bg-surface-container rounded-full font-bold">42</button>
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest py-section-gap px-margin-desktop border-t border-outline-variant/50 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop mb-16">
+<div class="space-y-6">
+<span class="text-headline-md font-headline-md font-bold text-primary">Horizons</span>
+<p class="text-on-surface-variant text-body-md">Empowering global ambitions through personalized educational mentorship and institutional partnerships.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Find a Course</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Partner Universities</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Student Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Success Stories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Scholarships</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Visa Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">English Proficiency</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div class="bg-surface-container p-6 rounded-2xl">
+<h4 class="font-bold text-on-surface mb-4">Newsletter</h4>
+<p class="text-on-surface-variant text-body-md mb-4">Get academic insights and scholarship alerts directly in your inbox.</p>
+<div class="flex flex-col gap-2">
+<input class="px-4 py-2 rounded-lg bg-surface-container-lowest border-outline-variant focus:ring-primary focus:border-primary" placeholder="Email address" type="email"/>
+<button class="w-full py-2 bg-primary text-on-primary rounded-lg font-bold hover:opacity-90">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-label-md">© 2024 Horizons Educational Agency. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary text-label-md transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary text-label-md transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary text-label-md transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover states and filter selections
+        document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
+            input.addEventListener('change', (e) => {
+                // Future: Add real filtering logic here
+                console.log('Filter changed:', e.target.checked);
+            });
+        });
+
+        // Search highlight effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-4', 'ring-primary/10', 'border-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-4', 'ring-primary/10', 'border-primary');
+        });
+    </script>
+</body></html>

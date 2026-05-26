@@ -1,0 +1,172 @@
+UNIVERSITY_NAME: Taylor's University
+SHORT_CODE: TAYLORS
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: MYR
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+Faculty of Health and Medical Sciences
+Program Total Fees (Ringgit)
+Bachelor of Pharmacy with Honours 213,194
+Bachelor of Pharmaceutical Science (Honours) 135,738
+Bachelor of Pharmaceutical Science (Honours) Work Based Learning 135,738
+Bachelor of Biotechnology (Honours) 135,846
+Bachelor of Food Science (Honours) 135,846
+Bachelor of Biomedical Science (Honours) 152,618
+Bachelor of Applied Health Sciences (Honours) 52,586
+Bachelor of Medicine, Bachelor of Surgery (MBBS) 456,934
+
+Faculty of Business & Law
+Program Total Fees (Ringgit)
+Bachelor of Laws (Honours) 146,106
+Bachelor in Philosophy, Politics and Economics (Honours) 139,302
+Bachelor of Business (Honours) with Free Electives / Minor / Extension 143,946
+Bachelor of Business (Honours) in International Business and Marketing 143,946
+Bachelor of Entrepreneurship (Honours) in Team Entrepreneurship 124,830
+Bachelor of Accounting and Finance (Honours) 139,042
+Bachelor in Accounting (FinTech) (Honours) 135,214
+Bachelor of Banking and Finance (Honours) 139,194
+Bachelor of Finance and Economics (Honours) 139,194
+Bachelor of Actuarial Studies (Honours) (3 Years) 128,610
+Bachelor of Actuarial Studies (Honours) (4 Years) 141,554
+
+Faculty of Innovation and Technology
+Program Total Fees (Ringgit)
+Bachelor of Mechanical Engineering with Honours 183,562
+Bachelor of Chemical Engineering with Honours 183,562
+Bachelor of Electrical and Electronic Engineering with Honours 183,562
+Bachelor of Mechatronics Engineering with Honours 183,562
+Bachelor of Design (Honours) in Creative Media 135,846
+Bachelor of Fashion Design Technology (Honours) 130,684
+Bachelor of Interactive Spatial Design (Honours) 129,798
+Bachelor of Interactive Spatial Design (Honours) - Work Based Learning 129,798
+Bachelor of Interactive Spatial Design (Honours) - Technopreneurship 129,798
+Bachelor of Computer Science (Honours) 135,738
+Bachelor of Computer Science (Honours) - Work Based Learning 135,738
+Bachelor of Information Technology (Honours) 135,738
+Bachelor of Software Engineering (Honours) 135,738
+Bachelor of Software Engineering (Honours) - Work Based Learning 135,738
+Bachelor of Science (Honours) in Architecture 149,346
+Master of Architecture 75,694
+Bachelor of Quantity Surveying (Honours) 115,218
+Bachelor of Arts (Honours) Interior Architecture 144,155
+Bachelor of Science (Honours) in Sustainable Digital Construction Management 118,350
+Bachelor of Science (Honours) in Sustainable Digital Construction Management - Work Based Learning 118,350
+
+Faculty of Social Sciences and Leisure Management
+Program Total Fees (Ringgit)
+Intensive English (240 Hours/12 Weeks) 20,729
+Bachelor of Mass Communication (Honours) 133,794
+Bachelor of Mass Communication (Honours) in Advertising and Brand Management 133,794
+Bachelor of Mass Communication (Honours) (Digital Media Production) 133,794
+Bachelor of Mass Communication (Honours) in Public Relations and Event Management 133,794
+Bachelor of Mass Communication (Honours) in Public Relations and Marketing 133,794
+Bachelor of Performing Arts (Honours) 122,886
+Bachelor of Psychology (Honours) 124,506
+Bachelor of Social Science (Honours) in International Relations 121,806
+Bachelor of Culinary Management (Honours) 133,254
+Bachelor of Patisserie Arts (Honours) 127,962
+Bachelor of Science (Honours) in Culinology 140,274
+Bachelor of Science (Honours) in Culinology - Entrepreneurship 140,274
+Bachelor of International Hospitality Management (Honours) 133,146
+Bachelor of International Hospitality Management (Honours) (Work-Based Learning) 133,146
+Bachelor of International Tourism Management (Honours) 133,146
+Bachelor of International Events Management (Honours) 133,146
+Bachelor of International Events Management (Honours) (Work-Based Learning) 133,146
+Bachelor of Education (Honours) [Primary Education] 124,398
+Bachelor of Education (Honours) [Early Childhood Education] 124,398
+Bachelor of Education (Honours) [Special Educational Needs] 124,398
+Bachelor of Education (Honours) [Teaching of English] 124,398
+Diploma in Culinary Arts 79,136
+Diploma in Hotel Management 73,806
+Advanced Diploma in Patisserie & Gastronomic Cuisine 49,494
+American Degree Transfer Program (Business) 84,322
+American Degree Transfer Program (Computer Science) 84,322
+American Degree Transfer Program (Engineering) 84,306
+American Degree Transfer Program (Liberal Arts) 75,578
+
+Postgraduate Programs
+
+School of Architecture, Building and Design
+Master of Architecture 75,694
+Master of Science in Virtual Design and Construction 59,054
+Doctor of Philosophy in Architecture (Research) 68,944
+Doctor of Philosophy in Architecture (Research) (Prior Publication) 49,562
+
+School of Biosciences
+Master of Science 50,694
+Doctor of Philosophy in Science (Research) 68,944
+Doctor of Philosophy in Science (Research) (Prior Publication) 49,562
+
+Taylor's Business School
+Master of Business Administration (MBA) 70,014
+Master of Management 70,014
+Doctor of Philosophy in Business (Research) 68,944
+Doctor of Philosophy in Business (Research) (Prior Publication) 49,562
+Doctor of Business Administration (DBA) 91,614
+
+School of Media and Communication
+Master of Communication 59,284
+Doctor of Philosophy in Media and Communication Studies (Research) 68,944
+Doctor of Philosophy in Media and Communication Studies (Research) (Prior Publication) 49,562
+
+School of Computer Science
+Master of Applied Computing (Coursework) 61,105
+Master of Applied Computing (Bridging Module) 63,447
+Master of Applied Computing (Double Specialisations) 71,623
+Master of Applied Computing (Double Specialisations) (Bridging Module) 73,965
+Master of Computer Science (Research) 50,694
+Doctor of Philosophy in Computer Science (Research) 68,944
+Doctor of Philosophy in Computer Science (Research) (Prior Publication) 49,562
+
+The Design School
+Master of Design (Research) 50,694
+Doctor of Philosophy in Design Management (Research) 68,944
+Doctor of Philosophy in Design Management (Research) (Prior Publication) 49,562
+
+School of Education
+Postgraduate Certificate in Teaching and Learning 35,474
+Master of Teaching and Learning 55,684
+Master of Education (Research) 50,694
+Doctor of Philosophy in Education (Research) 68,944
+Doctor of Philosophy in Education (Research) (Prior Publication) 49,562
+
+Taylor's Culinary Institute
+Master of Food Studies and Gastronomy 72,924
+Master of Food Studies (Research) 50,694
+Doctor of Philosophy in Food Studies (Research) 68,944
+Doctor of Philosophy in Food Studies (Research) (Prior Publication) 49,562
+
+School of Hospitality, Tourism and Events
+Master of International Hospitality Management - Dual Award with University of Toulouse 73,724
+Master of Science in Tourism (Research) 50,694
+Doctor of Philosophy in Hospitality and Tourism (Research) 68,944
+Doctor of Philosophy in Hospitality and Tourism (Research) (Prior Publication) 49,562
+
+School of Law and Governance
+Master of Laws 71,924
+Master of Laws in Healthcare and Medical Law 71,924
+Master of Laws in Healthcare and Medical Law (Bridging Module) 77,692
+Doctor of Philosophy in Law (Research) 68,944
+Doctor of Philosophy in Law (Research) (Prior Publication) 49,562
+
+School of Liberal Arts and Sciences
+Master of Clinical Psychology 77,554
+Master of Counselling 62,454
+Doctor of Philosophy in Social Sciences (Research) 68,944
+Doctor of Philosophy in Social Sciences (Research) (Prior Publication) 49,562
+
+School of Medicine
+Master of Science in Medical Science (Research) 50,694
+Doctor of Philosophy in Medical Science (Research) 68,944
+Doctor of Philosophy in Medical Science (Research) (Prior Publication) 49,562
+
+School of Pharmacy
+Master of Philosophy in Pharmaceutical Science (Research) 50,694
+Master of Philosophy in Pharmacy (Research) 50,694
+Doctor of Philosophy in Pharmaceutical Science (Research) 68,944
+Doctor of Philosophy in Pharmaceutical Science (Research) (Prior Publication) 49,562
+
+RAW_CONTENT_END

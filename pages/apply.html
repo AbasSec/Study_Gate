@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | StudyGate International</title>
+    <meta name="description" content="Apply to your chosen university with StudyGate International.">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/design-system.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/database-init.js"></script>
+    <style>
+        .apply-page {
+            background: radial-gradient(circle at top left, rgba(6, 108, 73, 0.05), transparent 45%),
+                        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.05), transparent 50%);
+            min-height: 100vh;
+            padding: 110px 0 80px;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        }
+        html[dir="rtl"], html[lang="ar"] .apply-page { font-family: "Tajawal", system-ui, sans-serif; }
+        [data-theme="dark"] .apply-page {
+            background-color: #0d1626;
+            color: #dce4f7;
+        }
+
+        .apply-body .navbar,
+        .apply-body .navbar.scrolled {
+            background: transparent;
+            border-bottom: none;
+            box-shadow: none;
+        }
+
+        .apply-body .navbar .container {
+            flex-wrap: nowrap;
+        }
+
+        .apply-body .nav-cta,
+        .apply-body .nav-toggle,
+        .apply-body .theme-toggle {
+            flex-shrink: 0;
+        }
+
+        .apply-body .nav-logo span,
+        .apply-body .nav-links a {
+            color: #0b1c30;
+        }
+
+        .apply-body .nav-links a.active {
+            color: #006c49;
+        }
+
+        .apply-body .nav-logo span,
+        .apply-body .nav-logo .site-logo-text-only {
+            color: #000;
+            font-weight: 700;
+        }
+
+        .apply-body .nav-logo .site-logo-img {
+            max-height: 40px;
+            max-width: 180px;
+            object-fit: contain;
+            margin-right: 8px;
+        }
+
+        .apply-body .nav-toggle span {
+            background: #0b1c30;
+        }
+
+        .apply-body .nav-links a:hover {
+            color: #006c49;
+        }
+
+        .apply-body .theme-toggle {
+            background: #eff4ff;
+            color: #0b1c30;
+            border: 1px solid #c6c6cd;
+        }
+
+        .apply-body .theme-toggle:hover {
+            background: #e5eeff;
+        }
+
+        [data-theme="dark"] .apply-body .navbar,
+        [data-theme="dark"] .apply-body .navbar.scrolled {
+            background: transparent;
+            border-bottom: none;
+            box-shadow: none;
+        }
+
+        [data-theme="dark"] .apply-body .nav-logo span,
+        [data-theme="dark"] .apply-body .nav-links a {
+            color: #dce4f7;
+        }
+
+        [data-theme="dark"] .apply-body .nav-links a.active {
+            color: #6dd4c8;
+        }
+
+        [data-theme="dark"] .apply-body .nav-logo span,
+        [data-theme="dark"] .apply-body .nav-logo .site-logo-text-only {
+            color: #6dd4c8;
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] .apply-body .nav-toggle span {
+            background: #dce4f7;
+        }
+
+        [data-theme="dark"] .apply-body .nav-links a:hover {
+            color: #6dd4c8;
+        }
+
+        [data-theme="dark"] .apply-body .theme-toggle {
+            background: #1a2844;
+            color: #dce4f7;
+            border: 1px solid #2c3e5a;
+        }
+
+        [data-theme="dark"] .apply-body .theme-toggle:hover {
+            background: #1e2b42;
+        }
+
+        .apply-body .breadcrumb {
+            padding: 0;
+            background: transparent;
+        }
+
+        .apply-shell {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        html[dir="rtl"], html[lang="ar"] {
+            font-family: "Tajawal", system-ui, sans-serif;
+        }
+
+        .apply-header {
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            margin-bottom: 32px;
+        }
+
+        .apply-header-container {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 28px 32px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #eff4ff 0%, #f8f9ff 100%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            border: 1px solid #c6c6cd;
+        }
+
+        .apply-header-content {
+            flex: 1;
+        }
+
+        .apply-logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 16px;
+            background: #f8f9ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #c6c6cd;
+        }
+
+        .apply-logo img {
+            width: 78%;
+            height: 78%;
+            object-fit: contain;
+        }
+
+        .logo-placeholder {
+            width: 60%;
+            height: 60%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(0, 108, 73, 0.1), rgba(15, 23, 42, 0.1));
+        }
+
+        .apply-header h1 {
+            font-size: 1.75rem;
+            color: #0b1c30;
+            margin-bottom: 6px;
+            min-height: 34px;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+            font-weight: 700;
+        }
+
+        .apply-header p {
+            color: #45464d;
+            margin: 0;
+            min-height: 20px;
+        }
+
+        [data-theme="dark"] .apply-header-container {
+            background: linear-gradient(135deg, #1a2844 0%, #0d1626 100%);
+            border-color: #2c3e5a;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .apply-logo {
+            background: #1e2b42;
+            border-color: #2c3e5a;
+        }
+
+        [data-theme="dark"] .apply-header h1 {
+            color: #dce4f7;
+        }
+
+        [data-theme="dark"] .apply-header p {
+            color: #9eaec4;
+        }
+
+        .apply-header.loading h1,
+        .apply-header.loading p {
+            color: transparent;
+            background: linear-gradient(90deg, rgba(148, 163, 184, 0.2), rgba(148, 163, 184, 0.4), rgba(148, 163, 184, 0.2));
+            border-radius: 8px;
+            background-size: 200% 100%;
+            animation: shimmer 1.4s infinite;
+        }
+
+        .apply-header.loading h1 {
+            width: 70%;
+        }
+
+        .apply-header.loading p {
+            width: 90%;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .apply-card {
+            margin-top: 0;
+            background: #f8f9ff;
+            border-radius: 24px;
+            border: 1px solid #c6c6cd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            padding: 36px;
+            overflow: hidden;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 32px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #c6c6cd;
+        }
+
+        .step {
+            border: 1px solid #c6c6cd;
+            border-radius: 12px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9ff;
+            opacity: 0.6;
+            transition: all 150ms ease;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: #006c49;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .step.active {
+            opacity: 1;
+            border-color: #006c49;
+            background: #eff4ff;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .step-label {
+            font-weight: 600;
+            color: #0b1c30;
+            font-size: 0.9rem;
+        }
+
+        [data-theme="dark"] .apply-card {
+            background: #0d1626;
+            border-color: #2c3e5a;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .steps {
+            border-color: #2c3e5a;
+        }
+
+        [data-theme="dark"] .step {
+            background: #1a2844;
+            border-color: #2c3e5a;
+        }
+
+        [data-theme="dark"] .step.active {
+            background: #1e2b42;
+            border-color: #006c49;
+        }
+
+        [data-theme="dark"] .step-label {
+            color: #dce4f7;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group .clear-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(4px);
+            font-size: 0.85rem;
+            color: #45464d;
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+        }
+
+        .form-group .clear-btn:hover {
+            color: #006c49;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #45464d;
+            margin-bottom: 6px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #c6c6cd;
+            background: #eff4ff;
+            color: #0b1c30;
+            appearance: none;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+            background-image: linear-gradient(45deg, transparent 50%, #45464d 50%), linear-gradient(135deg, #45464d 50%, transparent 50%);
+            background-position: calc(100% - 18px) calc(50% + 2px), calc(100% - 12px) calc(50% + 2px);
+            background-size: 6px 6px, 6px 6px;
+            background-repeat: no-repeat;
+            transition: all 150ms ease;
+        }
+
+        .form-group input {
+            background-image: none;
+        }
+
+        .form-group select {
+            padding-right: 36px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #006c49;
+            box-shadow: 0 0 0 3px rgba(111, 251, 190, 0.3);
+            background-color: #f8f9ff;
+        }
+
+        .form-group input::placeholder {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .form-group label {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .form-group .clear-btn {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .form-group .clear-btn:hover {
+            color: #6dd4c8;
+        }
+
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group select {
+            background: #1a2844;
+            border-color: #2c3e5a;
+            color: #dce4f7;
+        }
+
+        [data-theme="dark"] .form-group input:focus,
+        [data-theme="dark"] .form-group select:focus {
+            border-color: #006c49;
+            box-shadow: 0 0 0 3px rgba(111, 251, 190, 0.3);
+            background-color: #1e2b42;
+        }
+
+        [data-theme="dark"] .form-group input::placeholder {
+            color: #45464d;
+        }
+
+        .phone-group {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px;
+        }
+
+        .section-title {
+            margin: 0 0 20px 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0b1c30;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .upload-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .upload-card {
+            border: 1px dashed #c6c6cd;
+            border-radius: 14px;
+            padding: 14px;
+            background: #f8f9ff;
+            transition: all 150ms ease;
+        }
+
+        .upload-card:hover {
+            border-color: #006c49;
+            background: #eff4ff;
+        }
+
+        .upload-card strong {
+            color: #0b1c30;
+            font-weight: 600;
+        }
+
+        .upload-card p {
+            margin: 6px 0 12px;
+            color: #45464d;
+            font-size: 0.85rem;
+        }
+
+        .upload-card input[type="file"] {
+            display: none;
+        }
+
+        .upload-card .upload-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: #006c49;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 150ms ease;
+        }
+
+        .upload-card .upload-btn:hover {
+            background: #005a3f;
+            transform: translateY(-1px);
+        }
+
+        .consent {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 0.85rem;
+            color: #45464d;
+            border: 1px solid #c6c6cd;
+            border-radius: 12px;
+            padding: 12px;
+            background: #f8f9ff;
+        }
+
+        .consent label {
+            cursor: pointer;
+            color: #45464d;
+        }
+
+        .consent input[type="checkbox"] {
+            margin-top: 2px;
+        }
+
+        .consent span {
+            color: #45464d;
+            font-size: 0.8rem;
+        }
+
+        .form-actions {
+            margin-top: 32px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid #c6c6cd;
+        }
+
+        [data-theme="dark"] .section-title {
+            color: #dce4f7;
+        }
+
+        [data-theme="dark"] .upload-card {
+            background: #1a2844;
+            border-color: #2c3e5a;
+        }
+
+        [data-theme="dark"] .upload-card:hover {
+            background: #1e2b42;
+            border-color: #006c49;
+        }
+
+        [data-theme="dark"] .upload-card strong {
+            color: #dce4f7;
+        }
+
+        [data-theme="dark"] .upload-card p {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .consent {
+            background: #1a2844;
+            border-color: #2c3e5a;
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .consent label {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .consent span {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .form-actions {
+            border-color: #2c3e5a;
+        }
+
+        .form-warning {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            background: rgba(186, 26, 26, 0.1);
+            color: #ba1a1a;
+            border: 1px solid rgba(186, 26, 26, 0.3);
+            font-size: 0.85rem;
+            display: none;
+        }
+
+        [data-theme="dark"] .form-warning {
+            background: rgba(186, 26, 26, 0.15);
+            border-color: rgba(186, 26, 26, 0.35);
+            color: #fecaca;
+        }
+
+        .btn, .btn-submit, #submitBtn, #nextBtn, #backBtn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 150ms ease;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+        }
+
+        .btn-primary, .btn-submit, #submitBtn {
+            background: #006c49;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover, .btn-submit:hover, #submitBtn:hover {
+            background: #005a3f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary, #nextBtn, #backBtn {
+            background: transparent;
+            color: #0b1c30;
+            border: 1px solid #c6c6cd;
+        }
+
+        .btn-secondary:hover, #nextBtn:hover, #backBtn:hover {
+            background: #eff4ff;
+            border-color: #006c49;
+        }
+
+        [data-theme="dark"] .btn-primary, [data-theme="dark"] .btn-submit, [data-theme="dark"] #submitBtn {
+            background: #006c49;
+            color: #fff;
+        }
+
+        [data-theme="dark"] .btn-primary:hover, [data-theme="dark"] .btn-submit:hover, [data-theme="dark"] #submitBtn:hover {
+            background: #005a3f;
+        }
+
+        [data-theme="dark"] .btn-secondary, [data-theme="dark"] #nextBtn, [data-theme="dark"] #backBtn {
+            background: transparent;
+            color: #dce4f7;
+            border-color: #2c3e5a;
+        }
+
+        [data-theme="dark"] .btn-secondary:hover, [data-theme="dark"] #nextBtn:hover, [data-theme="dark"] #backBtn:hover {
+            background: #1a2844;
+            border-color: #006c49;
+        }
+
+        .submit-overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(6, 108, 73, 0.1), transparent 40%),
+                        rgba(15, 23, 42, 0.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .submit-card {
+            background: #eff4ff;
+            border-radius: 20px;
+            padding: 28px 26px 24px;
+            width: min(440px, 92vw);
+            border: 1px solid #c6c6cd;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            position: relative;
+        }
+
+        .submit-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #006c49;
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: -54px auto 14px;
+            box-shadow: 0 10px 24px rgba(0, 108, 73, 0.35);
+        }
+
+        .submit-card h4 {
+            margin-bottom: 8px;
+            color: var(--color-text-primary);
+            font-family: var(--font-family);
+            font-weight: 700;
+        }
+
+        [data-theme="dark"] .submit-card h4 {
+            color: var(--color-text-primary);
+        }
+
+        .submit-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            border-radius: 999px;
+            background: var(--color-surface-container);
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        [data-theme="dark"] .progress-bar {
+            background: var(--color-surface-container-high);
+        }
+
+        .progress-bar span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--color-secondary), #0d9488);
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .submit-actions {
+            display: none;
+            margin-top: 16px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-surface-container);
+            border-color: var(--color-secondary);
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* =========================================================
+           Apply Body - Design System Aligned
+           ========================================================= */
+        .apply-body {
+            background: var(--color-surface);
+            color: var(--color-text-primary);
+            font-family: var(--font-family);
+        }
+
+        .apply-body h1,
+        .apply-body h2,
+        .apply-body h3,
+        .apply-body h4 {
+            font-family: var(--font-family);
+            letter-spacing: -0.01em;
+            font-weight: 700;
+        }
+
+        .apply-body p,
+        .apply-body span,
+        .apply-body label,
+        .apply-body input,
+        .apply-body select,
+        .apply-body button,
+        .apply-body a {
+            font-family: var(--font-family);
+        }
+
+        .apply-body .navbar,
+        .apply-body .navbar.scrolled {
+            background: transparent;
+            border-bottom: none;
+            box-shadow: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        .apply-body .nav-logo span {
+            color: #000;
+        }
+
+        .apply-body .nav-links a {
+            color: #0b1c30;
+        }
+
+        .apply-body .nav-links a:hover {
+            color: #006c49;
+        }
+
+        .apply-body .theme-toggle {
+            background: #eff4ff;
+            color: #0b1c30;
+            border: 1px solid #c6c6cd;
+        }
+
+        .apply-body .theme-toggle:hover {
+            background: #e5eeff;
+        }
+
+        .apply-body .breadcrumb {
+            margin-bottom: 16px !important;
+        }
+
+        .apply-body .breadcrumb-list {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #45464d;
+        }
+
+        .submit-card {
+            border-radius: 22px;
+            border-color: #c6c6cd;
+            box-shadow: 0 30px 56px rgba(9, 12, 21, 0.28);
+            background: linear-gradient(145deg, #f8f9ff 0%, #eff4ff 100%);
+        }
+
+        .submit-card h4 {
+            color: #0b1c30;
+        }
+
+        .submit-card p,
+        .progress-text {
+            color: #45464d;
+        }
+
+        [data-theme="dark"] .apply-page {
+            background: radial-gradient(circle at 8% 10%, rgba(93, 49, 255, 0.14), transparent 42%),
+                        radial-gradient(circle at 90% 88%, rgba(239, 68, 68, 0.12), transparent 46%),
+                        #0d1626;
+        }
+
+        [data-theme="dark"] .apply-body .breadcrumb-list {
+            color: #9eaec4;
+        }
+
+        [data-theme="dark"] .submit-card {
+            background: linear-gradient(145deg, #0d1626 0%, #1a2844 100%);
+            border-color: #2c3e5a;
+        }
+
+        [data-theme="dark"] .submit-card {
+            background: #1a2844;
+            border-color: #2c3e5a;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="dark"] .submit-card h4 {
+            color: #dce4f7;
+        }
+
+        [data-theme="dark"] .submit-card p,
+        [data-theme="dark"] .progress-text {
+            color: #9eaec4;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid,
+            .upload-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .apply-page {
+                padding-top: 88px;
+            }
+
+            .apply-header {
+                padding: 16px;
+                border-radius: 20px;
+            }
+
+            .apply-header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .apply-logo {
+                width: 74px;
+                height: 74px;
+            }
+
+            .apply-card {
+                padding: 16px;
+                border-radius: 20px;
+            }
+
+            .phone-group {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-secondary,
+            .btn-submit,
+            #submitBtn,
+            #nextBtn,
+            #backBtn,
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../css/mobile-fixes.css">
+</head>
+<body class="home-page apply-body">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <img class="site-logo-img" src="" alt="StudyGate International Logo" style="display:inline-block; visibility:visible; opacity:1;">
+                <span class="site-logo-text-only">StudyGate</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html" data-translate="nav.home">Home</a></li>
+                <li><a href="universities.html" data-translate="nav.universities">Universities</a></li>
+                <li><a href="courses.html" data-translate="nav.courses">Courses</a></li>
+                <li><a href="services.html" data-translate="nav.services">Services</a></li>
+                <li><a href="team.html" data-translate="nav.team">Our Team</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button id="languageToggle" class="theme-toggle" aria-label="Toggle language" style="font-size:0.85rem;font-weight:600;padding:8px 12px;">EN</button>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary">Apply now</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="apply-page" data-page-key="apply">
+        <div class="apply-shell">
+            <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 24px;">
+                <ul class="breadcrumb-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-separator">›</li>
+                    <li><a href="universities.html">Universities</a></li>
+                    <li class="breadcrumb-separator">›</li>
+                    <li class="breadcrumb-current" id="breadcrumbUniversity">Apply</li>
+                </ul>
+            </nav>
+
+            <header class="apply-header loading" id="applyHeader">
+                <div class="apply-header-container">
+                    <div class="apply-logo" id="applyLogo">
+                        <div class="logo-placeholder"></div>
+                    </div>
+                    <div class="apply-header-content">
+                        <h1 id="applyUniversityName"></h1>
+                        <p id="applySubtitle"></p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="apply-card">
+                <div class="steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Personal & Course</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Guardian Details</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Upload Documents</div>
+                    </div>
+                </div>
+
+                <div class="form-step active" data-step="1">
+                    <h3 class="section-title">Personal & Course</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="studentName" placeholder="Enter your full name">
+                            <span class="clear-btn" onclick="clearInput('studentName')">×</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Nationality</label>
+                            <select id="studentNationality">
+                                <option value="">Select your nationality</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="India">India</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="studentEmail" placeholder="Enter your email address">
+                            <span class="clear-btn" onclick="clearInput('studentEmail')">×</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Country of Residence</label>
+                            <select id="studentCountry">
+                                <option value="">Select country</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="India">India</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <div class="phone-group">
+                                <select id="studentPhoneCode">
+                                    <option value="+60">Malaysia (+60)</option>
+                                    <option value="+880">Bangladesh (+880)</option>
+                                    <option value="+92">Pakistan (+92)</option>
+                                    <option value="+91">India (+91)</option>
+                                    <option value="+234">Nigeria (+234)</option>
+                                    <option value="+966">Saudi Arabia (+966)</option>
+                                    <option value="+971">United Arab Emirates (+971)</option>
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+61">Australia (+61)</option>
+                                    <option value="+65">Singapore (+65)</option>
+                                    <option value="+62">Indonesia (+62)</option>
+                                </select>
+                                <input type="tel" id="studentPhone" placeholder="Enter contact no." inputmode="numeric" pattern="[0-9]*" oninput="sanitizePhone(this)" onblur="validatePhone()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>City of Residence</label>
+                            <input type="text" id="studentCity" placeholder="Enter your residence city">
+                            <span class="clear-btn" onclick="clearInput('studentCity')">×</span>
+                        </div>
+                        <div class="form-group">
+                            <label>What is your preferred programme?</label>
+                            <select id="studentProgramme">
+                                <option value="">Select your preferred programme</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <h3 class="section-title">Parent/Guardian Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Parent/Guardian’s Name</label>
+                            <input type="text" id="guardianName" placeholder="Enter your Parent/Guardian’s full name">
+                            <span class="clear-btn" onclick="clearInput('guardianName')">×</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Parent/Guardian’s Email Address</label>
+                            <input type="email" id="guardianEmail" placeholder="Enter your Parent/Guardian’s email address">
+                            <span class="clear-btn" onclick="clearInput('guardianEmail')">×</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Parent/Guardian’s Contact Number</label>
+                            <div class="phone-group">
+                                <select id="guardianPhoneCode">
+                                    <option value="+60">Malaysia (+60)</option>
+                                    <option value="+880">Bangladesh (+880)</option>
+                                    <option value="+92">Pakistan (+92)</option>
+                                    <option value="+91">India (+91)</option>
+                                    <option value="+234">Nigeria (+234)</option>
+                                    <option value="+966">Saudi Arabia (+966)</option>
+                                    <option value="+971">United Arab Emirates (+971)</option>
+                                    <option value="+1">United States (+1)</option>
+                                    <option value="+44">United Kingdom (+44)</option>
+                                    <option value="+61">Australia (+61)</option>
+                                    <option value="+65">Singapore (+65)</option>
+                                    <option value="+62">Indonesia (+62)</option>
+                                </select>
+                                <input type="tel" id="guardianPhone" placeholder="Enter Parent/Guardian’s contact no." inputmode="numeric" pattern="[0-9]*" oninput="sanitizePhone(this)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select id="guardianCountry">
+                                <option value="">Select Country</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="India">India</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <h3 class="section-title">Upload Documents</h3>
+                    <div class="upload-grid">
+                        <div class="upload-card">
+                            <strong>High School Certificate or equivalent</strong>
+                            <p id="fileLabel1">No file selected</p>
+                            <label class="upload-btn">
+                                Select File
+                                <input type="file" id="docHighSchool" onchange="updateFileLabel('fileLabel1', this)">
+                            </label>
+                        </div>
+                        <div class="upload-card">
+                            <strong>White Background Photo</strong>
+                            <p id="fileLabel2">No file selected</p>
+                            <label class="upload-btn">
+                                Select File
+                                <input type="file" id="docPhoto" onchange="updateFileLabel('fileLabel2', this)">
+                            </label>
+                        </div>
+                        <div class="upload-card">
+                            <strong>Passport info page</strong>
+                            <p id="fileLabel3">No file selected</p>
+                            <label class="upload-btn">
+                                Select File
+                                <input type="file" id="docPassport" onchange="updateFileLabel('fileLabel3', this)">
+                            </label>
+                        </div>
+                        <div class="upload-card">
+                            <strong>Additional Documents</strong>
+                            <p id="fileLabel4">No file selected</p>
+                            <label class="upload-btn">
+                                Select File
+                                <input type="file" id="docAdditional" onchange="updateFileLabel('fileLabel4', this)">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="consent">
+                        <input type="checkbox" id="consentCheck">
+                        <label for="consentCheck">
+                            By submitting this form, I agree to the terms & conditions.
+                            <br>
+                            <span>After submitting your application, your files will be reviewed and an educational counselor will communicate with you to start your admission procedures and provide you with more information.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-secondary" type="button" id="backBtn" onclick="prevStep()">Back</button>
+                    <button class="btn btn-primary btn-submit" type="button" id="nextBtn" onclick="nextStep()">
+                        Next
+                        <span>→</span>
+                    </button>
+                    <button class="btn btn-primary btn-submit" type="button" id="submitBtn" onclick="submitApplication()" style="display:none;">
+                        Submit Application
+                        <span>→</span>
+                    </button>
+                </div>
+                <div class="form-warning" id="formWarning"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="submit-overlay" id="submitOverlay">
+        <div class="submit-card">
+            <div class="submit-icon" id="submitIcon">✓</div>
+            <h4 id="submitTitle">Submitting your application</h4>
+            <p id="submitMessage">Please do not close this tab while we upload your documents.</p>
+            <div class="progress-bar"><span id="submitProgress"></span></div>
+            <div class="progress-text" id="submitPercent">0% completed</div>
+            <div class="submit-actions" id="submitActions">
+                <button class="btn btn-primary" type="button" onclick="window.location.href='../index.html'">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-check-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/currency.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/database-init.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/translations.js"></script>
+    <script src="../js/apply.js"></script>
+    <script>
+        // Load WhatsApp settings
+        async function loadWhatsApp() {
+            if (typeof db === 'undefined') {
+                setTimeout(loadWhatsApp, 500);
+                return;
+            }
+            try {
+                const doc = await db.collection('contactSettings').doc('main').get();
+                if (doc.exists && doc.data()) {
+                    const whatsapp = doc.data().whatsapp || doc.data().whatsappNumber || doc.data().phone;
+                    if (whatsapp) {
+                        const cleaned = whatsapp.replace(/\D/g, '');
+                        document.getElementById('whatsappLink').href = `https://wa.me/${cleaned}`;
+                        document.getElementById('whatsappButton').style.display = 'flex';
+                    }
+                }
+            } catch (e) {
+                console.error('Error loading WhatsApp:', e);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                loadWhatsApp();
+                if (typeof setupLanguageToggle === 'function') {
+                    setupLanguageToggle();
+                }
+            });
+        } else {
+            loadWhatsApp();
+            if (typeof setupLanguageToggle === 'function') {
+                setupLanguageToggle();
+            }
+        }
+    </script>
+
+<!-- WhatsApp Floating Button -->
+<div id="whatsappButton" class="fixed bottom-6 right-6 z-40" style="display:none;">
+    <a id="whatsappLink" href="#" target="_blank" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+        <span class="material-symbols-outlined text-[24px]">mail</span>
+    </a>
+</div>
+
+<script src="../js/site-logo.js"></script>
+<script src="../js/site-hero.js"></script>
+
+</body>
+</html>
+
+

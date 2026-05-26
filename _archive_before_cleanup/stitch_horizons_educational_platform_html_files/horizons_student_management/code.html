@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Horizons Admin | Students &amp; Applications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e5eeff;
+            border-radius: 10px;
+        }
+        .drawer-transition {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<!-- Tailwind Config Execution -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "on-surface": "#0b1c30",
+                    "on-surface-variant": "#45464d",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-container": "#00201d",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary": "#000000",
+                    "surface-bright": "#f8f9ff",
+                    "outline": "#76777d",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#131b2e",
+                    "outline-variant": "#c6c6cd",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#dae2fd",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-container": "#7c839b",
+                    "surface-tint": "#565e74",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#0c9488",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-primary": "#bec6e0",
+                    "primary-container": "#131b2e",
+                    "secondary": "#006c49",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#002113",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#00201d",
+                    "surface-variant": "#d3e4fe",
+                    "on-background": "#0b1c30",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed": "#89f5e7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "section-gap": "120px",
+                    "gutter-desktop": "24px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "gutter-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "status-pill": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-hidden h-screen flex">
+<!-- SIDE NAVIGATION SHELL -->
+<aside class="flex flex-col h-screen p-base gap-2 bg-surface-container-lowest border-r border-outline-variant/30 w-72 shrink-0 hidden md:flex">
+<div class="px-4 py-6">
+<h2 class="text-headline-sm font-bold text-on-surface tracking-tight">Horizons Admin</h2>
+<p class="text-label-md text-on-surface-variant/70">Global Education Portal</p>
+</div>
+<button class="mx-4 mb-6 bg-primary text-on-primary py-3 px-6 rounded-xl font-semibold flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-transform shadow-md">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            New Application
+        </button>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md">Dashboard</span>
+</a>
+<!-- Active Tab Mapping: Students -->
+<a class="flex items-center gap-3 px-4 py-3 mx-2 bg-secondary-container text-on-secondary-container rounded-xl font-semibold scale-95 transition-all" href="#">
+<span class="material-symbols-outlined" data-weight="fill">group</span>
+<span class="text-label-md">Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-label-md">Institutions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="text-label-md">Agents</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 mx-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all text-error" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 flex flex-col h-full relative overflow-hidden bg-surface">
+<!-- TOP APP BAR -->
+<header class="h-20 flex items-center justify-between px-8 border-b border-outline-variant/30 bg-surface/70 backdrop-blur-xl sticky top-0 z-40">
+<div>
+<h1 class="text-headline-md font-bold tracking-tight">Applications Management</h1>
+<p class="text-label-md text-on-surface-variant">Manage international student trajectories and visa stages.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-full pl-10 pr-4 py-2 text-label-md w-64 focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" placeholder="Global search..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary-fixed overflow-hidden border border-outline-variant/50">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A professional headshot of a senior administrator in an office setting. The person is wearing a navy blue blazer and has a confident, approachable expression. The background is slightly blurred showing a modern office with large windows and soft daylight. The overall lighting is balanced, clean, and bright for a light-mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbCrH7u2GwDqzntFU0fdqDwzVmD23hRgq7yW0MqL5EkPEh3R9yZjOKEyVRwDO-orKZxFl7BDJZZV-j4Z0vWjsT7Vrmjy91y0cdUbbH0UtpPcGSt0hvAEYw3lflEDrofX3JgLzmjPBqNY_N8D5SyJNk9rYCvgJv9iyug96noHY4IQJIPnYlTpNdtZVhJ_IRktsQ4ZZouSUzFoSqn2rBid6C3XQfgiTRdNQlDbZLL8jxuujPPKhbzW31BzxnkFsFYm5PqasWcB6B_meo"/>
+</div>
+</div>
+</header>
+<!-- FILTERS BAR -->
+<section class="p-8 pb-4">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex-1 flex items-center gap-3">
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-2.5 pr-10 text-label-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none">
+<option>All Statuses</option>
+<option>Applied</option>
+<option>Enrolled</option>
+<option>Finding Course</option>
+<option>Visa Stage</option>
+<option>Waiting for Commission</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-2.5 pr-10 text-label-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none">
+<option>All Agents</option>
+<option>Global Pathways Ltd</option>
+<option>EduLink International</option>
+<option>Scholar's Hub</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-2.5 pr-10 text-label-md focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none">
+<option>All Universities</option>
+<option>University of Manchester</option>
+<option>Sydney Global University</option>
+<option>Berlin Tech School</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 border border-outline-variant/50 rounded-xl text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        Date Range
+                    </button>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 text-primary-container font-semibold hover:underline decoration-2 underline-offset-4">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+                    Clear Filters
+                </button>
+</div>
+</section>
+<!-- DATA TABLE -->
+<section class="flex-1 overflow-auto px-8 pb-8 custom-scrollbar">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-2xl shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low/50 sticky top-0 z-10">
+<tr>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Student Name</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Contact Info</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Course &amp; Uni</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Referral Agent</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Applied On</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Student Row 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group cursor-pointer" onclick="openStudentDrawer('Amara Okafor')">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold">AO</div>
+<div>
+<div class="font-semibold text-on-surface">Amara Okafor</div>
+<div class="text-[12px] text-on-surface-variant">#STU-44091</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">amara.oka@email.com</div>
+<div class="text-[12px] text-on-surface-variant">+234 801 234 5678</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md font-medium">MSc Data Science</div>
+<div class="text-[12px] text-on-surface-variant">Univ. of Greenwich</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">Global Pathways</div>
+</td>
+<td class="px-6 py-4 text-label-md">12 Oct 2024</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1.5 rounded-full text-status-pill font-status-pill bg-secondary/10 text-secondary border border-secondary/20">Enrolled</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="opacity-0 group-hover:opacity-100 p-2 hover:bg-surface-container rounded-lg transition-all">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Student Row 2 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group cursor-pointer" onclick="openStudentDrawer('Chen Wei')">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">CW</div>
+<div>
+<div class="font-semibold text-on-surface">Chen Wei</div>
+<div class="text-[12px] text-on-surface-variant">#STU-44102</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">chen.w@pro.cn</div>
+<div class="text-[12px] text-on-surface-variant">+86 139 5544 3321</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md font-medium">BBA International Business</div>
+<div class="text-[12px] text-on-surface-variant">Melbourne Institute</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">EduLink Int.</div>
+</td>
+<td class="px-6 py-4 text-label-md">15 Oct 2024</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1.5 rounded-full text-status-pill font-status-pill bg-tertiary-fixed-dim/20 text-on-tertiary-container border border-tertiary-fixed-dim/30">Visa Stage</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="opacity-0 group-hover:opacity-100 p-2 hover:bg-surface-container rounded-lg transition-all">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Student Row 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group cursor-pointer" onclick="openStudentDrawer('Sofia Rodriguez')">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold">SR</div>
+<div>
+<div class="font-semibold text-on-surface">Sofia Rodriguez</div>
+<div class="text-[12px] text-on-surface-variant">#STU-44115</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">s.rodriguez@email.es</div>
+<div class="text-[12px] text-on-surface-variant">+34 655 443 221</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md font-medium">Digital Architecture</div>
+<div class="text-[12px] text-on-surface-variant">Berlin Tech School</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">Direct Application</div>
+</td>
+<td class="px-6 py-4 text-label-md">20 Oct 2024</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1.5 rounded-full text-status-pill font-status-pill bg-primary-fixed/30 text-on-primary-fixed-variant border border-primary-fixed/50">Applied</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="opacity-0 group-hover:opacity-100 p-2 hover:bg-surface-container rounded-lg transition-all">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Student Row 4 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-error-container/30 flex items-center justify-center text-error font-bold">JP</div>
+<div>
+<div class="font-semibold text-on-surface">James Potter</div>
+<div class="text-[12px] text-on-surface-variant">#STU-44120</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">j.potter@academy.uk</div>
+<div class="text-[12px] text-on-surface-variant">+44 7788 990011</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md font-medium">Foundations in AI</div>
+<div class="text-[12px] text-on-surface-variant">Searching...</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-label-md">Scholar's Hub</div>
+</td>
+<td class="px-6 py-4 text-label-md">22 Oct 2024</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1.5 rounded-full text-status-pill font-status-pill bg-on-tertiary-container/10 text-on-tertiary-container border border-on-tertiary-container/20">Finding Course</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="opacity-0 group-hover:opacity-100 p-2 hover:bg-surface-container rounded-lg transition-all">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- PAGINATION -->
+<div class="mt-6 flex items-center justify-between">
+<p class="text-label-md text-on-surface-variant">Showing 1 to 4 of 1,248 students</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded-xl font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/30 rounded-xl hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- STUDENT DETAIL DRAWER (Bento Modal Style) -->
+<div class="absolute top-0 right-0 h-full w-[500px] bg-surface-container-lowest shadow-2xl z-50 translate-x-full drawer-transition border-l border-outline-variant/30 flex flex-col" id="studentDrawer">
+<div class="p-6 flex items-center justify-between border-b border-outline-variant/20 bg-surface/40 backdrop-blur-md">
+<h3 class="text-headline-md font-bold tracking-tight" id="drawerStudentName">Student Details</h3>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors" onclick="closeStudentDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-auto p-6 space-y-6 custom-scrollbar">
+<!-- Status Update Section -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/20">
+<label class="block text-label-md font-bold text-on-surface-variant mb-2">Update Application Status</label>
+<div class="flex gap-2 flex-wrap">
+<button class="px-3 py-2 rounded-lg text-status-pill bg-white border border-outline-variant/30 hover:border-primary transition-all">Applied</button>
+<button class="px-3 py-2 rounded-lg text-status-pill bg-secondary-container text-on-secondary-container border border-secondary font-bold">Enrolled</button>
+<button class="px-3 py-2 rounded-lg text-status-pill bg-white border border-outline-variant/30 hover:border-primary transition-all">Visa Stage</button>
+<button class="px-3 py-2 rounded-lg text-status-pill bg-white border border-outline-variant/30 hover:border-primary transition-all">Finding Course</button>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 p-4 rounded-2xl border border-outline-variant/20 bg-white shadow-sm">
+<h4 class="text-label-md font-bold uppercase tracking-wider text-on-surface-variant/60 mb-3">Application Progress</h4>
+<div class="relative pt-1">
+<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-surface-container">
+<div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-secondary transition-all duration-1000" style="width:75%"></div>
+</div>
+<div class="flex justify-between text-[11px] font-bold text-outline uppercase">
+<span>Submission</span>
+<span>Offer Letter</span>
+<span class="text-secondary">Visa Granted</span>
+<span>Travel</span>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-2xl border border-outline-variant/20 bg-white shadow-sm">
+<h4 class="text-label-md font-bold text-on-surface-variant mb-1">Passport No.</h4>
+<p class="text-body-md font-semibold">A88291029</p>
+</div>
+<div class="p-4 rounded-2xl border border-outline-variant/20 bg-white shadow-sm">
+<h4 class="text-label-md font-bold text-on-surface-variant mb-1">Nationality</h4>
+<p class="text-body-md font-semibold">Nigerian</p>
+</div>
+<div class="col-span-2 p-4 rounded-2xl border border-outline-variant/20 bg-white shadow-sm">
+<h4 class="text-label-md font-bold text-on-surface-variant mb-3">Document Checklist</h4>
+<ul class="space-y-3">
+<li class="flex items-center justify-between text-label-md">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-weight="fill">check_circle</span>
+                                    IELTS Certificate
+                                </span>
+<button class="text-primary hover:underline">View</button>
+</li>
+<li class="flex items-center justify-between text-label-md">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-weight="fill">check_circle</span>
+                                    Undergraduate Transcript
+                                </span>
+<button class="text-primary hover:underline">View</button>
+</li>
+<li class="flex items-center justify-between text-label-md text-on-surface-variant/40">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+                                    Bank Statement (Proof of Funds)
+                                </span>
+<button class="text-primary hover:underline">Upload</button>
+</li>
+</ul>
+</div>
+</div>
+<!-- History Timeline -->
+<div class="space-y-4">
+<h4 class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">History &amp; Activity</h4>
+<div class="border-l-2 border-outline-variant/30 ml-2 pl-6 space-y-6 relative">
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-secondary ring-4 ring-white"></div>
+<p class="text-label-md font-bold">Status changed to Enrolled</p>
+<p class="text-[12px] text-on-surface-variant">Oct 24, 2024 • by Admin Sarah</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-outline ring-4 ring-white"></div>
+<p class="text-label-md font-bold">Offer Letter Received</p>
+<p class="text-[12px] text-on-surface-variant">Oct 18, 2024 • University of Greenwich</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-outline ring-4 ring-white"></div>
+<p class="text-label-md font-bold">Initial Application Submitted</p>
+<p class="text-[12px] text-on-surface-variant">Oct 12, 2024 • via Global Pathways Agent</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant/20 bg-surface-container-lowest grid grid-cols-2 gap-3">
+<button class="py-3 px-4 rounded-xl border border-outline text-label-md font-bold hover:bg-surface-container transition-all">Send Email</button>
+<button class="py-3 px-4 rounded-xl bg-primary text-on-primary text-label-md font-bold hover:shadow-lg transition-all">Generate Invoice</button>
+</div>
+</div>
+<!-- Overlay for drawer -->
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0" id="drawerOverlay" onclick="closeStudentDrawer()"></div>
+</main>
+<script>
+        function openStudentDrawer(name) {
+            const drawer = document.getElementById('studentDrawer');
+            const overlay = document.getElementById('drawerOverlay');
+            const drawerName = document.getElementById('drawerStudentName');
+            
+            drawerName.innerText = name;
+            drawer.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.add('opacity-100'), 10);
+        }
+
+        function closeStudentDrawer() {
+            const drawer = document.getElementById('studentDrawer');
+            const overlay = document.getElementById('drawerOverlay');
+            
+            drawer.classList.add('translate-x-full');
+            overlay.classList.remove('opacity-100');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+        }
+
+        // Search highlight effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-105');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-105');
+        });
+    </script>
+</body></html>

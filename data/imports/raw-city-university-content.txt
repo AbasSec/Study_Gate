@@ -1,0 +1,93 @@
+UNIVERSITY_NAME: City University Malaysia
+SHORT_CODE: CITY
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION PROGRAMS
+Foundation in Business 12000
+Foundation in Arts (Communication) 11800
+Foundation in Arts (English) 11800
+Foundation in Arts (Graphic Design & Multimedia) 11800
+Foundation in Arts (Build Environment) 11800
+Foundation in Arts (Fashion Design) 11800
+Foundation in Science 11800
+Foundation in Information Technology 11400
+
+DIPLOMA PROGRAMS
+Diploma in Fashion Design 26600
+Diploma in Graphic Design 29040
+Diploma in Mass Communication 26600
+Diploma in Corporate Communication 26600
+Diploma in Accounting 26010
+Diploma in Business Management 25740
+Diploma in Human Resource Management 25740
+Diploma in Office Management 25830
+Diploma in Islamic Banking 29960
+Diploma in Management 25740
+Diploma in Information Technology 26010
+Diploma in Medical Lab Technology 45440
+Diploma in Nursing 46160
+Diploma in Occupational Safety & Health 45440
+Diploma in Environmental Health 45440
+Diploma in Culinary Arts 28440
+Diploma in Hotel Management 29040
+Diploma in Early Childhood Education 29960
+Diploma in Civil Engineering 25830
+Diploma in Mechanical Engineering 27360
+Diploma in Architectural Technology 26550
+Diploma in Interior Design 29040
+
+BACHELOR'S DEGREE PROGRAMS
+Bachelor of Graphic Design (Hons) 44640
+Bachelor of Fashion Design (Hons) 54600
+Bachelor of Multimedia (Hons) 44580
+Bachelor of Communication (Hons) Corporate Communication 39840
+Bachelor of Communication (Hons) Mass Communication 41600
+Bachelor of Communication (Hons) Journalism 41580
+Bachelor of Business Administration (Hons) 37560
+Bachelor of Engineering Management (Hons) 38920
+Bachelor of Accounting (Hons) 43680
+Bachelor of Science (Hons) Accounting & Finance 36350
+Bachelor of Information Technology (Hons) 42900
+Bachelor of Computer Science (Hons) Software Engineering 42900
+Bachelor of Occupational Safety & Health (Hons) 56420
+Bachelor of Biomedical Sciences (Hons) 56420
+Bachelor of Environmental Health (Hons) 56420
+Bachelor of Nursing 42600
+Bachelor of Hospitality Management (Hons) 43650
+Bachelor of Education (Early Childhood Education) Honours 36400
+Bachelor of Applied Psychology (Hons) 44640
+Bachelor of Education (Hons) in Teaching English As A Second Language (TESL) 40460
+Bachelor of Civil Engineering with Honours 53280
+Bachelor of Mechanical Engineering with Honours 50580
+Bachelor of Science (Hons) Architectural Design 43050
+Bachelor of Interior Design (Hons) 42350
+
+POSTGRADUATE PROGRAMS - MASTER'S
+Master of Business Administration (MBA) 19120
+Master of Science in Business Administration (By Research) 16740
+Master of Information Technology (MIT) 16740
+Master of Accounting (MACC) 19120
+Master of Education (MED) 16740
+Master of Architecture (M.ARC) 16740
+Master of Mechanical Engineering (MME) 16740
+Master of Sport Studies (By Research) 16740
+Master of Creative Industries and Communication (MCIC) 16740
+Master of Architecture Project Management (MAPM) 16740
+
+POSTGRADUATE PROGRAMS - DOCTORATE
+Doctor of Business Administration (DBA) 40920
+Doctor of Education (DDE) 35820
+Doctor of Philosophy in Business Administration (PhDBA) 35820
+Doctor of Philosophy in Design (PhD Design) 35820
+Doctor of Philosophy in Education (PhD Edu) 35820
+Doctor of Philosophy in Information Technology (PhD IT) 39800
+Doctor of Philosophy in Sport Studies (PhD SS) 38240
+Doctor of Philosophy in Performing Art (PhD PA) 38240
+Doctor of Philosophy in Built Environment (PhD BE) 39800
+
+RAW_CONTENT_END

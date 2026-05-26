@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-05-24T13:25:25.416Z",
+  "totalNonCourseRows": 1,
+  "recommendations": [
+    {
+      "offeringId": "1fkl57osXdY1jVHxhb9r",
+      "courseName": "UniKL RCMP - Royal College of Medicine Perak",
+      "reason": "Institute/campus/faculty name, not a course",
+      "recommendedAction": "MARK_INACTIVE",
+      "severity": "MEDIUM",
+      "notes": "Non-course rows should be marked inactive, not deleted, in case they have dependencies"
+    }
+  ]
+}

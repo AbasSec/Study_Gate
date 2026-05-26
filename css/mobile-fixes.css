@@ -1,0 +1,416 @@
+/* ============================================
+   Global Mobile Fixes (non-functional UI overrides)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .container {
+        width: min(100% - 32px, 1200px) !important;
+    }
+
+    .navbar .container {
+        width: min(100% - 20px, 1200px) !important;
+    }
+
+    .stats-grid,
+    .service-grid,
+    .story-grid,
+    .hero-stats-shell,
+    .hero-metrics-grid,
+    .uni-page-grid,
+    .courses-grid,
+    .team-grid,
+    .services-grid,
+    .uni-grid,
+    .contact-grid,
+    .footer-grid,
+    .delivery-layout,
+    .support-mini-grid,
+    .review-grid,
+    .timeline-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: min(100% - 24px, 1200px) !important;
+        max-width: none !important;
+    }
+
+    img,
+    video,
+    canvas,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    section,
+    main,
+    footer {
+        overflow-x: clip;
+    }
+
+    /* Header must NEVER clip horizontally - it contains action buttons */
+    header {
+        overflow-x: visible;
+    }
+
+    .navbar .container {
+        min-height: 56px;
+        gap: 8px;
+    }
+
+    .nav-logo {
+        min-width: 0;
+        max-width: calc(100% - 104px);
+        gap: 8px;
+    }
+
+    .nav-logo img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .nav-logo span {
+        font-size: 1.1rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+
+    .nav-toggle {
+        margin-left: 6px;
+        transition: transform 0.22s ease;
+    }
+
+    .nav-toggle span {
+        transition: transform 0.26s ease, opacity 0.22s ease, background-color 0.22s ease;
+    }
+
+    .nav-toggle:hover {
+        transform: scale(1.04);
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Structural mobile menu styles live in styles.css; keep only animation enhancements here. */
+    .nav-links.active {
+        animation: navMenuDropIn 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .nav-links.active li {
+        opacity: 0;
+        transform: translateY(-6px);
+        animation: navMenuItemIn 0.32s ease forwards;
+    }
+
+    .nav-links.active li:nth-child(1) { animation-delay: 0.04s; }
+    .nav-links.active li:nth-child(2) { animation-delay: 0.08s; }
+    .nav-links.active li:nth-child(3) { animation-delay: 0.12s; }
+    .nav-links.active li:nth-child(4) { animation-delay: 0.16s; }
+    .nav-links.active li:nth-child(5) { animation-delay: 0.2s; }
+    .nav-links.active li:nth-child(6) { animation-delay: 0.24s; }
+
+    .page-header,
+    .hero,
+    .universities-hero,
+    .courses-hero,
+    .services-hero,
+    .success-hero,
+    .team-hero,
+    .contact-hero {
+        padding-top: 96px !important;
+    }
+
+    h1,
+    .hero-title,
+    .section-title,
+    .page-title {
+        font-size: clamp(1.7rem, 8.2vw, 2.4rem) !important;
+        line-height: 1.08 !important;
+    }
+
+    h2 {
+        font-size: clamp(1.35rem, 6vw, 2rem) !important;
+    }
+
+    .stats-grid,
+    .service-grid,
+    .story-grid,
+    .hero-stats-shell,
+    .hero-metrics-grid,
+    .uni-page-grid,
+    .courses-grid,
+    .team-grid,
+    .services-grid,
+    .uni-grid,
+    .contact-grid,
+    .footer-grid,
+    .delivery-layout,
+    .support-mini-grid,
+    .review-grid,
+    .timeline-grid,
+    .testimonials-grid,
+    .testimonial-grid,
+    .course-grid,
+    .course-fields,
+    .picker-course-fields,
+    .form-row,
+    .modal-body .form-row,
+    .settings-form .form-row,
+    .date-range {
+        grid-template-columns: 1fr !important;
+    }
+
+    .search-filter-bar,
+    .course-toolbar,
+    .admin-filters {
+        grid-template-columns: 1fr !important;
+        display: grid !important;
+    }
+
+    .search-filter-bar,
+    .course-toolbar,
+    .admin-filters,
+    .search-bar-wrapper {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    .filter-group,
+    .search-input-wrapper {
+        min-width: 0 !important;
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    [class*="card"],
+    [class*="panel"] {
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .course-card,
+    .uni-page-card,
+    .service-card,
+    .story-image-card,
+    .testimonial-card,
+    .team-card,
+    .contact-card,
+    .stat-card {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .course-media,
+    .story-image-card,
+    .hero-image,
+    .hero-media {
+        border-radius: 16px !important;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 640px;
+    }
+
+    .admin-header,
+    .admin-content {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .modal {
+        max-height: 92vh;
+    }
+
+    .whatsapp-chat-widget {
+        right: 10px !important;
+        bottom: 10px !important;
+    }
+
+    .whatsapp-chat-label {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: min(100% - 18px, 1200px) !important;
+    }
+
+    .nav-logo span {
+        font-size: 1rem !important;
+    }
+
+    .nav-logo {
+        max-width: calc(100% - 96px);
+    }
+
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    button {
+        max-width: 100%;
+    }
+
+    .hero,
+    .page-header,
+    .universities-hero,
+    .courses-hero,
+    .services-hero,
+    .success-hero,
+    .team-hero,
+    .contact-hero {
+        padding-top: 88px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav-logo span {
+        display: none;
+    }
+
+    .nav-logo {
+        max-width: calc(100% - 90px);
+    }
+}
+
+@keyframes navMenuDropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes navMenuItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   FINAL ADMIN HEADER VISIBILITY FIX
+   Override global styles.css .language-toggle hide
+   ============================================ */
+
+.admin-body .admin-header .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
+    overflow: visible !important;
+    min-width: max-content !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+.admin-body .admin-header #themeToggle,
+.admin-body .admin-header #languageToggle,
+.admin-body .admin-header #adminEmail,
+.admin-body .admin-header .admin-theme-toggle,
+.admin-body .admin-header .language-toggle {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.admin-body .admin-header #themeToggle,
+.admin-body .admin-header .admin-theme-toggle {
+    display: inline-flex !important;
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    height: 38px !important;
+}
+
+.admin-body .admin-header #languageToggle,
+.admin-body .admin-header .language-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    min-width: 70px !important;
+    max-width: 95px !important;
+    white-space: nowrap !important;
+}
+
+.admin-body .admin-header #adminEmail {
+    display: inline-block !important;
+    flex: 0 1 auto !important;
+    max-width: 260px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.admin-body .admin-header #adminNotificationBtn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .admin-body .admin-header #adminEmail {
+        max-width: 110px !important;
+    }
+
+    .admin-body .admin-header #languageToggle,
+    .admin-body .admin-header .language-toggle {
+        min-width: 52px !important;
+        max-width: 70px !important;
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .admin-body .admin-header #adminEmail {
+        max-width: 70px !important;
+    }
+
+    .admin-body .admin-header #languageToggle,
+    .admin-body .admin-header .language-toggle {
+        min-width: 44px !important;
+        max-width: 60px !important;
+        font-size: 11px !important;
+        padding: 5px 6px !important;
+    }
+
+    .admin-body .admin-header #themeToggle,
+    .admin-body .admin-header .admin-notification-btn {
+        width: 34px !important;
+        height: 34px !important;
+    }
+}

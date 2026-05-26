@@ -1,0 +1,394 @@
+UNIVERSITY_NAME: INTI International University
+SHORT_CODE: INTI
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: MYR
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+2025 Fee Schedule
+INTI INTERNATIONAL UNIVERSITY
+Persiaran Perdana BBN, Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia.
+Tel: (606) 798 2000  Fax: (606) 799 7536
+www.newinti.edu.my Published as at 03/10/2024
+INTERNATIONAL STUDENTS
+Program Name Intake Duration
+Approximate
+Tuition Fee*
+(RM)
+Foundation in Business
+Foundation in Arts
+Foundation in Science
+Foundation in Information Technology
+Diploma in Business (Online Learning) Jan, Mar, May, Aug, Oct FT- 2 years
+PT- 4 years 19,448
+Diploma in Business
+Diploma in Accounting
+Bachelor of Business (Hons) - Business Administration
+Bachelor of Business (Hons) - International Business
+Bachelor of Business (Hons) - Accounting
+Bachelor of Business (Hons) - Marketing
+Bachelor of Business (Hons) - Human Resource Management
+Bachelor of Business (Hons) - Finance
+Bachelor of Business (Hons) with Psychology
+Bachelor of Business (Hons) - Logistics and Supply Chain Management
+Bachelor of Business (Honours) in Entrepreneurship and Marketing (SA)
+Bachelor of Business (Honours) in International Business and Logistics Supply Chain Management
+(SA)
+Bachelor of Business (Hons) - Digital Enterprise Management (SA) 72,227
+Bachelor of Accountancy (Hons) 4 years 89,190
+Bachelor of Accounting & Finance (Hons) 79,586
+Bachelor of Banking and Finance (Hons) 79,602
+Bachelor of Business (Hons) Management 72,227
+Australian Degree Transfer Programme - Commerce 2 years 48,417
+Bachelor of Business (Hons) - Marketing / International Business / Human Resource Management /
+Business Administration (Online Learning) Jan, Mar, May, Aug, Oct FT- 3 years
+PT-  6 years 32,292
+Diploma in Mass Communication 2 years 38,398
+Bachelor of Mass Communication (Hons) (SA) 72,223
+Bachelor of Mass Communication (Hons)
+Bachelor of Arts (Honours) Digital Media
+Diploma in Mechanical Engineering 42,622
+Diploma in Civil Engineering 43,831
+Diploma in Quantity Surveying 43,062
+Bachelor of Mechanical Engineering with Honours 90,764
+Bachelor of Civil Engineering with Honours 90,783
+Bachelor of Science (Hons) Quantity Surveying 3.5 years 79,966
+Bachelor of Technology in Intelligent Process and Product Design
+Bachelor of Technology in Intelligent Manufacturing
+Bachelor of Technology in Digital Construction Management 78,030
+Jan, May, Aug
+3 years
+3 years
+78,047
+2.5 years
+4 years
+Jan, May, Aug
+72,236
+75,860
+Engineering
+3 years
+75,854
+Mass Communication
+3 years
+Foundation
+Business
+2 years
+19,942 1  year Jan, May, Aug
+38,264
+Jan, May, Aug
+ 2025 Fee Schedule
+INTERNATIONAL STUDENTS
+Computing & IT
+Program Name
+Intake
+Duration
+Diploma in Information Technology (Online Learning)
+Jan, Mar, May, Aug, Oct
+FT- 2 years
+ PT-  4 years
+Approximate
+Tuition Fee*
+(RM)
+19,464
+Diploma in Information Technology
+Diploma in Computer Science
+Bachelor of Computer Science (Hons)
+Bachelor of Information Technology (Hons)
+Bachelor of Technology (Honours) Data Science
+Bachelor of Computer Science (Hons) (Online Learning)
+Biotechnology
+39,855
+2 years
+Jan, May, Aug
+Jan, Mar, May, Aug, Oct
+3 years
+FT- 3 years
+PT-  6 years
+42,640
+78,036
+76,328
+78,036
+32,284
+Bachelor of Biotechnology (Hons)
+Australian Degree Transfer Programme - Science
+Health Sciences
+3 years
+Jan, May, Aug
+2 years
+84,932
+57,182
+Bachelor of Traditional Chinese Medicines (Hons)
+BSc (Hons) in Physiotherapy
+INTI INTERNATIONAL UNIVERSITY
+Persiaran Perdana BBN, Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia.
+Tel: (606) 798 2000  Fax: (606) 799 7536
+www.newinti.edu.my
+5 years
+Jan, Jul
+4 years
+137,824
+95,479
+Published as at 03/10/2024
+ 2025 Fee Schedule
+INTI INTERNATIONAL UNIVERSITY
+Persiaran Perdana BBN, Putra Nilai, 71800 Nilai, Negeri Sembilan, Malaysia.
+Tel: (606) 798 2000  Fax: (606) 799 7536
+www.newinti.edu.my Published as at 03/10/2024
+INTERNATIONAL STUDENTS
+Program Name = Duration
+Approximate
+Tuition Fee*
+(RM)
+Master in Business Administration (Business Analytics) 40,208
+Master of Business Administration (Dual Award) 45,734
+Master of Business Administration 40,196
+Master of Business Administration (Online Learning) FT- 1.2 year
+PT- 2.5 years 32,256
+Master in Information Technology (Online Learning) 32,260
+Master in Education Management (Online Learning) 32,252
+Master of Science in Construction Management
+(Building Information Modelling) (Online Learning)
+FT- 1 year
+PT- 2 years 32,256
+Master in Information Technology
+Master in Information Systems
+Master in Entrepreneurship (E-Commerce) 40,208
+Master of Science in Construction Management
+(Building Information Modelling/ Facility Management)
+Master in Education Management
+Master of Social Entrepreneurship FT- 1 year
+ PT- 2 years 40,200
+Master of Science in Data Science (by Research) FT- 2 years
+PT-3 years 32,310
+Master of Science in Innovation and Technology (by Research)
+Master of Education in Learning, Design and Technology (by Research)
+Master of Biotechnological Innovations and Application (by Research) FT- 2 years
+PT-3 years
+Master in Health Sciences (Physiotherapy) (by Research) FT- 2 years
+PT-3 years
+Master of Health Administration FT- 1 year
+PT- 2 years 40,196
+Doctor of Philosophy - Applied Physics/ Information Systems/ Management (by Research) FT- 3 years
+Doctor of Philosophy - Innovation and Technology/ Data Science/ Education/ Financial Technology (by Research)
+Doctor of Education
+Doctor of Business Administration
+Doctor of Business Administration (Online Learning) Jan, Mar, May, Aug, Oct 50,400
+Intensive English Program (per level) Jan, Mar,
+Jun, Aug, Oct 8 weeks/level 5,000
+*Please refer to full fee schedule for detailed fee breakdown. The above fees are an approximate cost only.
+*The fee listing herein is correct at the time of printing. We reserve the right to amend the fee at any time, without giving prior notice.
+FT: Full time
+PT: Part time
+FT- 1.2 years
+PT- 2 years Jan, Mar, May, Aug, Oct
+Postgraduate Studies
+Jan, May, Sep FT- 1 year
+PT- 2 years
+Intensive English Program
+40,200
+PHD
+40,205
+59,796
+FT- 2 years
+FT- 1 year
+ PT- 2 years
+FT- 1 year
+Jan, May, Sep
+FT- 3 years
+PT- 4 years
+Jan, May, Sep
+39,600
+38,178
+ 2025 Fee Schedule
+INTI INTERNATIONAL COLLEGE SUBANG, MALAYSIA
+3, Jalan SS15/8, 47500 Subang Jaya, Selangor. Tel (603) 5623 2800 Fax: (603) 5633 4350
+www.newinti.edu.my Published as at : 03/10/2024
+INTERNATIONAL STUDENTS
+Program Name Intake Duration
+Approximate
+Tuition Fee*
+(RM)
+Pre-U & Foundation
+Foundation in Business
+Foundation in Information Technology
+Foundation in Design
+Foundation in Science
+Foundation in Arts
+Cambridge A-Level - 3 Subjects 29,997
+Cambridge A-Level - 4 Subjects 39,996
+Art & Design
+Certificate in Art & Design 1.3 years 16,860
+Diploma in Interior Design 42,795
+Diploma in Graphic Design 47,625
+Diploma in Digital Media Design 45,798
+Diploma in Immersive Design 47,709
+Diploma in Fashion Design 49,437
+3+0 BA (Hons) Graphic Design, Sheffield Hallam University, UK 83,324
+3+0 BA (Hons) Fashion Management & Communication,
+Sheffield Hallam University, UK 83,330
+3.5+0 Bachelor of Art (Honours) Interior Architecture & Design, Sheffield Hallam University,
+UK 3.5 years 88,688
+Business
+Certificate in Business Studies 1.3 years 15,956
+Diploma in Business 35,787
+Diploma in Marketing 38,639
+3+0 BA (Hons), University of Hertfordshire, UK
+Major: Accounting & Finance 81,370
+3+0 BA (Hons), University of Hertfordshire, UK
+Major: Business Administration / Finance / Marketing/ Advertising & Digital Marketing 81,340
+3+0 Bachelor of Business, Swinburne University of Technology, AUS Mar, Aug 86,882
+4+0 BSc in Business Administration, SNHU, US Jan, Jun, Aug 4 years 93,560
+Communication
+Diploma in Mass Communication 41,940
+Diploma in Digital Media 45,416
+3+0 BA (Hons) in Mass Communication,
+University of Hertfordshire, UK 80,450
+3+0 Bachelor of Media and Communication,
+Swinburne University of Technology, AUS Mar, Aug 86,900
+4+0 BA in Communication, SNHU, US Jan, May, Aug 4 years 93,560
+4+0 BA in Psychology, SNHU, US Jan, May, Aug 4 years 95,744
+Diploma in Mechanical Engineering (FULL TIME) 2.5 years
+Diploma in Mechanical Engineering (PART TIME) 3.5 years
+Diploma in Quantity Surveying 2.5 years 43,062
+Computing IT
+Certificate in Information Technology 1.6 years 16,332
+Diploma in Information Technology 42,260
+Diploma in Computer Science 44,380
+3+0 Bachelor of Computer Science,
+Swinburne University of Technology, AUS 86,900
+3+0 Bachelor of Information and Communication Technology,
+Swinburne University of Technology, AUS 86,900
+Jan, Apr, Aug 2 years
+Engineering
+Jan, Apr, Aug
+Mar, Aug 3 years
+21,112
+39,498
+1.5 years
+Jan, Apr, Aug 2.3 years
+1 year
+Jan, Jul
+Jan, Apr, Aug
+3 years
+Jan, Apr, Aug 42,986 Diploma in Financial Informatics
+Apr, Aug
+Psychology
+Jan, Apr, Aug
+3 years
+3 years
+2 years
+2 years
+ 2025 Fee Schedule
+INTERNATIONAL STUDENTS
+Program Name
+American Degree Transfer Program (AUP)
+American Degree Transfer Program
+Hospitality
+Intake
+Duration
+Approximate
+Tuition Fee*
+(RM)
+Jan, May, Aug
+Certificate in Hotel Operations
+Certificate in Food and Beverage Services
+Diploma in Culinary Arts
+Diploma in Hotel Management
+Bachelor of Food Service Management with Culinary Arts (Honours) 3+0 in collaboration
+with CY Cergy, Paris Universite, France
+English
+Jan, Apr, Aug
+Jan, May, Sep
+2 years
+1.3 years
+2 years
+3 years
+44,380
+15,279
+47,396
+43,744
+84,977
+Intensive English Program (per level)
+Jan, Mar, June,
+Aug, Oct
+8 weeks/ level
+*Please refer to full fee schedule for detailed fee breakdown. The above fees are an approximate cost only.
+*The fee listing herein is correct at the time of printing. We reserve the right to amend the fee at any time, without giving prior notice.
+5,000
+INTI INTERNATIONAL COLLEGE SUBANG, MALAYSIA
+3, Jalan SS15/8, 47500 Subang Jaya, Selangor. Tel (603) 5623 2800 Fax: (603) 5633 4350
+www.newinti.edu.my
+Published as at : 03/10/2024
+ 2025 Fee Schedule
+INTI INTERNATIONAL COLLEGE PENANG, MALAYSIA
+1-Z, Lebuh Bukit Jambul, 11900, Penang, Malaysia. Tel (604) 631 0138   Fax (604) 645 7505
+www.newinti.edu.my Published as at 15/10/2024
+INTERNATIONAL STUDENTS
+Program Name Intake Duration Approximate Tuition Fee* (RM)
+Foundation in Business
+Foundation in Information Technology
+Foundation in Science 19,305
+Cambridge A-Level - 3 Subjects 21,087
+Cambridge A-Level - 4 Subjects 28,116
+Business
+Certificate in Business Studies 1.3 years 14,097
+Diploma in Business 33,510
+Diploma in Finance 34,292
+Diploma in Marketing
+TAFE NSW Advance Diploma in Accounting Jan, July 2 years 36,224
+3+0 BA (Hons) - University of Hertfordshire, UK
+Major : Business Administration 68,785
+3+0 BA (Hons) - University of Herdfordshire, UK
+Major : Accounting & Finance 69,436
+Bachelor of Business 3+0 in Collaboration with
+Swinburne University of Technology, AUS Mar, Aug 69,722
+Mass Communication
+Diploma in Mass Communication Jan, Apr, Aug 34,482
+Diploma in Digital Media Apr, Aug 40,884
+3+0 BA (Hons) Mass Communication, University of Hertfordshire, UK Jan, Apr, Aug 70,632
+3+0 Bachelor of Media and Communication, Swinburne University of Technology,
+AUS Mar, Aug 69,725
+4+0 BA in Psychology, SNHU, US Jan, May, Aug 4 years 82,388
+Hospitality
+Diploma in Culinary Arts 2 years 46,588
+Diploma in Hotel Management 2 years 35,836
+Certificate in Information Technology 1.6 years 14,486
+Diploma in Information Technology 34,140
+Diploma in Computer Science 39,000
+3+0 BSc (Hons) in Computer Science, Coventry University, UK 3 years 70,266
+Diploma in Electrical & Electronic Engineering 37,440
+Diploma in Mechanical Engineering 38,049
+4+0 Master of Engineering in Electrical and Electronic Engineering,
+Coventry University, UK 101,996
+4+0 Master of Engineering in Mechanical Engineering
+Coventry University, UK 102,009
+American Degree Transfer Program (AUP) Jan, May, Aug 2 years 41,858
+Intensive English Programme (per level) Jan, Mar, Jun, Aug,
+Oct 8 weeks/level 5,000
+*Please refer to full fee schedule for detailed fee breakdown. The above fees are an approximate cost only.
+*The fee listing herein is correct at the time of printing. We reserve the right to amend the fee at any time, without giving prior notice.
+35,097
+Jan, Apr, Aug
+Computing & IT
+2 years
+Diploma in E-Commerce
+2 years
+3 years
+Pre-U & Foundation
+Jan, Apr, Aug 1 year
+Jan, Jul 1.5 years
+17,810
+Jan, Apr, Aug
+Jan, Apr, Aug
+2 years Jan, Apr, Aug
+Psychology
+Engineering
+3 years
+2.5 years
+4 years
+American Degree Transfer Program (AUP)
+Intensive English Programme
+
+RAW_CONTENT_END

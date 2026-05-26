@@ -1,0 +1,254 @@
+UNIVERSITY_NAME: Universiti Kuala Lumpur
+LOCATION: Kuala Lumpur, Malaysia
+COUNTRY: Malaysia
+
+UniKL MIIT - Malaysian Institute of Information Technology
+
+Bachelor of Computer Engineering Technology (Networking Systems) with Honours
+Duration: 4 Years
+Intake: Mar & Oct
+Tuition Fee: RM 19,500/year
+
+Bachelor of Computer Engineering Technology (Computer Systems) with Honours
+Duration: 4 Years
+Intake: Mar & Oct
+Tuition Fee: RM 17,600/year
+
+Bachelor of Information Technology (Hons) in Software Engineering
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 23,466/year
+
+Bachelor of Multimedia Technology (Hons) in Interactive Multimedia Design
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 23,466/year
+
+Bachelor of Information Technology (Hons) in Computer System Security
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 23,466/year
+
+Bachelor of Multimedia Technology (Hons) in Computer Animation
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 26,000/year
+
+Bachelor of Information Technology (Hons) in Internet of Things
+Duration: 3.5 Years
+Intake: Mar & Oct
+Tuition Fee: RM 22,100/year
+
+Bachelor of Game Development with Honours
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 30,680/year
+
+Diploma of Engineering Technology (Computer & Networking)
+Duration: 2.5 Years
+Intake: July
+Tuition Fee: RM 16,920/year
+
+Diploma in Animation
+Duration: 2.5 Years
+Intake: July
+Tuition Fee: RM 20,280/year
+
+Diploma in Multimedia
+Duration: 2.5 Years
+Intake: July
+Tuition Fee: RM 14,040/year
+
+Diploma in Information Technology
+Duration: 2.5 Years
+Intake: July
+Tuition Fee: RM 14,040/year
+
+Foundation in Computer Technology
+Duration: 1 Year
+Intake: July
+Tuition Fee: RM 19,500/year
+
+Doctor of Philosophy (Information Technology) - By Research
+Duration: 3-7 Years
+Intake: Jan & July
+Tuition Fee: RM 5,000/year
+
+Master of Information Technology - By Research
+Duration: 1.5-3 Years
+Intake: Jan & July
+Tuition Fee: RM 5,000/year
+
+Master in Creative Digital Media - By Research
+Duration: 2-3 Years
+Intake: Jan & July
+Tuition Fee: RM 5,000/year
+
+Master in Computer Science - ODL
+Duration: 1.5 Years
+Intake: Jan & Sept
+Tuition Fee: RM 16,000/year
+
+UniKL Business School
+
+Bachelor of Business Administration (Hons) in Management and Entrepreneurship
+Duration: 3 Years
+Intake: Mar, July & Oct
+Tuition Fee: RM 15,600/year
+
+Bachelor in Accounting (Hons)
+Duration: 4 Years
+Intake: Mar, July & Oct
+Tuition Fee: RM 16,900/year
+
+Bachelor of Business Administration (Hons) In Islamic Finance
+Duration: 3 Years
+Intake: Mar, July & Oct
+Tuition Fee: RM 15,600/year
+
+Bachelor of Business Administration in Marketing (Honours)
+Duration: 3 Years
+Intake: Mar, July & Oct
+Tuition Fee: RM 16,900/year
+
+Bachelor of Business Administration (Hons) International Business
+Duration: 3 Years
+Intake: Mar, July & Oct
+Tuition Fee: RM 16,900/year
+
+Bachelor in Tourism Planning and Development (Honours)
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 16,900/year
+
+Bachelor of Science (Hons) in Analytical Economics
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 21,160/year
+
+Bachelor in Financial Technology with Honours
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 30,420/year
+
+Foundation in Business
+Duration: 1 Year
+Intake: Mar & July
+Tuition Fee: RM 17,000/year
+
+Doctor of Philosophy in Accounting - By Research
+Duration: 3-7 Years
+Intake: Jan & July
+Tuition Fee: RM 5,000/year
+
+Doctor of Philosophy in Islamic Finance - By Research
+Duration: 3-7 Years
+Intake: Jan & July
+Tuition Fee: RM 8,580/year
+
+Doctor of Philosophy in Management - By Research
+Duration: 3-7 Years
+Intake: Jan & July
+Tuition Fee: RM 5,000/year
+
+Master of Management - By Research
+Duration: 2 Years
+Intake: Jan & July
+Tuition Fee: RM 5,000/year
+
+Master of Business Administration (Entrepreneurship)
+Duration: 1.5-3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 18,000/year
+
+Master of Business Administration - By Coursework
+Duration: 1.5-3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 18,000/year
+
+UniKL RCMP - Royal College of Medicine Perak
+
+Bachelor of Medicine and Bachelor of Surgery (MBBS)
+Duration: 5 Years
+Intake: Oct
+Tuition Fee: RM 72,000/year
+
+Bachelor of Physiotherapy (Honours)
+Duration: 4 Years
+Intake: Oct
+Tuition Fee: RM 24,000/year
+
+Bachelor of Pharmacy (Hons)
+Duration: 4 Years
+Intake: Oct
+Tuition Fee: RM 35,000/year
+
+Bachelor in Pharmaceutical Technology (Honours)
+Duration: 3.5 Years
+Intake: Oct
+Tuition Fee: RM 25,200/year
+
+Bachelor of Science in Psychology (Honours)
+Duration: 3 Years
+Intake: Mar & Oct
+Tuition Fee: RM 23,500/year
+
+Bachelor of Nursing Science (Honours)
+Duration: 4 Years
+Intake: Sept
+Tuition Fee: RM 20,000/year
+
+Diploma in Pharmacy
+Duration: 3 Years
+Intake: July
+Tuition Fee: RM 14,000/year
+
+Diploma in Medical Imaging
+Duration: 3 Years
+Intake: July
+Tuition Fee: RM 14,000/year
+
+Diploma in Physiotherapy
+Duration: 3 Years
+Intake: July
+Tuition Fee: RM 17,000/year
+
+Diploma in Nursing
+Duration: 3 Years
+Intake: Jan & July
+Tuition Fee: RM 14,000/year
+
+Foundation in Medical Sciences
+Duration: 1 Year
+Intake: July
+Tuition Fee: RM 20,000/year
+
+Doctor of Philosophy (Pharmacy) - By Research
+Duration: 3-6 Years
+Intake: Jan & July
+Tuition Fee: RM 17,400/year
+
+Doctor of Philosophy (Medical Sciences) - By Research
+Duration: 3-5 Years
+Intake: Jan & July
+Tuition Fee: RM 11,000/year
+
+Master of Science (Pharmacy) - By Research
+Duration: 2-4 Years
+Intake: Jan & July
+Tuition Fee: RM 13,400/year
+
+Master of Medical Science - By Research
+Duration: 2-3 Years
+Intake: Jan & July
+Tuition Fee: RM 7,000/year
+
+Master of Public Health - By Coursework
+Duration: 1-2 Years
+Intake: Mar & Sept
+Tuition Fee: RM 22,000/year
+
+Master of Science in Public Health - By Coursework
+Duration: 1-2 Years
+Intake: Mar & Sept
+Tuition Fee: RM 20,000/year

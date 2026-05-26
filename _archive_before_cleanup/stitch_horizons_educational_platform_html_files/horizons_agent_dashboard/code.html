@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Horizons Agent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#eff4ff",
+                      "on-surface": "#0b1c30",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "secondary-fixed-dim": "#4edea3",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary-container": "#00201d",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary": "#000000",
+                      "surface-bright": "#f8f9ff",
+                      "outline": "#76777d",
+                      "background": "#f8f9ff",
+                      "on-primary-fixed": "#131b2e",
+                      "outline-variant": "#c6c6cd",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface": "#f8f9ff",
+                      "primary-fixed": "#dae2fd",
+                      "error-container": "#ffdad6",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#00714d",
+                      "on-primary-container": "#7c839b",
+                      "surface-tint": "#565e74",
+                      "inverse-surface": "#213145",
+                      "on-tertiary-container": "#0c9488",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-primary": "#bec6e0",
+                      "primary-container": "#131b2e",
+                      "secondary": "#006c49",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#002113",
+                      "surface-dim": "#cbdbf5",
+                      "primary": "#000000",
+                      "on-tertiary-fixed": "#00201d",
+                      "surface-variant": "#d3e4fe",
+                      "on-background": "#0b1c30",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "primary-fixed-dim": "#bec6e0",
+                      "tertiary-fixed": "#89f5e7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "section-gap": "120px",
+                      "gutter-desktop": "24px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "gutter-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "status-pill": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar (Restricted for Agents) -->
+<aside class="hidden md:flex flex-col h-screen p-base gap-2 bg-surface-container-lowest border-r border-outline-variant/30 w-72 sticky top-0">
+<div class="px-4 py-6">
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">Horizons Admin</h1>
+<p class="text-label-md text-on-surface-variant">Global Education Portal</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-2">
+<!-- Active State: Dashboard -->
+<a class="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container rounded-xl font-semibold scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container rounded-xl hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md">Students</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container rounded-xl hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container rounded-xl hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md">Settings</span>
+</a>
+</nav>
+<div class="px-4 py-4 mt-auto">
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-transform">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Application
+            </button>
+</div>
+<div class="flex flex-col gap-1 px-2 border-t border-outline-variant/30 pt-4">
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container rounded-xl" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container rounded-xl text-error" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 min-w-0">
+<!-- TopBar (Simplified for Dashboard) -->
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 h-20 px-6 md:px-10 flex items-center justify-between">
+<div>
+<h2 class="text-headline-md font-bold text-on-surface tracking-tight">Agent Overview</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md" placeholder="Search applications..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-high/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden border-2 border-primary">
+<img alt="Agent Profile" data-alt="A professional headshot of a smiling young educational agent with a diverse background, set against a blurred modern office environment with soft window lighting. The style is clean, corporate, and high-end, utilizing a bright color palette that aligns with the premium brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWTDTADrqkHoD_hp1N8RQESTiwj1E8gnVX2O0jdey2nZAjBqa6paRpQgvUomfhR7SpYviUC0zygyQWKa1uOnK3KwD1s-sLBIlibaluAkbiWL4rQB3Vat7Z-5908IQz1i3ffoRsgGjttwraVnxRcGUpuZessryN0A_1gom9ILGsebptu75gR41UBLQwYmMlAQKPq7Epc7W4DVegRMJ_RAI5pGNWPA51vMWmCeZYxbyp2mYvUreW38xeou8XeEiOuyBXNTM-B3NDtrbk"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-6 md:p-10 max-w-[1440px] mx-auto space-y-8">
+<!-- Referral Focus Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 glass-card rounded-2xl p-6 flex flex-col md:flex-row items-center gap-8">
+<div class="w-40 h-40 bg-white p-4 rounded-xl border border-outline-variant/30 shadow-sm flex items-center justify-center">
+<img alt="Referral QR Code" class="w-full h-full" data-alt="A high-resolution, clean QR code displayed on a crisp white surface. The image is minimalist and focuses on the technical reliability and digital connectivity of the educational platform. The surroundings are clean and feature subtle shadows to provide depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyh-XXj9G2OWy6s6gyxQLyMIts_62-mk2MSHzDexLBz4zTifEevLfcXRPF0nzM5OVsGitOYCx0St0_60Pyrhr4Q6weZ-UahSLJmxh2dgpmqSbpiC3s2Vx0XDwS0mWWKD6lr_NBwjuj1Sfn2CwqRjYVo17_jppLndEtXUOObcqNhpW8sSm_pfttwta9HRtSKwE2rvEudA0X8H7_RdIFMArVsvwarfuc3XatuRAO3I2xylXmYR7Antisbg_R4JoMrGFoDFTcGahhz4dL"/>
+</div>
+<div class="flex-1 space-y-4 text-center md:text-left">
+<h3 class="text-headline-sm font-bold text-primary">Your Unique Referral Link</h3>
+<p class="text-body-md text-on-surface-variant">Share this link with prospective students. All applications started through this link will be automatically credited to your agency account.</p>
+<div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+<div class="flex-1 w-full p-3 bg-surface-container-low rounded-xl border border-outline-variant/30 text-on-surface font-mono text-sm truncate">
+                                horizons.edu/ref/AGENT2024
+                            </div>
+<button class="whitespace-nowrap px-6 py-3 bg-primary text-on-primary rounded-xl font-bold hover:scale-105 transition-all" onclick="this.innerHTML='Copied!'">
+                                Copy Link
+                            </button>
+</div>
+</div>
+</div>
+<!-- Performance Snapshot -->
+<div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+<div class="space-y-1">
+<h3 class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Conversion Rate</h3>
+<div class="flex items-end gap-2">
+<span class="text-display-lg text-primary leading-none">12.4%</span>
+<span class="text-secondary font-bold flex items-center mb-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                2.1%
+                            </span>
+</div>
+</div>
+<div class="h-16 w-full bg-surface-container-high/30 rounded-lg overflow-hidden relative mt-4">
+<div class="absolute bottom-0 left-0 w-full h-full flex items-end">
+<div class="flex-1 bg-secondary-fixed-dim h-[20%]" style="margin-right:2px"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-[35%]" style="margin-right:2px"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-[65%]" style="margin-right:2px"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-[45%]" style="margin-right:2px"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-[80%]" style="margin-right:2px"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-[70%]" style="margin-right:2px"></div>
+<div class="flex-1 bg-secondary-fixed-dim h-[90%]" style="margin-right:2px"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Metrics Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="glass-card p-6 rounded-2xl space-y-4 hover:translate-y-[-4px] transition-all duration-300">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">ads_click</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant">Link Visits</p>
+<h4 class="text-headline-md font-bold">1,482</h4>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl space-y-4 hover:translate-y-[-4px] transition-all duration-300">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant">Applications</p>
+<h4 class="text-headline-md font-bold">184</h4>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl space-y-4 hover:translate-y-[-4px] transition-all duration-300">
+<div class="w-12 h-12 bg-secondary-container/30 rounded-xl flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant">WhatsApp Clicks</p>
+<h4 class="text-headline-md font-bold">342</h4>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl space-y-4 hover:translate-y-[-4px] transition-all duration-300">
+<div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant">Enrolled Students</p>
+<h4 class="text-headline-md font-bold">23</h4>
+</div>
+</div>
+</section>
+<!-- Traffic Chart & Table Section -->
+<section class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Traffic Visits Over Time -->
+<div class="xl:col-span-2 glass-card rounded-2xl p-6">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-headline-sm font-bold text-on-surface">Traffic Trends</h3>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-surface-container-high rounded-full text-label-md font-bold">7D</button>
+<button class="px-3 py-1 text-label-md text-on-surface-variant">30D</button>
+<button class="px-3 py-1 text-label-md text-on-surface-variant">1Y</button>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="h-[300px] w-full flex items-end gap-1 px-2">
+<!-- Chart Bars -->
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[40%] rounded-t-sm relative group">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] px-2 py-1 rounded hidden group-hover:block">Mon</div>
+</div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary/30 transition-colors h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[90%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary/30 transition-colors h-[95%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[65%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[80%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[30%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/10 hover:bg-primary/30 transition-colors h-[45%] rounded-t-sm"></div>
+</div>
+<div class="mt-4 flex justify-between px-2 text-[10px] text-on-surface-variant uppercase font-bold tracking-tighter">
+<span>Oct 01</span>
+<span>Oct 07</span>
+<span>Oct 14</span>
+<span>Oct 21</span>
+<span>Oct 31</span>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="glass-card rounded-2xl p-6">
+<h3 class="text-headline-sm font-bold text-on-surface mb-6">Recent Activity</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">person_add</span>
+</div>
+<div>
+<p class="text-label-md font-bold">New Referral Signup</p>
+<p class="text-sm text-on-surface-variant">Lina Ahmed joined using your link.</p>
+<p class="text-[11px] text-outline mt-1 uppercase font-bold">2 mins ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">description</span>
+</div>
+<div>
+<p class="text-label-md font-bold">Application Submitted</p>
+<p class="text-sm text-on-surface-variant">Marcus T. submitted Harvard CS app.</p>
+<p class="text-[11px] text-outline mt-1 uppercase font-bold">1 hour ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+</div>
+<div>
+<p class="text-label-md font-bold">WhatsApp Inquiry</p>
+<p class="text-sm text-on-surface-variant">Unknown user clicked contact link.</p>
+<p class="text-[11px] text-outline mt-1 uppercase font-bold">3 hours ago</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- My Students Table -->
+<section class="glass-card rounded-2xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant/30 flex items-center justify-between">
+<h3 class="text-headline-sm font-bold text-on-surface">My Referred Students</h3>
+<button class="text-primary font-bold text-label-md flex items-center gap-1 hover:underline">
+                        View All <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Student Name</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Date Referred</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Interest</th>
+<th class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-wider text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs">SA</div>
+<span class="text-body-md font-semibold text-on-surface">Sarah Al-Fayed</span>
+</div>
+</td>
+<td class="px-6 py-5 text-body-md text-on-surface-variant">Oct 24, 2024</td>
+<td class="px-6 py-5">
+<span class="text-sm text-primary font-medium">Oxford / M.Eng</span>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="px-3 py-1.5 rounded-full bg-blue-100 text-blue-800 text-status-pill font-status-pill">Applied</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs">JM</div>
+<span class="text-body-md font-semibold text-on-surface">James Miller</span>
+</div>
+</td>
+<td class="px-6 py-5 text-body-md text-on-surface-variant">Oct 22, 2024</td>
+<td class="px-6 py-5">
+<span class="text-sm text-primary font-medium">MIT / Robotics</span>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-status-pill font-status-pill">Enrolled</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs">YT</div>
+<span class="text-body-md font-semibold text-on-surface">Yuki Tanaka</span>
+</div>
+</td>
+<td class="px-6 py-5 text-body-md text-on-surface-variant">Oct 18, 2024</td>
+<td class="px-6 py-5">
+<span class="text-sm text-primary font-medium">UCL / Economics</span>
+</td>
+<td class="px-6 py-5 text-right">
+<span class="px-3 py-1.5 rounded-full bg-amber-100 text-amber-800 text-status-pill font-status-pill">Visa Stage</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<footer class="w-full py-10 px-6 md:px-10 border-t border-outline-variant/50 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-lowest">
+<span class="text-headline-md font-bold text-primary">Horizons</span>
+<p class="text-body-md text-on-surface-variant">© 2024 Horizons Educational Agency. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-label-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Global Offices</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Navigation (Floating for accessibility) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center bg-inverse-surface text-inverse-on-surface px-6 py-4 rounded-full shadow-2xl z-[100] gap-8">
+<button class="flex flex-col items-center gap-1 text-secondary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined">group</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</nav>
+</body></html>

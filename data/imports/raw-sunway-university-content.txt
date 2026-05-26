@@ -1,0 +1,132 @@
+UNIVERSITY_NAME: Sunway University
+SHORT_CODE: SUNWAY
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: MYR
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+SCHOOL OF ARTS
+BA in Advertising and Branding 117490
+BA Contemporary Music (Audio Technology) 119910
+BA in Communication 117680
+BA Design Communication 117700
+BA Digital Film Production 116750
+BA in Interior Architecture 127715
+BA Music Performance 119910
+BA in Theatre Production 113850
+Diploma in Graphic and Multimedia Design 65525
+Diploma in Interior Design 65525
+Diploma in Performing Arts 64350
+
+SCHOOL OF BUSINESS
+Bachelor of Science in Accounting and Finance 121950
+Bachelor of Business Analytics 120770
+Bachelor of Science Business Management 120770
+Bachelor of Science Business Studies 120770
+Bachelor of Arts Entrepreneurship 116610
+Bachelor of Science Financial Analysis 120770
+Bachelor of Science Financial Economics 120770
+Bachelor in Finance 120770
+Bachelor of Science Global Supply Chain Management 120770
+Bachelor of Science in International Business 120770
+Bachelor of Science Marketing 120770
+
+SCHOOL OF ENGINEERING AND TECHNOLOGY
+Bachelor of Chemical Engineering with Honours 153570
+Bachelor of Civil Engineering with Honours 150860
+Bachelor of Software Engineering 124850
+Bachelor of Science (Hons) in Computer Science 121250
+Bachelor of Electronic and Electrical Engineering with Honours 154540
+Bachelor of Science (Hons) in Information Technology 121250
+Bachelor of Mechanical Engineering with Honours 153800
+Bachelor of Mechatronic Engineering (Robotics) with Honours 150825
+Bachelor of Information Systems (Data Analytics) 124850
+Bachelor of Science (Hons) IT (Computer Networking & Security) 121250
+
+SCHOOL OF HOSPITALITY AND SERVICE MANAGEMENT
+Bachelor of Science (Hons) in Culinary Management 120650
+Bachelor of Science (Hons) in Conventions and Events Management 116690
+Bachelor of Science (Hons) in International Hospitality Management 117300
+Diploma in Culinary Arts 69360
+Diploma in Events Management 59840
+Diploma in Hotel Management 61240
+
+SCHOOL OF MATHEMATICAL SCIENCES
+Bachelor of Science (Hons) in Actuarial Studies 115070
+Bachelor of Science (Hons) in Statistical Data Modelling 115070
+
+SCHOOL OF MEDICAL AND LIFE SCIENCES
+Bachelor of Science (Hons) Biomedicine 130690
+BSc (Hons) Biology with Psychology 117910
+Bachelor of Nursing (Hons) 98460
+Bachelor of Science (Hons) in Psychology 116080
+BSc (Hons) Medical Biotechnology 117910
+Diploma in Nursing 64250
+Post Basic in Intensive Care Nursing 17600
+Post Basic in Renal Nursing 17600
+Postgraduate Diploma in Primary Care for Elderly 28450
+
+SCHOOL OF EDUCATION
+International Preparatory Programme (Business and Communication) 9700
+International Preparatory Programme (Computer Science/Engineering and Sciences) 10600
+
+SCHOOL OF AMERICAN EDUCATION
+Bachelor of Arts in Psychology (Hons) (with Bursary) 128700
+Bachelor of Science (Hons) Computer Science (AI) (with Bursary) 125150
+Bachelor in Digital Communication (Advertising) (with Bursary) 126990
+American Degree Transfer Programme (Arts/Science/Engineering) 66400
+
+CENTER FOR ENGLISH LANGUAGE STUDIES
+English for International Mobility 17900
+Intensive English Program (Full Time) 20850
+Intensive English Program (Part Time 30 Hours) 900
+
+POSTGRADUATE - SCHOOL OF ARTS
+Master of Arts in Creative Arts and Media (Full Time) 51200
+Master of Arts in Visual Communication and Media Studies (Full Time) 51750
+Doctor of Philosophy in Creative Arts and Media (Full Time) 60770
+
+POSTGRADUATE - SCHOOL OF BUSINESS
+Master of Human Resource Management (Full Time) 52273
+Master of Marketing (Full Time) 54390
+Master of Business Administration (Full Time) 51200
+Master in Public Policy (Full Time) 43390
+Master of Business Analytics (Full Time) 51730
+Master in Sustainable Development Management (Full Time) 50550
+PhD in Business (Full Time) 65390
+PhD in Sustainable Development (Full Time) 67730
+
+POSTGRADUATE - SCHOOL OF ENGINEERING AND TECHNOLOGY
+Master of Science in Computer Science (Full Time) 51200
+Master of Science in Information Systems (Full Time) 50120
+Doctor of Philosophy (Computing) (Full Time) 67730
+Doctor of Philosophy in Sustainability Science and Technology (Full Time) 67730
+
+POSTGRADUATE - SCHOOL OF HOSPITALITY AND SERVICE MANAGEMENT
+Master in International Hospitality Management (Full Time) 52150
+Doctor of Philosophy in Hospitality and Tourism (Full Time) 67730
+
+POSTGRADUATE - SCHOOL OF MATHEMATICAL SCIENCES
+Master of Science in Applied Mathematics (Full Time) 51200
+Master of Science in Mathematical Sciences (Full Time) 51200
+Doctor of Philosophy in Mathematical Sciences (Full Time) 67730
+
+POSTGRADUATE - SCHOOL OF MEDICAL AND LIFE SCIENCES
+Master of Applied Behavior Analysis 54400
+Master of Science in Life Sciences (Full Time) 51200
+Master in Medical Science (Full Time) 55500
+Masters of Counselling (Clinical Mental Health) (Full Time) 66980
+Master of Science in Psychology (Full Time) 51200
+Doctor of Medicine (MD) 511600
+Doctor of Philosophy in Biology (Full Time) 67730
+Doctor of Philosophy in Psychology (Full Time) 65240
+Doctor of Philosophy in Medical Science (Full Time) 77210
+
+POSTGRADUATE - SCHOOL OF EDUCATION
+Master of Education (Full Time) 37190
+Postgraduate Certificate in Higher Education Practice 19700
+Doctor of Philosophy in Education (Full Time) 67730
+
+RAW_CONTENT_END

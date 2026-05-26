@@ -1,0 +1,140 @@
+UNIVERSITY_NAME: UCSI University
+SHORT_CODE: UCSI
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FACULTY OF APPLIED SCIENCES
+BSc (Hons) Biotechnology 83060
+BSc (Hons) Food Science with Nutrition 82110
+BSc (Hons) Nutrition with Wellness 92570
+BSc (Hons) Aquatic Science 81720
+BSc (Hons) Forensic Science 99600
+Bachelor of Science (Honours) Applied Microbiology 80365
+Diploma in Aquaculture with Entrepreneurship 44460
+
+FACULTY OF BUSINESS AND MANAGEMENT - KL
+BSc (Hons) Finance & Investment 65490
+Bachelor of Financial Economics (Hons) 65400
+BA (Hons) Business Administration 65400
+BA (Hons) Accounting 67380
+BA (Hons) Accounting & Finance 67380
+BA (Hons) Branding & Advertising 65550
+BA (Hons) Marketing 65400
+BA (Hons) Logistics Management 65400
+BA (Hons) Supply Chain Operations Management 65700
+Bachelor of Arts (Honours) Entrepreneurship 67950
+Bachelor of International and Sustainable Business (Honours) 67440
+Bachelor of Financial Technology (Honours) 66490
+Diploma in Logistic Management 44630
+Diploma in Management 45046
+Diploma in Finance 45110
+
+FACULTY OF BUSINESS AND MANAGEMENT - KUCHING
+BComm (Hons) Accounting & Finance 53340
+BComm (Hons) Marketing 54240
+BA (Hons) Commerce 49372
+Bachelor of International Business (Honours) 54240
+Diploma in International Business 31400
+Diploma in Accounting 32040
+Diploma in Business Management 31400
+
+FACULTY OF ENGINEERING, TECHNOLOGY AND BUILT ENVIRONMENT
+Bachelor of Electrical and Electronic Engineering with Honours 82205
+Bachelor of Mechatronic Engineering with Honours 82715
+Bachelor of Mechanical Engineering with Honours 82480
+Bachelor of Chemical Engineering with Honours 87170
+Bachelor of Petroleum Engineering with Honours 88820
+Bachelor of Civil Engineering with Honours 88635
+Bachelor of Environmental Engineering with Honours 97345
+Bachelor of Computer Engineering (Artificial Intelligence) with Honours 90470
+Bachelor of Energy Engineering with Honours 88990
+Diploma of Engineering Technology (Industrial Design) 45530
+
+ARCHITECTURE AND BUILT ENVIRONMENT
+BSc (Hons) Architecture 83110
+Bachelor of Quantity Surveying (Hons) 91144
+Diploma in Interior Architecture 46395
+Diploma in Architectural Studies 49995
+BA (Hons) Interior Architecture 73000
+
+FACULTY OF HOSPITALITY AND TOURISM MANAGEMENT - KL
+Diploma in Hotel Management 72050
+Diploma in Culinary Arts 73100
+Bachelor of Hospitality Administration 44420
+Bachelor of Arts (Honours) in Culinary Management 41350
+
+SCHOOL OF HOSPITALITY AND TOURISM MANAGEMENT - SPRINGHILL
+Bachelor of Arts (Honours) in Hospitality Management 71941
+Diploma in Culinary Arts Springhill 39960
+Diploma in Pastry and Bakery 39960
+
+FACULTY OF HOSPITALITY AND TOURISM MANAGEMENT - KUCHING
+BA (Hons) Hospitality Management Kuching 65660
+BA (Hons) Event & Tourism Management 60170
+Diploma in Hotel Management Kuching 38900
+Diploma in Culinary Arts Kuching 45200
+Diploma in Leisure Management 36400
+Diploma in Event Management 38000
+Bachelor of Arts (Honours) in Culinary Management Kuching 61874
+
+FACULTY OF MEDICINE AND HEALTH SCIENCES
+Foundation in Science 74010
+Doctor of Medicine 341340
+Bachelor of Nursing (Hons) 54140
+Diploma in Nursing 76850
+Bachelor of Optometry (Hons) 102750
+
+FACULTY OF SOCIAL SCIENCES AND LIBERAL ARTS
+BA (Hons) Mass Communication 68330
+BA (Hons) Psychology 68730
+BA (Hons) English Language and Communication 61300
+Bachelor of Early Childhood Education (Honours) 66750
+
+FACULTY OF PHARMACEUTICAL SCIENCES
+Bachelor of Pharmacy (Hons) 160698
+Bachelor of Formulation Science (Honours) 81330
+Diploma in Pharmacy 51650
+Diploma in Cosmetic Science 51620
+Diploma in Packaging Science and Technology 51510
+
+INSTITUTE OF ACTUARIAL SCIENCE AND DATA ANALYTICS
+BSc (Hons) Actuarial Science 68900
+BSc (Hons) Actuarial Science & Finance 69950
+Bachelor of Science (Honours) Actuarial Science with Data Analytics 79350
+
+CENTRE FOR PRE-U STUDIES
+Foundation Studies (Science) 37740
+Foundation Studies (Arts) 37040
+Foundation in Music 24200
+
+INSTITUTE OF MUSIC
+BMus (Hons) Classical Music 89180
+Diploma in Music Performance 89180
+BMus (Hons) Contemporary Music 51240
+
+DE INSTITUTE OF CREATIVE AND DESIGN
+BCA (Hons) 3D Animation Design 70850
+BA (Hons) Fashion Design with Marketing 71850
+BA (Hons) Graphic Design 65305
+BA (Hons) Multimedia Design 68070
+BA (Hons) Game Design 68415
+Diploma in 3D Animation Design 51200
+Diploma in Graphic Design 51840
+Diploma in Fashion Design 48420
+
+INSTITUTE OF COMPUTER SCIENCE AND DIGITAL INNOVATION
+Bachelor of Computer Science (Honours) 65820
+BSc (Hons) Business Information System 65820
+Bachelor of Computer Science (Hons) Mobile Computing And Networking 65220
+Bachelor of Computer Science in Data Science with Honours 69040
+Diploma in Information Technology 44130
+
+CENTRE FOR LANGUAGES
+English for Tertiary Education 19000
+English Enrichment Programme 11600
+
+RAW_CONTENT_END

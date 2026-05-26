@@ -1,0 +1,23 @@
+{
+  "name": "Universiti Kuala Lumpur",
+  "shortCode": "UKL",
+  "location": "Kuala Lumpur, Malaysia",
+  "intro": "Universiti Kuala Lumpur offers international programmes across Computing & IT, Mass Communication, Other and more.",
+  "aboutContent": "Universiti Kuala Lumpur is a higher education institution offering a comprehensive range of programmes for international students. Based in Kuala Lumpur, Malaysia, the university provides educational pathways across Computing & IT, Mass Communication, Other, Art & Design, Business, Health Sciences, Psychology.\n\nStudents can choose from Bachelor, Diploma, Foundation, PhD, Master, Other level programmes. The university maintains multiple intake periods throughout the year to accommodate diverse student schedules and academic requirements.",
+  "logo": "assets/universities/ukl-campus.jpg",
+  "image": "assets/universities/ukl-campus.jpg",
+  "youtubeVideo": "",
+  "nextIntakeDate": "",
+  "intakeMonths": [],
+  "offerLetterFree": false,
+  "faqs": [
+    "What programmes are available? The university offers programmes across multiple disciplines and levels, including foundation, diploma, bachelor's, postgraduate, and doctoral programmes.",
+    "What are the intake months? Intake months vary by programme and are listed in the university profile.",
+    "What is the typical programme duration? Durations vary from 1-5 years depending on the level and programme selected.",
+    "Are international students supported? Yes, the university welcomes international students and provides relevant support services.",
+    "How do I apply? Contact the university directly through the provided contact information or the agency for guidance on the application process."
+  ],
+  "ranking": "",
+  "active": true,
+  "order": 1
+}

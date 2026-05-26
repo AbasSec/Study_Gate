@@ -1,0 +1,150 @@
+{
+  "_comment": "Course alias mappings for canonical matching. Format: 'Level|canonical-key': [variant names]. When any variant name matches, all are considered equivalent.",
+  "_usage": "Add entries to group course name variations that should reference the same global course. Level must match exactly (case-insensitive). Use this to handle naming conventions across different universities.",
+
+  "bachelor|computer science": [
+    "Bachelor of Computer Science",
+    "Bachelor of Computer Science (Hons)",
+    "Bachelor of Computer Science (Honours)",
+    "Bachelor of Computer Science with Honours",
+    "BSc (Hons) Computer Science",
+    "Bachelor of Science in Computer Science",
+    "Bachelor of Science (Hons) in Computer Science"
+  ],
+
+  "bachelor|information technology": [
+    "Bachelor of Information Technology",
+    "Bachelor of Information Technology (Hons)",
+    "Bachelor of Information Technology (Honours)",
+    "Bachelor of Information Technology with Honours",
+    "BSc (Hons) Information Technology"
+  ],
+
+  "bachelor|software engineering": [
+    "Bachelor in Software Engineering",
+    "Bachelor of Software Engineering",
+    "Bachelor of Software Engineering (Hons)",
+    "Bachelor of Software Engineering (Honours)",
+    "Bachelor in Software Engineering with Honours"
+  ],
+
+  "diploma|information technology": [
+    "Diploma in Information Technology",
+    "Diploma in Information & Communication Technology",
+    "Diploma of Information Technology",
+    "Diploma in ICT"
+  ],
+
+  "master|business administration": [
+    "Master of Business Administration",
+    "MBA",
+    "Master in Business Administration",
+    "Master of Business Administration (Hons)"
+  ],
+
+  "bachelor|business administration": [
+    "Bachelor of Business Administration",
+    "Bachelor of Business Administration (Hons)",
+    "Bachelor of Business Administration (Honours)",
+    "Bachelor of Business Administration with Honours",
+    "BBA",
+    "BBA (Hons)",
+    "Bachelor in Business Administration"
+  ],
+
+  "bachelor|accounting": [
+    "Bachelor of Accounting",
+    "Bachelor of Accounting (Hons)",
+    "Bachelor of Accounting (Honours)",
+    "Bachelor of Accountancy",
+    "Bachelor of Accountancy (Hons)",
+    "Bachelor in Accounting with Honours"
+  ],
+
+  "diploma|accounting": [
+    "Diploma in Accounting",
+    "Diploma of Accountancy",
+    "Diploma in Accountancy"
+  ],
+
+  "bachelor|nursing": [
+    "Bachelor of Nursing",
+    "Bachelor of Nursing (Hons)",
+    "Bachelor of Nursing (Honours)",
+    "Bachelor of Nursing Sciences",
+    "Bachelor of Nursing Sciences (Hons)",
+    "Bachelor of Nursing (Public Health)"
+  ],
+
+  "diploma|nursing": [
+    "Diploma in Nursing",
+    "Diploma of Nursing"
+  ],
+
+  "bachelor|mechanical engineering": [
+    "Bachelor of Mechanical Engineering",
+    "Bachelor of Mechanical Engineering (Hons)",
+    "Bachelor of Mechanical Engineering with Honours",
+    "Bachelor of Mechanical Engineering Technology with Honours"
+  ],
+
+  "bachelor|civil engineering": [
+    "Bachelor of Civil Engineering",
+    "Bachelor of Civil Engineering (Hons)",
+    "Bachelor of Civil Engineering with Honours",
+    "Bachelor of Civil Engineering Technology with Honours"
+  ],
+
+  "bachelor|electrical engineering": [
+    "Bachelor of Electrical Engineering",
+    "Bachelor of Electrical Engineering (Hons)",
+    "Bachelor of Electrical and Electronics Engineering",
+    "Bachelor of Electrical and Electronics Engineering with Honours"
+  ],
+
+  "bachelor|pharmacy": [
+    "Bachelor of Pharmacy",
+    "Bachelor of Pharmacy (Hons)",
+    "Bachelor of Pharmacy with Honours",
+    "Bachelor of Pharmacy (Honours)"
+  ],
+
+  "diploma|pharmacy": [
+    "Diploma in Pharmacy",
+    "Diploma of Pharmacy"
+  ],
+
+  "bachelor|psychology": [
+    "Bachelor of Psychology",
+    "Bachelor of Psychology (Hons)",
+    "Bachelor of Psychology (Honours)",
+    "Bachelor of Applied Psychology",
+    "Bachelor of Applied Psychology (Hons)"
+  ],
+
+  "bachelor|education": [
+    "Bachelor of Education",
+    "Bachelor of Education (Hons)",
+    "Bachelor of Education (Honours)"
+  ],
+
+  "master|computer science": [
+    "Master of Computer Science",
+    "Master of Computer Science (Hons)",
+    "MSc Computer Science"
+  ],
+
+  "bachelor|finance": [
+    "Bachelor of Finance",
+    "Bachelor of Finance (Hons)",
+    "Bachelor of Finance (Honours)",
+    "Bachelor of Science in Finance"
+  ],
+
+  "master|engineering": [
+    "Master of Engineering",
+    "Master of Engineering (Hons)",
+    "MSc Engineering",
+    "Master in Engineering"
+  ]
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Horizons | Global Education Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-container": "#00201d",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#000000",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#76777d",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed": "#131b2e",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#dae2fd",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-container": "#7c839b",
+                        "surface-tint": "#565e74",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#0c9488",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-primary": "#bec6e0",
+                        "primary-container": "#131b2e",
+                        "secondary": "#006c49",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#002113",
+                        "surface-dim": "#cbdbf5",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-variant": "#d3e4fe",
+                        "on-background": "#0b1c30",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary-fixed": "#89f5e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "gutter-desktop": "24px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "gutter-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "status-pill": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto bg-surface/70 dark:bg-inverse-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex items-center gap-base">
+<span class="text-headline-md font-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight">Horizons</span>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold text-label-md font-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Universities</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Success Stories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-high/50 transition-all duration-300 flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">language</span>
+<span class="text-label-md font-label-md">EN</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high/50 transition-all duration-300" id="theme-toggle">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<button class="hidden md:block text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors px-4 py-2">Login</button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold text-label-md font-label-md hover:translate-y-[-2px] transition-transform active:scale-[0.98]">Apply Now</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full min-h-[870px] flex items-center px-margin-desktop max-w-[1440px] mx-auto py-20 overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop items-center z-10">
+<div class="max-w-2xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-status-pill text-status-pill mb-6">Empowering Global Ambitions</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-8">Your Global Education Journey <span class="text-secondary">Starts Here</span></h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 leading-relaxed">Expert mentorship and strategic guidance to navigate the complexities of international admissions. We bridge the gap between your potential and the world's most prestigious institutions.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-label-md font-label-md hover:translate-y-[-2px] shadow-lg shadow-primary/10 transition-all">Start Your Application</button>
+<button class="bg-transparent border border-secondary text-secondary px-8 py-4 rounded-xl font-bold text-label-md font-label-md hover:bg-secondary/5 transition-all">Explore Universities</button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="relative z-10 rounded-[32px] overflow-hidden shadow-2xl">
+<img class="w-full h-[600px] object-cover" data-alt="A focused female student with a laptop sitting in a sun-drenched, ultra-modern university library characterized by soaring glass walls and minimalist white architecture. The scene is illuminated by soft, natural morning light, creating a professional yet warm atmosphere. The color palette features clean whites, soft greys, and vibrant emerald green accents from indoor plants, embodying a high-end corporate modern educational aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpDh0HFQ2jMfaANDc0vXJtSPc76WNwFNjXB8QddfFPEZkye92Y9pc2qgQb1KAYn0fyhVZphxriCmdMHH4WeqhGF4-6qLO5U7G5H8rOyZrUDg8MfiDEBEwpVnelU9JyVxk7A6HAbh1giezwIiExGdkda6PlF27lK2EAyjXGSbP1n9T2UpO97HUg9S6Oy18cHAtLooYGv-HxRpbtHk6dI1mp3gOPiUnIL54KwWNi5z3dOGPEQBWsZUMkjutF4d2R2udR0r1jLmievkbr"/>
+</div>
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<!-- Floating Stat Card -->
+<div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl flex items-center gap-4 shadow-xl">
+<div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">public</span>
+</div>
+<div>
+<div class="text-headline-md font-bold text-on-surface">500+</div>
+<div class="text-label-md text-on-surface-variant">Global Partners</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Indicators -->
+<section class="w-full bg-surface-container-low py-12 px-margin-desktop">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<div class="flex flex-col items-center text-center p-6 hover:bg-surface-container-high/30 transition-colors rounded-2xl">
+<div class="text-[48px] font-bold text-primary mb-2">500+</div>
+<div class="text-body-md font-semibold text-on-surface-variant uppercase tracking-widest">Universities</div>
+</div>
+<div class="flex flex-col items-center text-center p-6 border-x border-outline-variant/30 hover:bg-surface-container-high/30 transition-colors rounded-2xl">
+<div class="text-[48px] font-bold text-secondary mb-2">10k+</div>
+<div class="text-body-md font-semibold text-on-surface-variant uppercase tracking-widest">Students Placed</div>
+</div>
+<div class="flex flex-col items-center text-center p-6 hover:bg-surface-container-high/30 transition-colors rounded-2xl">
+<div class="text-[48px] font-bold text-primary mb-2">98%</div>
+<div class="text-body-md font-semibold text-on-surface-variant uppercase tracking-widest">Visa Success</div>
+</div>
+</div>
+</section>
+<!-- Featured Universities Bento -->
+<section class="py-section-gap px-margin-desktop max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Elite Global Institutions</h2>
+<p class="text-body-md text-on-surface-variant">Discover world-class universities across 40+ countries. We help you find the perfect match for your academic and career goals.</p>
+</div>
+<button class="text-primary font-bold text-label-md flex items-center gap-2 group">
+                    View All <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Card -->
+<div class="md:col-span-2 md:row-span-2 group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A grand view of an ancient sandstone university campus with gothic spires and perfectly manicured green quads. The late afternoon golden hour lighting casts long, elegant shadows across the architectural details, evoking a sense of heritage and elite academic excellence. The atmosphere is quiet and dignified, with a palette of warm ochre, deep greens, and clear sapphire blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJIpf2RiBNfs9Zk444ZAmDvtvdZkTU8JvmVyr7DNRTadQgBgGv--YTCjHcuPFQoTBDwnIMk-AtkchD-Gv7dpAbYN-Yl-4tW2PkGGSTNsHl65w2lrWVEjRvudXEbkrWWenLH4Qpwsk4WX4MKYRQOQV6xOLzAV2YFWZt72dcbGNkj2E07BXSb_bIg4MFcf8ezpoR-wHA_nJDBmUvtfHH3yRSFqISD8yqU7QTU5ADUhoSRyYMdteK1t-Ijee1A6spWikumsk-kf8h7Vgi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-secondary text-on-secondary text-status-pill font-status-pill">Ranked #1</span>
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-status-pill font-status-pill">United Kingdom</span>
+</div>
+<h3 class="text-white text-headline-md font-bold mb-1">University of Oxford</h3>
+<p class="text-white/80 text-body-md">Ancient traditions meet cutting-edge research.</p>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 aspect-square">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A modern cityscape campus featuring sleek glass buildings and vibrant urban spaces in Toronto. The lighting is crisp and bright, reflecting a dynamic city life integrated with academic pursuit. The color scheme is dominated by cool blues, metallic silvers, and the natural textures of stone and wood, conveying a forward-thinking and energetic university environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJMn6qVgSZVkSVsO2OG99ebAxq50olZK0GoYaKSnYY4_Teruq2r8fFzmhlFwMPI840fHketC7LtT6iIi4a_WEY_ez7Ipg3Ly0zIDAHtQiqwNMP-RSb8pFMZ6Kqp3bv9O8pHAgbHQPcHRLfPRPfRpOLC2hM_Jzvtt1XVrkRktvZvf09ro2ZtiG0sqshxGzOqrtatSU1xnGpssqQd5ng5y7Y5MZ23qo7MtgDd--abYqGTgDVxQ0DttN5Sv_8DWLSKkTUuEJ3ONFWh2PT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white font-bold text-label-md">University of Toronto</h3>
+<p class="text-white/70 text-[12px]">Canada • Ranked #21</p>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 aspect-square">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A stunning aerial view of a university campus in Sydney near the coast, showcasing a mix of historical sandstone architecture and contemporary design. Bright, clear daylight illuminates the lush lawns and the nearby blue ocean waters. The palette is fresh and coastal, with sandy beige, vibrant grass green, and deep ocean blue, creating an inviting and world-class study destination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu3_d_iwmZhSdIIZwxKZG2aZqcgwvm8V3FjM_1jzNzfLMakfcsO0ZDJWmm1g0wrTxRyHfggpbDt9xq20FDjO7w4iaf8jX6t5RsyvF2Op4xw73c4mh7Kq2Qwcr3k7XD76CCu-2iOvj7NIapVDfXTYOCE3YZ988kiBUTfk5Hc9GYXavMn4cM5-IIF6zQ4Zv7kdPcAcXP6Denmc3SBzKhhxfMqXhKwNdg41zwhyGSTpmPA0vRrRIs-uBpB9BmLXIrbFlLMm7AYvr4LlDC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="text-white font-bold text-label-md">University of Sydney</h3>
+<p class="text-white/70 text-[12px]">Australia • Ranked #18</p>
+</div>
+</div>
+<!-- Wide Card -->
+<div class="md:col-span-2 group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-[240px]">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="The modern interior of a German technical university, featuring minimalist white halls, high-tech labs with glowing blue equipment, and collaborative study pods. The lighting is clinical yet sophisticated, focusing on precision and engineering excellence. The aesthetic is monochromatic with pops of technical blue and emerald green, representing high-end industrial design and innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnAA7nBNIxTMOSN6WPFC5dtn6Z7XymmCwTHLGA44VMXpQbxrNyax-l3OwR-MgNrbz-5csCiNT2wdGDe-Wxu20NqM5OlE0cIP-QFehHO7BttuGyN_T7Hp-wSb0lsLEOVUFbUb6q0q7eftH6cdqz_DFz5WpVZnW8MJ_qWfOBLyEOepk4EcLfTjGisyDQ5ScuevK0GJ8ULmrZwQQoE6CaGueyhLKRpptrKk78Yk59mV3Y__gFeo6ImYJMryTP4KJPIVxowHN69U8VDQRO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-white text-headline-md font-bold mb-1">Technical University of Munich</h3>
+<p class="text-white/80 text-body-md">Germany • Engineering Powerhouse</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="px-margin-desktop max-w-[1440px] mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">End-to-End Success Services</h2>
+<p class="text-body-md text-on-surface-variant">From the first spark of ambition to your final enrollment, we handle every detail of your international journey.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<div class="p-8 rounded-[32px] border border-outline-variant/30 hover:border-secondary transition-all group">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">school</span>
+</div>
+<h3 class="text-headline-md font-bold mb-4">Course Counseling</h3>
+<p class="text-on-surface-variant mb-6">Personalized guidance to select programs that align with your career aspirations and academic strengths.</p>
+<a class="text-secondary font-bold flex items-center gap-2 group/link" href="#">Learn More <span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform">chevron_right</span></a>
+</div>
+<div class="p-8 rounded-[32px] border border-outline-variant/30 hover:border-secondary transition-all group bg-surface">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">description</span>
+</div>
+<h3 class="text-headline-md font-bold mb-4">Visa Assistance</h3>
+<p class="text-on-surface-variant mb-6">Expert documentation support and interview preparation to ensure a smooth visa approval process.</p>
+<a class="text-secondary font-bold flex items-center gap-2 group/link" href="#">Learn More <span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform">chevron_right</span></a>
+</div>
+<div class="p-8 rounded-[32px] border border-outline-variant/30 hover:border-secondary transition-all group">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">flight_takeoff</span>
+</div>
+<h3 class="text-headline-md font-bold mb-4">Pre-Departure</h3>
+<p class="text-on-surface-variant mb-6">Briefings on accommodation, health insurance, and cultural integration for your new host country.</p>
+<a class="text-secondary font-bold flex items-center gap-2 group/link" href="#">Learn More <span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform">chevron_right</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories Carousel -->
+<section class="py-section-gap overflow-hidden bg-primary text-on-primary">
+<div class="px-margin-desktop max-w-[1440px] mx-auto mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-2">Student Journeys</h2>
+<p class="text-primary-fixed-dim max-w-xl">Real stories from students who achieved their dreams with Horizons.</p>
+</div>
+<div class="flex gap-6 px-margin-desktop overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-8">
+<!-- Story 1 -->
+<div class="min-w-[280px] h-[500px] rounded-[24px] overflow-hidden relative group snap-center cursor-pointer shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A portrait-oriented, social-media style image of a young student smiling in front of the Eiffel Tower in Paris. The image has a vertical 9:16 aspect ratio with high saturation and vibrant evening street lighting. The mood is joyful and aspirational, captured with a shallow depth of field. A small emerald green badge indicates 'France' in the corner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADdD8HMnrkLc8LBAlXGJBQj0cWF-ut4gA-BKa-DmIGDWH4xxlwNKFLgKBPhnX_0Z9T9g92HgmY6ZF6nzC0tQcjyOezBd_aoW_OIQXqktyS7w7GSBskPepmo4XPm2_tDzZ2K4QxDyQlV_cMjdEsFM_6idDzUz4QA4nY3tbBMbWpFeabhQhdAoViy2ke2YhwKE9n-DFbcdfJgPg3JE6M88OSJrhzdHQhq_cwKPB8iQowgVqCqhrr7b1ry2pJtr-BwtUOkKI2yHW23zBf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-md font-bold uppercase tracking-widest text-[10px]">Enrolled</span>
+</div>
+<h4 class="text-white font-bold text-headline-md">Sarah Al-Farsi</h4>
+<p class="text-white/80 text-label-md">Sorbonne, France</p>
+</div>
+</div>
+<!-- Story 2 -->
+<div class="min-w-[280px] h-[500px] rounded-[24px] overflow-hidden relative group snap-center cursor-pointer shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-energy vertical photo of a student holding university acceptance papers in front of a modern campus building in New York. The lighting is dynamic, high-key, and urban. The style is reminiscent of a viral Instagram story, full of movement and authentic excitement. The primary colors include a bright white background with blue and red accents from the university branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvmaPy24n2ry8o2ynK8bS6fDQXho63dNksJY-MzNc1YhiKLwOQmH3nSZDS7nFDhVzxjZHVBb7bexalaLQg7uij760sn_0qIBTvnVabzFVkg2Wp9h_Vl-8rCh7_RYjt1TMzuu-hcBrhmSZNWg7fgcktQV6sRhZamUCHxTDdRLLpcSs_ETOJzuLp04lp6FQxiqKohxc5r19lQEU5offpp9DUrftG_dCLY7ZlsFfg3_QOMV0EX8UvuWQIj41y4WBS3zqWqiatpBFYgecs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-md font-bold uppercase tracking-widest text-[10px]">Applied</span>
+</div>
+<h4 class="text-white font-bold text-headline-md">Omar Chen</h4>
+<p class="text-white/80 text-label-md">NYU, USA</p>
+</div>
+</div>
+<!-- Story 3 -->
+<div class="min-w-[280px] h-[500px] rounded-[24px] overflow-hidden relative group snap-center cursor-pointer shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A vertical, atmospheric shot of a student study group in a cozy library in London. The lighting is warm and intellectual, with desk lamps providing a soft glow over textbooks and laptops. The style is premium documentary, focusing on the collaborative academic experience. Deep navy and mahogany tones dominate the color palette, creating a feeling of tradition and success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pEXDIxX7A0i-1lOh2FseUr7qpWw0QiSUbPD2P7Dim3vE9TbqFb_OtvqpqeBNlXVBt2GgEuyTT_OBM4ESqbgTQvehrlWSldG13WBz90T9pUF-_aelyr5h7wgu8nlOB36leee4Kfg345gDi6eoYpOMIyBY5mwpDFJutaEPOV7FYBIZPdNg8jxi6--KYnZ_Uj9zA_D0OROYaNXwO1CF2fWdcdJ5H7uQ6Ay3Rh0VIyDhRki5asrWgYrxN8QFah0O672eA35vhryB2Ggs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-md font-bold uppercase tracking-widest text-[10px]">Visa Approved</span>
+</div>
+<h4 class="text-white font-bold text-headline-md">Maya Gupta</h4>
+<p class="text-white/80 text-label-md">UCL, UK</p>
+</div>
+</div>
+<!-- Story 4 -->
+<div class="min-w-[280px] h-[500px] rounded-[24px] overflow-hidden relative group snap-center cursor-pointer shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A vibrant vertical thumbnail of a student walking through a sunlit campus courtyard in Melbourne. The lighting is bright, golden, and optimistic. The aesthetic is clean and modern, highlighting the lifestyle benefits of studying abroad. Lush greenery and modern architecture provide a balanced background with a fresh, natural color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Ifo1L_I0LJcq4si2ju8rqQ7ib1n_87UKxVGTN9krNluDpJ81FKKlX9JETbuKUBQ9RA2qC4DGWbylA6E70s_jsVSdYvSzUDVn5StnJvSII5poX3UVoLHcxDoPlFHRQoHb7J-Yfc5wiyk4ZG-SwBt_jANjrTm2jQKhqMkwGVbLwNps3BPT3A-lRTdzN8YzfMnEF6maVhvYgzcaUCG7qHtyZ5OW9l3fdJCK0bVDjma90w5jbqUa4IpATlQY2AOqQokcXvToBuZqdHZ5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-label-md font-bold uppercase tracking-widest text-[10px]">Enrolled</span>
+</div>
+<h4 class="text-white font-bold text-headline-md">Liam Wilson</h4>
+<p class="text-white/80 text-label-md">Uni Melbourne, Australia</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Team Section -->
+<section class="py-section-gap px-margin-desktop max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Meet Your Mentors</h2>
+<p class="text-body-md text-on-surface-variant max-w-xl">Our specialists have decades of collective experience in international education systems.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<!-- Team Member 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-[24px] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional corporate portrait of a woman in her 40s, wearing a sharp navy blazer, smiling warmly in a bright, modern office setting. The lighting is soft and flattering, with a clean bokeh background. The overall style is institutional yet approachable, emphasizing authority and experience. The color palette is composed of navy, crisp white, and subtle warm skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBgkbzbHVSWxWDw00xty-4LrO6bmvuC35bvjJtLWtxJobvCPuDg1W9gNBNsNWJQDRSbR6Z_zcq9nyL_7wOS5pI7-rnXFLpVvJvcur2ES5Z1LQNk5nbck1AO9AKIx5UhjQs2IzFKSRyr4tNv0XUM4QZjjKIdw5tZWtWF3yeubEIvmxcnw6gUvvaRK__u_eNae-q5cY3Xp_lJDZ2a-N9dI8H5vrD-XnXYZLlMgVOoMUvi2M6Kpr5askTMsBzYaSiivfiKQnU8F5jsvQL"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Dr. Elena Rodriguez</h4>
+<p class="text-on-surface-variant mb-4">Director of Admissions</p>
+<button class="flex items-center gap-2 text-secondary font-bold text-label-md group/wa">
+<span class="material-symbols-outlined text-[20px]">call</span>
+                        WhatsApp Contact
+                    </button>
+</div>
+<!-- Team Member 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-[24px] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-end professional headshot of a man in his late 30s, wearing a grey tailored suit, posing confidently against a backdrop of a blurred architectural interior. The lighting is sophisticated and directional, creating depth and character. The aesthetic is modern corporate, suggesting professionalism and precision. The palette includes shades of grey, charcoal, and soft silver." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDobtppxK4CBz7NasZK-VvYAwpLCi79KXRzA-IUOjuigaEZqdN70tBqsFMpAG1DRjOsK7huLAWBiP2smxGJzeREG3L_SAHGUAqeMrItv3KRZBL4v5KWOXJlf6MoJy7ky-77qE0wRQa-i2Vy6nTHrLEgtWRPdS7EihOgNTOIyXV-88ymV7boXuwIFU0cA4RmNREHkNDGRRvd4cKm8XCL4E9NeamtSbjzEaj9qrEUWlHb_F9a3kdzCouRdpldCgjUXyuWepz_XDLgmSC2"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Jameson Blake</h4>
+<p class="text-on-surface-variant mb-4">Senior Visa Strategist</p>
+<button class="flex items-center gap-2 text-secondary font-bold text-label-md group/wa">
+<span class="material-symbols-outlined text-[20px]">call</span>
+                        WhatsApp Contact
+                    </button>
+</div>
+<!-- Team Member 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-[24px] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A friendly and professional portrait of a younger woman with glasses, smiling and holding a digital tablet in a light-filled co-working space. The mood is energetic and tech-savvy. The lighting is bright and even, highlighting her approachability. The color palette features light blues, greens, and warm natural wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8VQOVDSvbCrvjjhpTZSRNPtroBVy2EKV-DzaLd2eLltvrraJsBRL96NsLs5yEPyAaSWnD3jmGk9BZC8aou4wbdB-3O33G3zQYUAMjfDhSSPp-Z3WM2d2XEXdN_TJ4s3M_jNg4ON2Lw_rPOV1mnHtTUBnOqLEkiLqh1mldc06Bk0Ry-IMRV0ZfiXjvLc_uRYiR56Y-YtoRvYEnUerrkxkcYMKO2V5yKWDDDgFDhZMetSvpshmYPRHD8dx0Uru_xeO9p7yak64nuoz-"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Layla Hassan</h4>
+<p class="text-on-surface-variant mb-4">Student Life Coordinator</p>
+<button class="flex items-center gap-2 text-secondary font-bold text-label-md group/wa">
+<span class="material-symbols-outlined text-[20px]">call</span>
+                        WhatsApp Contact
+                    </button>
+</div>
+<!-- Team Member 4 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-[24px] overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A polished professional portrait of a senior consultant with white hair and a kind expression, seated in a high-end academic office with books in the background. The lighting is warm and scholarly, evoking wisdom and trust. The style is classic and premium, using a rich palette of deep reds, browns, and cream colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcqQ9UNQXTocE0EVekZg692ZoE7E1oIKjNDGLmA2xoeaL1TJOGcCY17JfZYApvRGwX5Ak44GK7Qv1ZUw-X3ycegX5zNmpVlZ3jA-t4aTqhMCsJeyXGTPGq6lzweV_TdvCV12dKZLKiRpHFti3LE8JqPkbZovJvfrTz3Pn_jdC4Eq8CrxDfC6ooboItkAlMOX85XomlSgDZU8RQtbx-tTPKAgVmISnCKIyFwcpbblxZDWXQVU6yDuaXZgRa0YNaLCh0Gg-JUn9yvSMg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<button class="w-12 h-12 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+</div>
+<h4 class="text-headline-md font-bold text-on-surface">Prof. Robert Chen</h4>
+<p class="text-on-surface-variant mb-4">Academic Partnership Lead</p>
+<button class="flex items-center gap-2 text-secondary font-bold text-label-md group/wa">
+<span class="material-symbols-outlined text-[20px]">call</span>
+                        WhatsApp Contact
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/50 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop mb-16">
+<div class="flex flex-col gap-6">
+<span class="text-headline-md font-headline-md font-bold text-primary">Horizons</span>
+<p class="text-on-surface-variant text-body-md">Global education agency dedicated to transforming student ambitions into international success stories through expert mentorship.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">video_camera_front</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Quick Links</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Universities</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Courses</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Success Stories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Company</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Team</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Contact</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Contact Info</h4>
+<ul class="flex flex-col gap-4 text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+                        123 Educational Blvd, London, UK
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">phone</span>
+                        +44 (0) 20 7946 0123
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">mail</span>
+                        admissions@horizons.edu
+                    </li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-body-md text-on-surface-variant">© 2024 Horizons Educational Agency. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-label-md text-on-surface-variant hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary" href="#">Terms of Service</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed on Home according to logic, but since it's a Landing Page, a "Chat" FAB is often useful. Suppression rule applied per instructions.) -->
+<script>
+        // Theme Toggle Interaction
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            themeToggle.innerHTML = isDark ? 
+                '<span class="material-symbols-outlined">light_mode</span>' : 
+                '<span class="material-symbols-outlined">dark_mode</span>';
+        });
+
+        // Simple scroll reveal effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('h-16', 'shadow-md');
+                header.classList.remove('h-20', 'shadow-sm');
+            } else {
+                header.classList.add('h-20', 'shadow-sm');
+                header.classList.remove('h-16', 'shadow-md');
+            }
+        });
+    </script>
+</body></html>

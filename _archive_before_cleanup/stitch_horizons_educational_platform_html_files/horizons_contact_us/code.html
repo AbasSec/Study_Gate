@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.3);
+        }
+        .input-focus-effect:focus {
+            outline: none;
+            border-color: #006c49;
+            box-shadow: 0 0 0 3px rgba(111, 251, 190, 0.3);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-container": "#00201d",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#000000",
+                        "surface-bright": "#f8f9ff",
+                        "outline": "#76777d",
+                        "background": "#f8f9ff",
+                        "on-primary-fixed": "#131b2e",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#dae2fd",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-container": "#7c839b",
+                        "surface-tint": "#565e74",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#0c9488",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-primary": "#bec6e0",
+                        "primary-container": "#131b2e",
+                        "secondary": "#006c49",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#002113",
+                        "surface-dim": "#cbdbf5",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-variant": "#d3e4fe",
+                        "on-background": "#0b1c30",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary-fixed": "#89f5e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "gutter-desktop": "24px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "gutter-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "status-pill": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight">Horizons</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Universities</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">About</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold text-label-md font-label-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high/50 p-2 rounded-full transition-all">language</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high/50 p-2 rounded-full transition-all">dark_mode</button>
+<button class="hidden md:block px-6 py-2 bg-primary text-on-primary rounded-xl font-semibold hover:scale-95 transition-all">Apply Now</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-desktop py-section-gap">
+<!-- Hero Section -->
+<section class="mb-section-gap text-center max-w-3xl mx-auto">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-status-pill text-status-pill mb-6">CONNECT WITH US</span>
+<h1 class="font-display-lg text-display-lg mb-6">Let's Navigate Your Global Future Together</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our expert consultants are ready to bridge the gap between your ambitions and the world's most prestigious institutions.</p>
+</section>
+<!-- Contact Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Panel: Contact Info -->
+<div class="lg:col-span-5 space-y-8">
+<div class="glass-panel p-8 rounded-2xl shadow-sm space-y-10">
+<div>
+<h2 class="font-headline-md text-headline-md mb-8">Get in touch</h2>
+<div class="space-y-6">
+<!-- Phone -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">General Inquiry</p>
+<p class="font-headline-sm text-headline-sm font-semibold">+1 (555) 890-2341</p>
+</div>
+</div>
+<!-- WhatsApp -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">WhatsApp Support</p>
+<p class="font-headline-sm text-headline-sm font-semibold">+1 (555) 722-1002</p>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Email Us</p>
+<p class="font-headline-sm text-headline-sm font-semibold">admissions@horizons.edu</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-10 border-t border-outline-variant/30">
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Global HQ</p>
+<p class="font-body-md text-body-md">1200 Avenue of the Americas, Suite 400<br/>New York, NY 10036</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Business Hours</p>
+<p class="font-body-md text-body-md">Monday - Friday: 09:00 - 18:00 EST</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Media Links -->
+<div class="pt-8">
+<p class="font-label-md text-label-md text-on-surface-variant mb-4">Follow Our Journey</p>
+<div class="flex gap-3">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_circle">play_circle</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Contact Form -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest p-8 lg:p-12 rounded-2xl border border-outline-variant/30 shadow-lg">
+<form class="space-y-8" id="contactForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="name">Full Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-4 py-3 font-body-md input-focus-effect transition-all" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-4 py-3 font-body-md input-focus-effect transition-all" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="subject">Subject</label>
+<select class="w-full bg-surface-bright border border-outline-variant rounded-xl px-4 py-3 font-body-md input-focus-effect transition-all appearance-none" id="subject">
+<option value="">Select a topic</option>
+<option value="admissions">University Admissions</option>
+<option value="visa">Visa Assistance</option>
+<option value="scholarship">Scholarship Inquiry</option>
+<option value="partnership">Institutional Partnership</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="message">Message</label>
+<textarea class="w-full bg-surface-bright border border-outline-variant rounded-xl px-4 py-3 font-body-md input-focus-effect transition-all resize-none" id="message" placeholder="How can we help you achieve your goals?" rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary rounded-2xl font-semibold text-body-md shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2" type="submit">
+                            Send Message
+                            <span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Global Offices & Map Section -->
+<section class="mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-2">Our Global Footprint</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Local expertise with a global perspective.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_back_ios_new">arrow_back_ios_new</span>
+</button>
+<button class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_forward_ios">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+<!-- Interactive Map Panel -->
+<div class="relative w-full h-[500px] rounded-3xl overflow-hidden group shadow-2xl border border-outline-variant/20">
+<div class="absolute inset-0 bg-surface-container-high/20 z-10 pointer-events-none"></div>
+<img alt="Global Offices Map" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" data-alt="A stylized, minimalist world map rendered in a premium architectural style. The map features subtle navy blue continents against a pristine off-white background. Glowing teal or emerald green nodes indicate office locations in major global hubs like London, Dubai, and New York. The lighting is bright and ethereal, suggesting a high-tech corporate environment with a focus on global connectivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhmPS8ll7VEi8LraYjvlWOc1ZWfaJo7hybEEpdrXvpYNRlZL9jWb_sRnn-N-t5_eDwdDBNoJfRU8TjHuHAzxL_NeaYg2nryECAO4B3cE2jcQalZCnwCjRZb3LhGxvx19_J32DHAZn0d7vBEVmtIlVbc2sEIKCrpGCPNd53wi2wzwGR5860d0ATZmwZPmEsppzOd__9VIT81osp2L5rtPmNAJUJ-bTcvI_5h6wciym6u1w0E0Hu4ARKJYSKvyKNhKPoK_fP6YjDWuxf"/>
+<!-- Floating Office Cards -->
+<div class="absolute top-10 left-10 z-20 space-y-4 hidden lg:block">
+<div class="glass-panel p-4 rounded-2xl border border-white/50 shadow-lg w-64 animate-float">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-3 h-3 bg-secondary-fixed-dim rounded-full animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm">London, UK</span>
+</div>
+<p class="text-label-md text-on-surface-variant">Mayfair Terrace, West End</p>
+</div>
+<div class="glass-panel p-4 rounded-2xl border border-white/50 shadow-lg w-64 animate-float" style="animation-delay: 1.5s;">
+<div class="flex items-center gap-3 mb-2">
+<span class="w-3 h-3 bg-secondary-fixed-dim rounded-full animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm">Dubai, UAE</span>
+</div>
+<p class="text-label-md text-on-surface-variant">Business Bay Tower, Floor 82</p>
+</div>
+</div>
+<div class="absolute bottom-10 right-10 z-20 glass-panel p-6 rounded-2xl border border-white/50 max-w-sm">
+<h4 class="font-headline-sm text-headline-sm mb-2">Visit an Office Near You</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Our regional offices provide personalized counseling and document verification services.</p>
+<button class="text-secondary font-bold text-label-md flex items-center gap-2 hover:translate-x-2 transition-transform">
+                        View all 14 locations
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/50">
+<div class="w-full py-section-gap px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md font-bold text-primary mb-6">Horizons</div>
+<p class="text-on-surface-variant text-body-md leading-relaxed">
+                    Pioneering global education through personalized mentorship and technical excellence since 2012.
+                </p>
+</div>
+<div>
+<h5 class="font-bold text-on-surface mb-6">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Student Portal</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Visa Guide 2024</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Scholarship List</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-surface mb-6">Quick Links</h5>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Our Story</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Global Offices</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-on-surface mb-6">Newsletter</h5>
+<p class="text-on-surface-variant text-label-md mb-4">Stay updated with global intake deadlines.</p>
+<div class="flex gap-2">
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-label-md" placeholder="Email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-label-md">© 2024 Horizons Educational Agency. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary text-label-md underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary text-label-md underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary text-label-md underline-offset-4 hover:underline" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Sending...';
+            btn.classList.add('opacity-80', 'pointer-events-none');
+
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Message Sent';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-secondary');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('bg-secondary', 'opacity-80', 'pointer-events-none');
+                    btn.classList.add('bg-primary');
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+
+        // Simple Parallax for map image
+        window.addEventListener('scroll', function() {
+            const map = document.querySelector('.group img');
+            const scroll = window.pageYOffset;
+            if (map) {
+                map.style.transform = `translateY(${scroll * 0.05}px) scale(1.1)`;
+            }
+        });
+    </script>
+</body></html>

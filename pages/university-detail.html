@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>University Details | StudyGate International</title>
+<link rel="stylesheet" href="../css/design-system.css">
+<link rel="stylesheet" href="../css/components.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "surface-container-low": "#eff4ff",
+                "on-surface": "#0b1c30",
+                "on-surface-variant": "#45464d",
+                "error": "#ba1a1a",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#dce9ff",
+                "surface-bright": "#f8f9ff",
+                "outline": "#76777d",
+                "background": "#f8f9ff",
+                "outline-variant": "#c6c6cd",
+                "surface-container": "#e5eeff",
+                "surface": "#f8f9ff",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-container": "#00714d",
+                "secondary-container": "#6cf8bb",
+                "secondary": "#006c49",
+                "primary-container": "#131b2e",
+                "primary": "#000000",
+                "on-primary": "#ffffff",
+            },
+            spacing: {
+                "margin-desktop": "64px",
+                "section-gap": "120px",
+                "gutter-desktop": "24px",
+                "margin-mobile": "20px",
+                "base": "8px",
+            },
+            fontFamily: {
+                "headline-lg": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "label-md": ["Plus Jakarta Sans"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "body-md": ["Plus Jakarta Sans"],
+                "status-pill": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+                "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            },
+        },
+    },
+}
+</script>
+<style>
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+}
+.loading-state {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 200px; color: #666; font-size: 16px;
+}
+.loading-state::after {
+    content: ""; display: inline-block; width: 20px; height: 20px;
+    border: 3px solid rgba(0,0,0,0.1); border-radius: 50%;
+    border-top-color: #000; animation: spin 0.8s linear infinite; margin-left: 10px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes soft-pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+.countdown-pulse { animation: soft-pulse 2s infinite; }
+.tab-btn { transition: all 0.2s; border-bottom: 2px solid transparent; color: #45464d; }
+.tab-btn:hover { color: #006c49; }
+.tab-btn.active { border-bottom-color: #006c49; font-weight: 600; color: #006c49; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.faq-answer { display: none; }
+.faq-item.open .faq-answer { display: block; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-chevron { transition: transform 0.2s; }
+.category-courses { display: none; }
+.course-category.open .category-courses { display: block; }
+.course-category.open .cat-chevron { transform: rotate(180deg); }
+.cat-chevron { transition: transform 0.2s; }
+.stat-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+html[dir="rtl"], html[lang="ar"] {
+    font-family: "Tajawal", system-ui, sans-serif;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] body { background-color: #0d1626; color: #dce4f7; }
+[data-theme="dark"] header { background-color: rgba(13,22,38,0.85) !important; border-color: rgba(44,62,90,0.3) !important; }
+[data-theme="dark"] footer { background-color: #0d1626 !important; border-color: #2c3e5a !important; }
+[data-theme="dark"] footer h4, [data-theme="dark"] footer p { color: #9eaec4; }
+[data-theme="dark"] footer a { color: #9eaec4; }
+[data-theme="dark"] footer a:hover { color: #6dd4c8; }
+[data-theme="dark"] .bg-surface-container-lowest { background-color: #182234 !important; }
+[data-theme="dark"] .bg-surface-container-low { background-color: #1a2844 !important; }
+[data-theme="dark"] .bg-surface-container { background-color: #1e2b42 !important; }
+[data-theme="dark"] .bg-surface-container-high { background-color: #243350 !important; }
+[data-theme="dark"] .bg-surface\/98 { background-color: rgba(13,22,38,0.98) !important; }
+[data-theme="dark"] .text-on-surface { color: #dce4f7 !important; }
+[data-theme="dark"] .text-on-surface-variant { color: #9eaec4 !important; }
+[data-theme="dark"] .border-outline-variant\/30,
+[data-theme="dark"] .border-outline-variant\/20,
+[data-theme="dark"] .border-outline-variant\/50,
+[data-theme="dark"] .border-outline-variant { border-color: rgba(44,62,90,0.5) !important; }
+[data-theme="dark"] .text-primary { color: #6dd4c8 !important; }
+[data-theme="dark"] .tab-btn.active { border-bottom-color: #6dd4c8 !important; color: #6dd4c8 !important; }
+[data-theme="dark"] .text-on-secondary-container { color: #6dd4c8 !important; }
+[data-theme="dark"] .bg-secondary-container { background-color: #0a3d30 !important; }
+[data-theme="dark"] .shadow-sm { box-shadow: 0 1px 4px rgba(0,0,0,0.4) !important; }
+[data-theme="dark"] input, [data-theme="dark"] textarea {
+    background-color: #1e2b42 !important; color: #dce4f7 !important; border-color: #2c3e5a !important;
+}
+[data-theme="dark"] .glass-panel { background: rgba(13,22,38,0.85) !important; }
+[data-theme="dark"] .text-secondary { color: #4edea3 !important; }
+[data-theme="dark"] .bg-primary { background-color: #6dd4c8 !important; }
+[data-theme="dark"] .text-on-primary { color: #0d1626 !important; }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Navigation -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-20 max-w-[1440px] mx-auto bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-base">
+<a href="../index.html" class="flex items-center gap-2">
+<img class="site-logo-img h-8 w-auto" src="" alt="StudyGate International Logo" style="display:inline-block; visibility:visible; opacity:1;">
+<span class="site-logo-text-only text-headline-md font-headline-md font-bold text-on-surface tracking-tight">StudyGate</span>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="../index.html" data-translate="nav.home">Home</a>
+<a class="text-primary font-bold text-label-md font-label-md border-b-2 border-primary pb-1" href="universities.html" data-translate="nav.universities">Universities</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="courses.html" data-translate="nav.courses">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="services.html" data-translate="nav.services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="team.html" data-translate="nav.team">Our Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="contact.html" data-translate="nav.contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2">
+<button class="flex items-center gap-1 px-3 py-2 hover:bg-surface-container-high/50 rounded-full transition-all duration-300 text-label-md font-label-md text-on-surface-variant" id="languageToggle" aria-label="Toggle language"><span class="material-symbols-outlined text-[18px]">language</span><span class="lang-label">EN</span></button>
+<button class="p-2 hover:bg-surface-container-high/50 rounded-full transition-all duration-300" id="themeToggle"><span class="material-symbols-outlined">dark_mode</span></button>
+</div>
+<a href="../admin.html" class="hidden lg:block px-6 py-2.5 rounded-full text-label-md font-bold border border-outline-variant hover:bg-surface-container-high/50 transition-all duration-300" data-translate="nav.login">Login</a>
+<a href="apply.html" class="hidden sm:inline-block px-6 py-2.5 bg-primary text-on-primary rounded-full text-label-md font-bold hover:translate-y-[-2px] transition-all duration-200" data-translate="nav.applyNow">Apply Now</a>
+<button class="sm:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container-high/50 transition-colors" aria-label="Open menu" onclick="toggleMobileNav()"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</header>
+
+<!-- Mobile Nav -->
+<div id="mobileNavDrawer" class="fixed inset-0 z-[200] bg-surface/98 backdrop-blur-xl sm:hidden flex-col p-6" style="display:none;">
+<div class="flex justify-between items-center mb-8 pb-4 border-b border-outline-variant/30">
+<span class="text-headline-md font-bold text-on-surface">StudyGate</span>
+<button onclick="toggleMobileNav()" class="p-2 rounded-lg hover:bg-surface-container-high/50 transition-colors" aria-label="Close menu"><span class="material-symbols-outlined">close</span></button>
+</div>
+<nav class="flex flex-col gap-1">
+<a href="../index.html" class="text-body-md font-medium text-on-surface px-4 py-3 rounded-xl hover:bg-surface-container-high/50 transition-colors" data-translate="nav.home" onclick="toggleMobileNav()">Home</a>
+<a href="universities.html" class="text-body-md font-medium text-primary px-4 py-3 rounded-xl bg-surface-container-high/50" data-translate="nav.universities">Universities</a>
+<a href="courses.html" class="text-body-md font-medium text-on-surface px-4 py-3 rounded-xl hover:bg-surface-container-high/50 transition-colors" data-translate="nav.courses" onclick="toggleMobileNav()">Courses</a>
+<a href="services.html" class="text-body-md font-medium text-on-surface px-4 py-3 rounded-xl hover:bg-surface-container-high/50 transition-colors" data-translate="nav.services" onclick="toggleMobileNav()">Services</a>
+<a href="team.html" class="text-body-md font-medium text-on-surface px-4 py-3 rounded-xl hover:bg-surface-container-high/50 transition-colors" data-translate="nav.team" onclick="toggleMobileNav()">Our Team</a>
+<a href="contact.html" class="text-body-md font-medium text-on-surface px-4 py-3 rounded-xl hover:bg-surface-container-high/50 transition-colors" data-translate="nav.contact" onclick="toggleMobileNav()">Contact</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/30">
+<a href="apply.html" class="block w-full text-center bg-primary text-on-primary px-6 py-4 rounded-xl font-bold text-label-md hover:translate-y-[-2px] transition-transform" data-translate="nav.applyNow" onclick="toggleMobileNav()">Apply Now</a>
+</div>
+</div>
+<script>
+function toggleMobileNav() {
+    const drawer = document.getElementById('mobileNavDrawer');
+    const isHidden = drawer.style.display === 'none' || !drawer.style.display;
+    drawer.style.display = isHidden ? 'flex' : 'none';
+    if (isHidden) drawer.style.flexDirection = 'column';
+    document.body.style.overflow = isHidden ? 'hidden' : '';
+}
+</script>
+
+<main>
+
+<!-- University Header Card Section -->
+<section class="section bg-surface-container-low py-12">
+<div class="max-w-[1440px] mx-auto">
+<!-- Breadcrumb -->
+<nav class="breadcrumb text-label-md text-on-surface-variant mb-8" aria-label="Breadcrumb">
+<a href="../index.html" class="hover:text-secondary transition-colors" data-translate="nav.home">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a href="universities.html" class="hover:text-secondary transition-colors" data-translate="nav.universities">Universities</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-medium" id="breadcrumbUniName">Loading...</span>
+</nav>
+
+<!-- University Header Card -->
+<section id="uniHeaderSection">
+<div class="loading-state" id="headerLoading">Loading university...</div>
+<div id="headerContent" class="premium-card p-8 flex flex-col md:flex-row items-start md:items-center gap-8" style="display:none;">
+    <div class="w-24 h-24 md:w-32 md:h-32 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
+        <img id="uniLogo" src="" alt="University Logo" class="w-full h-full object-contain p-3" onerror="this.style.display='none';this.parentElement.querySelector('.logo-fallback').style.display='flex';">
+        <span class="logo-fallback w-full h-full flex items-center justify-center text-headline-lg font-bold text-secondary" id="uniLogoFallback" style="display:none;"></span>
+    </div>
+    <div class="flex-1 min-w-0">
+        <h1 class="headline-lg text-on-surface mb-3" id="uniName">University Name</h1>
+        <div class="flex items-center gap-1.5 text-on-surface-variant text-body-md mb-6">
+            <span class="material-symbols-outlined text-[18px] text-secondary">location_on</span>
+            <span id="uniLocationHeader">Location</span>
+        </div>
+        <div class="flex flex-wrap gap-3">
+            <button onclick="applyNow()" class="btn btn-primary px-6 py-3 text-label-md font-bold transition-all" data-translate="uniDetail.applyNow">Apply Now</button>
+            <button onclick="askUs()" class="btn btn-secondary px-6 py-3 text-label-md font-bold transition-all" data-translate="uniDetail.askUs">Ask Us</button>
+        </div>
+    </div>
+</div>
+</section>
+</div>
+</section>
+
+<!-- Main Content -->
+<section class="section py-section-gap">
+<div class="max-w-[1440px] mx-auto">
+
+<!-- Tabs -->
+<div class="flex items-center gap-8 border-b border-outline-variant/20 mb-12 overflow-x-auto">
+<button class="tab-btn active py-4 text-label-md font-semibold text-on-surface-variant hover:text-secondary transition-colors flex items-center gap-2 border-b-2 border-transparent border-secondary whitespace-nowrap" data-tab="tabOverview">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span data-translate="uniDetail.overview">Overview</span>
+</button>
+<button class="tab-btn py-4 text-label-md font-semibold text-on-surface-variant hover:text-secondary transition-colors flex items-center gap-2 border-b-2 border-transparent whitespace-nowrap" data-tab="tabCourses">
+<span class="material-symbols-outlined text-[20px]">school</span>
+<span data-translate="uniDetail.courses">Courses</span>
+</button>
+</div>
+
+<!-- Tab: Overview -->
+<div id="tabOverview" class="tab-content active">
+
+    <!-- Intro + Image -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-gutter-desktop mb-12">
+        <div class="lg:col-span-3 flex flex-col gap-6">
+            <div>
+                <h2 class="section-title text-on-surface mb-4" id="studyAtTitle">Study at This University</h2>
+                <p class="text-on-surface-variant text-body-md leading-relaxed" id="introText"></p>
+            </div>
+            <div id="aboutSection">
+                <h3 class="font-bold text-on-surface mb-2" id="aboutTitle">About</h3>
+                <div class="text-on-surface-variant text-body-md leading-relaxed" id="aboutContent"></div>
+            </div>
+        </div>
+        <div class="lg:col-span-2">
+            <div class="rounded-2xl overflow-hidden border border-outline-variant/30 bg-surface-container-low h-60 lg:h-full min-h-[200px]">
+                <img id="uniImage" src="" alt="University Campus" class="w-full h-full object-cover" style="display:none;">
+                <div class="w-full h-full flex items-center justify-center text-on-surface-variant" id="uniImagePlaceholder">
+                    <span class="material-symbols-outlined text-[64px]">account_balance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube Video -->
+    <div id="videoEmbed" class="mb-12 rounded-2xl overflow-hidden border border-outline-variant/30 aspect-video" style="display:none;">
+        <iframe id="youtubeFrame" src="" class="w-full h-full" allowfullscreen></iframe>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div id="countdownSection" class="mb-12 rounded-2xl bg-primary text-on-primary p-8 text-center" style="display:none;">
+        <h3 class="font-headline-md text-headline-md mb-2" data-translate="uniDetail.registerNow">Register Now and Secure Your Spot!</h3>
+        <p class="text-on-primary/80 mb-6" data-translate="uniDetail.intakeTitle">Your Future Starts Here. Register Today for the Upcoming Intake</p>
+        <div class="flex items-center justify-center gap-4 md:gap-8 mb-6">
+            <div class="text-center">
+                <div class="text-[48px] font-bold countdown-pulse" id="countDays">00</div>
+                <div class="text-label-md uppercase tracking-wider opacity-80" data-translate="uniDetail.days">Days</div>
+            </div>
+            <div class="text-[32px] font-bold opacity-60">:</div>
+            <div class="text-center">
+                <div class="text-[48px] font-bold countdown-pulse" id="countHours">00</div>
+                <div class="text-label-md uppercase tracking-wider opacity-80" data-translate="uniDetail.hours">Hours</div>
+            </div>
+            <div class="text-[32px] font-bold opacity-60">:</div>
+            <div class="text-center">
+                <div class="text-[48px] font-bold countdown-pulse" id="countMinutes">00</div>
+                <div class="text-label-md uppercase tracking-wider opacity-80" data-translate="uniDetail.minutes">Minutes</div>
+            </div>
+            <div class="text-[32px] font-bold opacity-60">:</div>
+            <div class="text-center">
+                <div class="text-[48px] font-bold countdown-pulse" id="countSeconds">00</div>
+                <div class="text-label-md uppercase tracking-wider opacity-80" data-translate="uniDetail.seconds">Seconds</div>
+            </div>
+        </div>
+        <button onclick="applyNow()" class="px-8 py-3 bg-on-primary text-primary rounded-full font-bold text-label-md hover:translate-y-[-2px] transition-all" data-translate="uniDetail.secureSeat">Secure Your Seat Now!</button>
+    </div>
+
+    <!-- Quick Info Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 mb-12">
+        <div class="stat-card">
+            <div class="stat-card-icon bg-secondary/10 text-secondary mb-3">
+                <span class="material-symbols-outlined text-[28px]">verified</span>
+            </div>
+            <div class="font-bold text-on-surface text-[22px] mb-1" id="offerLetterValue">Free</div>
+            <div class="text-on-surface-variant text-label-md uppercase tracking-widest" data-translate="uniDetail.offerLetter">Offer Letter</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-icon bg-tertiary/10 text-tertiary mb-3">
+                <span class="material-symbols-outlined text-[28px]">calendar_month</span>
+            </div>
+            <div class="font-bold text-on-surface text-[22px] mb-1" id="intakeValue">Jan, Jul, Sep</div>
+            <div class="text-on-surface-variant text-label-md uppercase tracking-widest" data-translate="uniDetail.intake">Intake</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-icon bg-secondary/10 text-secondary mb-3">
+                <span class="material-symbols-outlined text-[28px]">location_on</span>
+            </div>
+            <div class="font-bold text-on-surface text-[22px] mb-1" id="locationValue">Malaysia</div>
+            <div class="text-on-surface-variant text-label-md uppercase tracking-widest" data-translate="uniDetail.location">Location</div>
+        </div>
+    </div>
+
+    <!-- FAQs -->
+    <div id="faqSection" style="display:none;" class="mt-12">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-6" id="faqTitle" data-translate="uniDetail.faq">Frequently Asked Questions</h2>
+        <div id="faqList" class="flex flex-col gap-3 max-w-3xl"></div>
+    </div>
+
+</div>
+
+<!-- Tab: Courses -->
+<div id="tabCourses" class="tab-content">
+    <div class="mb-8">
+        <h2 class="section-title" id="coursesTitle" data-translate="uniDetail.coursesTitle">Courses and Fees for International Students</h2>
+        <!-- Course Search (global catalog) -->
+        <div class="mb-8">
+            <div class="flex items-center gap-3 bg-surface-container-lowest border border-outline-variant/20 rounded-2xl px-6 py-3.5 max-w-xl shadow-sm hover:border-outline-variant/40 transition-all focus-within:ring-2 focus-within:ring-primary/20">
+                <span class="material-symbols-outlined text-on-surface-variant">search</span>
+                <input type="text" id="courseSearchInput" data-translate-placeholder="uniDetail.searchPlaceholder" placeholder="Search courses..." class="flex-1 bg-transparent border-none focus:ring-0 text-body-md outline-none text-on-surface placeholder:text-on-surface-variant"/>
+            </div>
+            <div id="courseSearchResults" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+        <!-- Courses grouped by category -->
+        <div id="courseCategories" class="flex flex-col gap-3">
+            <div class="loading-state">Loading courses...</div>
+        </div>
+    </div>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest py-section-gap px-margin-mobile md:px-margin-desktop border-t border-outline-variant/50">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop mb-16">
+<div class="space-y-6">
+<span class="text-headline-md font-headline-md font-bold text-primary">StudyGate</span>
+<p class="text-on-surface-variant text-body-md" data-translate="footer.tagline">Empowering global ambitions through personalized educational mentorship and institutional partnerships.</p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6" data-translate="footer.quickLinks">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="universities.html" data-translate="nav.universities">Universities</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="courses.html" data-translate="nav.courses">Courses</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="services.html" data-translate="nav.services">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="contact.html" data-translate="nav.contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6" data-translate="footer.company">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="../index.html" data-translate="nav.home">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="team.html" data-translate="nav.team">Our Team</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline underline-offset-4" href="apply.html" data-translate="nav.applyNow">Apply Now</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6" data-translate="footer.contactInfo">Contact Info</h4>
+<ul class="flex flex-col gap-4 text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary">location_on</span><span id="footerUniAddress">-</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">phone</span><span id="footerUniPhone">-</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">mail</span><span id="footerUniEmail">-</span></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-body-md text-on-surface-variant" data-translate="footer.copyright">© 2026 StudyGate International. All Rights Reserved.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#" data-translate="footer.privacyPolicy">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md" href="#" data-translate="footer.termsConditions">Terms &amp; Conditions</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div id="whatsappButton" class="fixed bottom-6 right-6 z-40" style="display:none;">
+<a id="whatsappLink" href="#" target="_blank" class="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378L.627 22.5l1.96-7.135a9.87 9.87 0 01-1.37-4.986C1.22 4.999 6.218 0 12.396 0c2.974 0 5.771 1.157 7.874 3.261a11.037 11.037 0 013.256 7.881c-.003 6.177-5 11.174-11.175 11.174z"/></svg>
+</a>
+</div>
+
+<script src="../js/dark-mode.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="../js/firebase-config.js"></script>
+<script src="../js/database-init.js"></script>
+<script src="../js/translations.js"></script>
+<script src="../js/currency.js"></script>
+<script src="../js/site-logo.js"></script>
+<script src="../js/site-hero.js"></script>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+});
+
+const urlParams = new URLSearchParams(window.location.search);
+const uniId = urlParams.get('id');
+
+const fixPath = (path) => {
+    if (!path) return null;
+    if (path.startsWith('../') || path.startsWith('http')) return path;
+    return '../' + path;
+};
+
+let currentUniversityData = null;
+let globalCourseCatalog = [];
+
+function formatTuitionFromMYR(feesInMYR) {
+    if (window.currencyManager) {
+        const code = window.currencyManager.getSelectedCurrency();
+        return window.currencyManager.formatFromMYR(feesInMYR || 0, code, 0);
+    }
+    return `MYR ${(feesInMYR || 0).toLocaleString()}`;
+}
+
+function formatOfferingFee(offering) {
+    const amount = Number(offering?.fees) || 0;
+    const currency = String(offering?.currency || 'MYR').toUpperCase();
+    if (window.currencyManager) {
+        const selected = window.currencyManager.getSelectedCurrency();
+        return window.currencyManager.formatFrom(amount, currency, selected, 0);
+    }
+    if (currency === 'MYR') return formatTuitionFromMYR(amount);
+    return `${currency} ${amount.toLocaleString()}`;
+}
+
+function formatDurationYearsValue(value) {
+    const years = Number(value);
+    if (!Number.isFinite(years) || years <= 0) return '';
+    return `${years} year${years === 1 ? '' : 's'}`;
+}
+
+function formatSemestersValue(value) {
+    const semesters = Number(value);
+    if (!Number.isFinite(semesters) || semesters <= 0) return '';
+    return `${semesters}`;
+}
+
+function getInitials(value) {
+    const text = String(value || '').trim();
+    if (!text) return 'UNI';
+    return text.split(/\s+/).map(p => p[0]).slice(0, 3).join('').toUpperCase();
+}
+
+function isLogoPath(path) {
+    const value = String(path || '').toLowerCase().replace(/\\/g, '/');
+    return value.endsWith('/assets/images/logo.png') || value.endsWith('assets/images/logo.png');
+}
+
+async function loadGlobalCourseCatalog() {
+    if (typeof getCoursesWithUniversities === 'function') {
+        globalCourseCatalog = await getCoursesWithUniversities();
+        return;
+    }
+    try {
+        const [courses, universities] = await Promise.all([getCourses(), getUniversities()]);
+        const courseMap = new Map();
+        courses.forEach(c => courseMap.set(c.id, { ...c, universities: [] }));
+        universities.forEach(uni => {
+            (uni.courseOfferings || []).forEach(offering => {
+                const course = courseMap.get(offering.courseId);
+                if (!course) return;
+                course.universities.push({ id: uni.id, name: uni.name, shortCode: uni.shortCode || '', logo: uni.logo || '', location: uni.location || 'Malaysia', fees: Number(offering.fees) || 0, currency: offering.currency || 'MYR' });
+            });
+        });
+        globalCourseCatalog = Array.from(courseMap.values());
+    } catch(e) { globalCourseCatalog = []; }
+}
+
+function renderCourseCategories(uni) {
+    const courses = Array.isArray(uni?.courses) ? uni.courses : [];
+    const container = document.getElementById('courseCategories');
+    if (courses.length === 0) {
+        container.innerHTML = '<p class="text-on-surface-variant py-8 text-center">No courses listed yet.</p>';
+        return;
+    }
+    document.getElementById('coursesTitle').textContent = `${uni.name} — Courses & Fees for International Students`;
+    const grouped = {};
+    courses.forEach(c => { const cat = c.category || 'Other'; if (!grouped[cat]) grouped[cat] = []; grouped[cat].push(c); });
+
+    container.innerHTML = Object.keys(grouped).map((category, idx) => `
+        <div class="course-category border border-outline-variant/30 rounded-2xl overflow-hidden bg-surface-container-lowest ${idx === 0 ? 'open' : ''}">
+            <button class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-surface-container-low transition-colors" onclick="toggleCategory(this)">
+                <span class="font-bold text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary">folder</span>
+                    ${category}
+                    <span class="text-on-surface-variant font-normal text-label-md">(${grouped[category].length})</span>
+                </span>
+                <span class="material-symbols-outlined cat-chevron text-on-surface-variant">expand_more</span>
+            </button>
+            <div class="category-courses">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-body-md">
+                        <thead>
+                            <tr class="bg-surface-container-low text-on-surface-variant text-label-md uppercase tracking-wider">
+                                <th class="text-left px-6 py-3" data-translate="uniDetail.program">Program</th>
+                                <th class="text-left px-6 py-3" data-translate="uniDetail.tuitionFees">Tuition / Year</th>
+                                <th class="text-left px-6 py-3" data-translate="uniDetail.duration">Duration</th>
+                                <th class="text-left px-6 py-3" data-translate="uniDetail.semesters">Semesters</th>
+                                <th class="text-left px-6 py-3" data-translate="common.apply">Apply</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline-variant/20">
+                            ${grouped[category].map(c => `
+                                <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                    <td class="px-6 py-4"><a href="course-detail.html?id=${encodeURIComponent(c.id)}" class="text-primary hover:underline font-medium">${c.name}</a></td>
+                                    <td class="px-6 py-4 text-on-surface-variant">${formatOfferingFee(c)}</td>
+                                    <td class="px-6 py-4 text-on-surface-variant">${formatDurationYearsValue(c.durationYears)}</td>
+                                    <td class="px-6 py-4 text-on-surface-variant">${formatSemestersValue(c.semesters)}</td>
+                                    <td class="px-6 py-4">
+                                        <a href="apply.html?uni=${encodeURIComponent(uni.id)}&course=${encodeURIComponent(c.id)}" class="inline-flex items-center gap-1 px-4 py-2 bg-primary text-on-primary rounded-full text-label-md font-bold hover:translate-y-[-1px] transition-all">
+                                            <span data-translate="common.apply">Apply</span>
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderCourseSearchResults(query) {
+    const container = document.getElementById('courseSearchResults');
+    if (!container) return;
+    const text = String(query || '').trim().toLowerCase();
+    if (!text) { container.innerHTML = ''; return; }
+    const matches = globalCourseCatalog.filter(c => `${c.name||''} ${c.category||''} ${c.level||''} ${c.description||''}`.toLowerCase().includes(text)).slice(0, 8);
+    if (!matches.length) {
+        container.innerHTML = '<div class="col-span-2 text-on-surface-variant text-body-md py-4">No matching courses found.</div>';
+        return;
+    }
+    container.innerHTML = matches.map(course => {
+        const logos = (course.universities || []).slice(0, 4);
+        const more = Math.max(0, (course.universities || []).length - logos.length);
+        return `
+            <a href="course-detail.html?id=${encodeURIComponent(course.id)}" class="flex items-start gap-3 p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                <div class="flex-1 min-w-0">
+                    <div class="font-medium text-on-surface mb-0.5">${course.name || 'Untitled'}</div>
+                    <div class="text-on-surface-variant text-label-md">${course.level || 'Program'} &bull; ${course.category || 'General'}</div>
+                    <div class="flex items-center gap-1 mt-2 flex-wrap">
+                        ${logos.map(uni => `
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container border border-outline-variant/30 text-[10px] font-bold text-on-surface-variant overflow-hidden">
+                                ${uni.logo ? `<img src="${fixPath(uni.logo)}" alt="${uni.shortCode||uni.name}" class="w-full h-full object-contain">` : getInitials(uni.shortCode||uni.name)}
+                            </span>
+                        `).join('')}
+                        ${more > 0 ? `<span class="text-on-surface-variant text-label-md">+${more}</span>` : ''}
+                    </div>
+                </div>
+            </a>
+        `;
+    }).join('');
+}
+
+// Countdown
+let countdownInterval;
+function startCountdown(targetDate) {
+    const target = new Date(targetDate).getTime();
+    countdownInterval = setInterval(() => {
+        const now = Date.now();
+        const diff = target - now;
+        if (diff <= 0) { clearInterval(countdownInterval); document.getElementById('countdownSection').style.display = 'none'; return; }
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        document.getElementById('countDays').textContent = String(days).padStart(2, '0');
+        document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('countMinutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('countSeconds').textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+}
+
+function toggleFaq(element) { element.closest('.faq-item').classList.toggle('open'); }
+function toggleCategory(element) { element.closest('.course-category').classList.toggle('open'); }
+
+function applyNow() {
+    if (uniId) { window.location.href = `apply.html?uni=${encodeURIComponent(uniId)}`; return; }
+    window.location.href = 'contact.html?action=apply';
+}
+function askUs() {
+    const uniName = document.getElementById('uniName').textContent;
+    window.location.href = `contact.html?action=ask&uni=${encodeURIComponent(uniName)}`;
+}
+
+async function loadUniversity() {
+    if (!uniId) { document.getElementById('headerLoading').textContent = 'No university specified.'; return; }
+    try {
+        const uni = await getUniversityWithCourses(uniId);
+        currentUniversityData = uni;
+        if (!uni) { document.getElementById('headerLoading').textContent = 'University not found.'; return; }
+
+        // Header
+        document.getElementById('uniName').textContent = uni.name;
+        document.getElementById('uniLocationHeader').textContent = uni.location || 'Malaysia';
+        document.getElementById('breadcrumbUniName').textContent = uni.shortCode || uni.name;
+        document.title = `${uni.name} | StudyGate International`;
+
+        const logoImg = document.getElementById('uniLogo');
+        const logoFallback = document.getElementById('uniLogoFallback');
+        if (uni.logo && !isLogoPath(uni.logo)) {
+            logoImg.src = fixPath(uni.logo);
+            logoImg.style.display = '';
+        } else {
+            logoFallback.textContent = getInitials(uni.shortCode || uni.name);
+            logoFallback.style.display = 'flex';
+        }
+
+        document.getElementById('headerLoading').style.display = 'none';
+        document.getElementById('headerContent').style.display = 'flex';
+
+        // Overview
+        document.getElementById('studyAtTitle').textContent = `Study at ${uni.name}`;
+        document.getElementById('introText').textContent = uni.intro || uni.overview || 'Welcome to this prestigious university.';
+        document.getElementById('aboutTitle').textContent = `About ${uni.name}`;
+        document.getElementById('aboutContent').innerHTML = uni.aboutContent || uni.overview || 'Information coming soon.';
+
+        const campusImgSrc = uni.campusImage || uni.campusImageUrl || uni.image;
+        if (campusImgSrc) {
+            const img = document.getElementById('uniImage');
+            img.src = fixPath(campusImgSrc);
+            img.style.display = '';
+            document.getElementById('uniImagePlaceholder').style.display = 'none';
+        }
+
+        // YouTube
+        if (uni.youtubeVideo) {
+            const videoId = uni.youtubeVideo.includes('watch?v=') ? uni.youtubeVideo.split('watch?v=')[1].split('&')[0] : uni.youtubeVideo;
+            document.getElementById('youtubeFrame').src = `https://www.youtube.com/embed/${videoId}`;
+            document.getElementById('videoEmbed').style.display = '';
+        }
+
+        // Countdown
+        if (uni.nextIntakeDate) {
+            document.getElementById('countdownSection').style.display = '';
+            startCountdown(uni.nextIntakeDate.toDate ? uni.nextIntakeDate.toDate() : uni.nextIntakeDate);
+        }
+
+        // Quick info
+        document.getElementById('offerLetterValue').textContent = uni.offerLetterFree !== false ? 'Free' : 'Paid';
+        document.getElementById('intakeValue').textContent = Array.isArray(uni.intakeMonths) ? uni.intakeMonths.join(', ') : (uni.intakeMonths || 'Jan, Jul, Sep');
+        document.getElementById('locationValue').textContent = uni.location || 'Malaysia';
+
+        // FAQs
+        if (uni.faqs && uni.faqs.length > 0) {
+            document.getElementById('faqSection').style.display = '';
+            document.getElementById('faqTitle').textContent = `Frequently Asked Questions About ${uni.name}`;
+            document.getElementById('faqList').innerHTML = uni.faqs.map(faq => `
+                <div class="faq-item border border-outline-variant/30 rounded-xl bg-surface-container-lowest overflow-hidden">
+                    <button class="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-surface-container-low transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-medium text-on-surface">${faq.question}</span>
+                        <span class="material-symbols-outlined faq-chevron text-on-surface-variant flex-shrink-0">expand_more</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-on-surface-variant">${faq.answer}</div>
+                </div>
+            `).join('');
+        }
+
+        // Courses
+        renderCourseCategories(uni);
+        await loadGlobalCourseCatalog();
+
+    } catch(error) {
+        console.error('Error loading university:', error);
+        document.getElementById('headerLoading').textContent = 'Error loading university data.';
+    }
+}
+
+window.addEventListener('currencychange', () => { if (currentUniversityData) renderCourseCategories(currentUniversityData); });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('courseSearchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', e => renderCourseSearchResults(e.target.value));
+    }
+    if (typeof setupLanguageToggle === 'function') setupLanguageToggle();
+    setTimeout(loadUniversity, 500);
+
+    // Load contact info for footer
+    (async function loadContactInfo() {
+        if (typeof db === 'undefined') { setTimeout(loadContactInfo, 500); return; }
+        try {
+            const doc = await db.collection('contactSettings').doc('main').get();
+            if (!doc.exists) return;
+            const d = doc.data();
+            if (d.address) document.getElementById('footerUniAddress').textContent = d.address;
+            if (d.phone) document.getElementById('footerUniPhone').textContent = d.phone;
+            if (d.email) document.getElementById('footerUniEmail').textContent = d.email;
+            const wa = d.whatsapp || d.whatsappNumber || d.phone;
+            if (wa) {
+                document.getElementById('whatsappLink').href = `https://wa.me/${wa.replace(/\D/g, '')}`;
+                document.getElementById('whatsappButton').style.display = 'flex';
+            }
+        } catch(e) { console.error('Contact info error:', e); }
+    })();
+});
+</script>
+</body>
+</html>
+

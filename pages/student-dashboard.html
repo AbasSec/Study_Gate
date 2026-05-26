@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal | StudyGate International</title>
+
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/design-system.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body class="admin-body">
+    <!-- Login/Register Screen -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-card" style="max-width: 480px;">
+            <div class="login-header">
+                <img src="../assets/images/logo.png" alt="StudyGate International Logo" class="login-logo">
+                <h1>Student Portal</h1>
+                <p>Track your application status</p>
+            </div>
+
+            <!-- Tab toggle: Login / Register -->
+            <div class="auth-tabs" id="authTabs">
+                <button class="auth-tab active" id="tabLogin" onclick="showTab('login')">Sign In</button>
+                <button class="auth-tab" id="tabRegister" onclick="showTab('register')">Register</button>
+            </div>
+
+            <!-- Login form -->
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+            </form>
+
+            <!-- Register form (display:none by default) -->
+            <form id="registerForm" class="login-form" style="display:none;">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required placeholder="Min. 6 characters" minlength="6">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+            </form>
+
+            <div class="login-error" id="loginError"></div>
+        </div>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div class="student-dashboard" id="studentDashboard" style="display: none;">
+        <!-- Header -->
+        <header class="student-header">
+            <div class="student-header-inner">
+                <img src="../assets/images/logo.png" class="student-logo" alt="StudyGate International">
+                <span class="student-greeting" id="studentGreeting">Welcome</span>
+                <div class="student-header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+                        <i class="bi bi-moon"></i>
+                    </button>
+                    <button class="btn btn-outline" id="logoutBtn" onclick="handleLogout()">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="student-main">
+            <!-- Status Card -->
+            <section class="student-section">
+                <h2>Application Status</h2>
+                <div id="statusCard">
+                    <!-- 5-stage progress bar -->
+                    <div class="progress-stages">
+                        <div class="stage" data-stage="Applied" id="stage-Applied">
+                            <div class="stage-dot"></div>
+                            <span>Applied</span>
+                        </div>
+                        <div class="stage-connector"></div>
+                        <div class="stage" data-stage="Finding_Course" id="stage-Finding_Course">
+                            <div class="stage-dot"></div>
+                            <span>Finding Course</span>
+                        </div>
+                        <div class="stage-connector"></div>
+                        <div class="stage" data-stage="Visa_Stage" id="stage-Visa_Stage">
+                            <div class="stage-dot"></div>
+                            <span>Visa Stage</span>
+                        </div>
+                        <div class="stage-connector"></div>
+                        <div class="stage" data-stage="Waiting_Commission" id="stage-Waiting_Commission">
+                            <div class="stage-dot"></div>
+                            <span>Waiting</span>
+                        </div>
+                        <div class="stage-connector"></div>
+                        <div class="stage" data-stage="Enrolled" id="stage-Enrolled">
+                            <div class="stage-dot"></div>
+                            <span>Enrolled</span>
+                        </div>
+                    </div>
+                    <p class="current-status-label" id="currentStatusLabel">Status: Loading...</p>
+                    <p class="status-notes" id="statusNotes"></p>
+                </div>
+            </section>
+
+            <!-- Application Details -->
+            <section class="student-section" id="applicationSection">
+                <h2>Your Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item"><span>Name</span><strong id="detailName">—</strong></div>
+                    <div class="detail-item"><span>Email</span><strong id="detailEmail">—</strong></div>
+                    <div class="detail-item"><span>Phone</span><strong id="detailPhone">—</strong></div>
+                    <div class="detail-item"><span>Country</span><strong id="detailCountry">—</strong></div>
+                </div>
+            </section>
+
+            <!-- Status History Timeline -->
+            <section class="student-section" id="historySection">
+                <h2>Status History</h2>
+                <div class="timeline" id="statusTimeline">
+                    <!-- Timeline entries injected dynamically -->
+                </div>
+            </section>
+
+            <!-- No record state (shown when no student doc found) -->
+            <section class="student-section" id="noRecordSection" style="display:none;">
+                <div class="empty-state-card">
+                    <i class="bi bi-search" style="font-size: 3rem; color: var(--gray-400);"></i>
+                    <h3>No application found</h3>
+                    <p>We could not find an application linked to this email address. Please contact us to check your enrollment status.</p>
+                    <a href="../pages/contact.html" class="btn btn-primary">Contact Us</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/student-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+UNIVERSITY_NAME: SEGI International
+SHORT_CODE: SEGI
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION PROGRAMMES
+Foundation in Arts 35250
+Foundation in Science 36910
+Intensive English Programme 27625
+
+CERTIFICATE PROGRAMMES
+Certificate in Early Child Education 23050
+Certificate in Business Studies 23050
+Certificate in Information Technology 23050
+Certificate in Hotel Operations 23270
+Certificate of English Proficiency (CEP) 21350
+
+DIPLOMA PROGRAMMES
+Diploma in Psychology 56250
+Diploma in Computer Science 57250
+Diploma in Restaurant Management 57850
+Diploma in Early Childhood Education, HEI Teacher Certification (Dual Award) 51850
+Diploma in Early Childhood Education 56250
+Diploma in Hotel Management 59850
+Diploma in Culinary Art 59850
+Diploma in Information Technology 56250
+Diploma in Accountancy 56250
+Diploma in Mass Communications 56250
+Diploma in Business Administration 56250
+Diploma in Occupational Safety & Health 57175
+Diploma in Mechanical Engineering 55175
+Diploma in Electrical & Electronics Engineering 55175
+
+UNDERGRADUATE DEGREES - BUSINESS & MANAGEMENT
+Bachelor of Accounting and Finance (Honours) 81450
+Bachelor of Accounting and Finance (Honours) - Double Award, UCLAN 87040
+Bachelor of Business Management (Honours) 85925
+Bachelor of Business Management (Honours) - Double Award, UCLAN 91515
+Bachelor of Mass Communications (Hons) 88705
+Bachelor of Arts (Hons) Visual Communications Design 86550
+Bachelor of Arts (Hons) Multimedia Design 86550
+
+UNDERGRADUATE DEGREES - ENGINEERING
+Bachelor of Electrical and Electronics Engineering with Honours 113625
+Bachelor of Civil Engineering with Honours 113625
+Bachelor of Mechanical Engineering with Honours 113625
+Bachelor of Chemical Engineering with Honours 113625
+Bachelor of Mechatronics Engineering with Honours 113625
+
+UNDERGRADUATE DEGREES - HEALTH SCIENCES
+Bachelor of Medicine and Bachelor of Surgery 378400
+Bachelor of Dental Surgery 128250
+Bachelor of Pharmacy with Honours 158250
+Bachelor of Optometry (Hons) 128250
+Bachelor of Physiotherapy (Honours) 119550
+Bachelor of Biomedical Science (Hons) 119550
+
+UNDERGRADUATE DEGREES - COMPUTING & TECHNOLOGY
+Bachelor of Information Technology (Hons) 85925
+Bachelor of Information Technology (Hons) - Double Award, UCLAN 91515
+Bachelor of Computer Science (Honours) 92950
+
+UNDERGRADUATE DEGREES - EDUCATION & HUMANITIES
+Bachelor of Education (Hons) 89625
+Bachelor of Education (Hons) - Double Award, UCLAN 95215
+Bachelor of Psychology (Honours) 95050
+Bachelor of Arts (Hons) English & Public Relations 83705
+Bachelor of Arts (Hons) English & Public Relations - Double Award, UCLAN 89295
+Bachelor of Hospitality Management (Honours) 85925
+Bachelor of Hospitality Management (Honours) - Double Award, UCLAN 91515
+
+UNDERGRADUATE DEGREES - ARCHITECTURE & BUILT ENVIRONMENT
+Bachelor of Science (Hons) Architecture 104550
+Bachelor of Arts (Honours) in Interior Architecture 95550
+Bachelor of Science (Hons) Quantity Surveying 84175
+
+POSTGRADUATE - MASTER'S PROGRAMMES
+Master of Business Administration 45150
+Master of Business Administration - Finance, Marketing, HRM, Global Business 54350
+Master of Business Administration - Finance, Marketing, HRM, Global Business - Double Award, UCLAN 59940
+Master of Accountancy 56900
+Master of Law (LL.M) in Advanced Legal Practice 54250
+Master of Arts in Corporate Communications 49650
+Master in Financial Planning 54250
+Master of Science (Pharmaceutical Sciences) - by Research 51950
+Master of Science (Engineering) - by Research 59950
+Master of Science (Vision Science) - by Research 58050
+Master of Science in Information Technology - by Coursework 50300
+Master of Science (Information Technology) - by Research 54100
+Master of Science (Management) - by Research 55100
+Master of Education - by Coursework 47250
+Master of Education - by Research 51150
+Master of Social Science in Psychology 50300
+
+POSTGRADUATE - DOCTORAL PROGRAMMES
+Doctor of Philosophy (Engineering) 78450
+Doctor of Philosophy (Education) 78450
+Doctor of Philosophy (Information Technology) 60550
+Doctor of Philosophy (Management) 70650
+Doctor of Business Administration 81850
+
+PARTNER UNIVERSITY PROGRAMMES - UNIVERSITY OF GREENWICH (UOG)
+Foundation in Arts (DA - UOG) 23050
+BA (Hons) Accounting & Finance 36392
+BA (Hons) Advertising and Digital Marketing Communications 35408
+BA (Hons) Early Years Education 26335
+BSc (Hons) Psychology 38200
+BA (Hons) Accounting & Finance (2+0) 62478
+BA (Hons) Advertising & Digital Marketing Communications (2+0) 67978
+BA (Hons) Early Years Education (2+0) 62478
+BSc (Hons) Computing (2+0) 62478
+BA (Hons) Accounting & Finance (3+0) 85358
+BA (Hons) Advertising & Digital Marketing Communications (3+0) 85358
+BA (Hons) Early Years Education (3+0) 85358
+BSc (Hons) Computing (3+0) 85358
+Bachelor of Education (Honours) in collaboration with SEGi University 85925
+Bachelor of Psychology (Honours) in collaboration with SEGi University 91350
+
+PARTNER UNIVERSITY PROGRAMMES - UNIVERSITY SAINS MALAYSIA
+Bachelor in Nursing (Hons) in Collaboration with University Sains Malaysia (USM) 84783
+
+RAW_CONTENT_END

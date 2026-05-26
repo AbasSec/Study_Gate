@@ -1,0 +1,82 @@
+UNIVERSITY_NAME: Universiti Teknologi Malaysia
+SHORT_CODE: UTM
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FACULTY OF CIVIL ENGINEERING
+Bachelor of Civil Engineering with Honours 14758
+
+FACULTY OF ELECTRICAL ENGINEERING
+Bachelor of Electrical Engineering with Honours 14758
+Bachelor of Engineering (Electrical-Mechatronics) with Honours 14758
+Bachelor of Electronic Engineering with Honours 14758
+Bachelor of Biomedical Engineering with Honours 14758
+
+FACULTY OF MECHANICAL ENGINEERING
+Bachelor of Mechanical Engineering with Honours 14758
+Bachelor of Mechanical Engineering (Manufacturing) with Honours 14758
+Bachelor of Mechanical Engineering (Aeronautics) with Honours 14758
+Bachelor of Naval Architecture and Offshore Engineering with Honours 14758
+Bachelor of Petroleum Engineering with Honours 14758
+
+FACULTY OF CHEMICAL AND ENERGY ENGINEERING
+Bachelor of Chemical Engineering with Honours 14758
+Bachelor of Chemical Engineering (Bioprocess) with Honours 14758
+Bachelor of Chemical Engineering (Gas) with Honours 14758
+Bachelor of Nuclear Engineering with Honours 14758
+
+FACULTY OF COMPUTING
+Bachelor in Software Engineering with Honours 14258
+Bachelor of Computer Science (Computer Networks and Security) with Honours 14258
+Bachelor of Computer Science (Graphics and Multimedia Software) with Honours 14258
+
+FACULTY OF BUILT ENVIRONMENT AND SURVEYING
+Bachelor of Science in Architecture with Honours 13730
+Bachelor of Landscape Architecture with Honours 13258
+Bachelor of Urban and Regional Planning with Honours 13258
+Bachelor of Quantity Surveying with Honours 13258
+Bachelor of Real Estate with Honours 13258
+Bachelor of Science in Construction with Honours 13258
+Bachelor of Geomatics Engineering with Honours 13258
+Bachelor of Science in Geoinformatics with Honours 12758
+Bachelor of Science in Land Administration and Development with Honours 12758
+
+FACULTY OF SCIENCE
+Bachelor of Science (Chemistry) with Honours 13258
+Bachelor of Science (Mathematics) with Honours 13258
+Bachelor of Science (Physics) with Honours 13258
+Bachelor of Science (Industrial Chemistry) with Honours 13258
+Bachelor of Science (Industrial Mathematics) with Honours 13258
+Bachelor of Science (Industrial Physics) with Honours 13258
+Bachelor of Science Biology with Honours 13258
+Bachelor of Science in Biotechnology with Honours 13258
+
+FACULTY OF ARTIFICIAL INTELLIGENCE
+Bachelor in Artificial Intelligence with Honours 14258
+
+FACULTY OF SOCIAL SCIENCES AND HUMANITIES
+Bachelor in Human Resource Development with Honours 13258
+Bachelor of Psychology with Human Resource Development with Honours 13258
+
+FACULTY OF MANAGEMENT
+Bachelor of Management with Honours 12758
+Bachelor in Accounting with Honours 13258
+Bachelor of Management (Marketing) with Honours 13258
+
+MALAYSIA - JAPAN INTERNATIONAL INSTITUTE OF TECHNOLOGY
+Bachelor of Chemical Process Engineering with Honours 75000
+Bachelor of Electronic Systems Engineering with Honours 75000
+Bachelor of Mechanical Precision Engineering with Honours 75000
+Bachelor in Software Engineering (MJIIT) with Honours 76000
+Bachelor of Science (Industrial Mathematics) with Honours 76000
+
+SUPPORT PROGRAMMES
+Intensive English Programme (IEP) 12469
+Certified Intensive English Programme (CIEP) 7569
+Bridging Programme 11469
+
+RAW_CONTENT_END

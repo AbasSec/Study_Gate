@@ -1,0 +1,62 @@
+UNIVERSITY_NAME: Asia Pacific University of Technology and Innovation
+SHORT_CODE: APU
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION PROGRAMMES
+APU Foundation Programme - Engineering Pathway 19800
+APU Foundation Programme - Computing & Technology Pathway 27900
+APU Foundation Programme - Business, Finance & Social Sciences Pathway 28500
+APU Foundation Programme - Architecture & Design Pathway 27900
+APU Foundation in Computing (ODL) 52600
+
+DIPLOMA PROGRAMMES
+Diploma in Information & Communication Technology 21200
+Diploma in Information & Communication Technology - Software Engineering 21200
+Diploma in Information & Communication Technology - Data Informatics 21200
+Diploma in Information & Communication Technology - Interactive Technology 21200
+Diploma in Business Administration 21200
+Diploma in Accounting 21200
+Diploma in Business Information Technology 21200
+Diploma in International Studies 21200
+Diploma in Design and Media 21200
+Diploma in Mechatronic Engineering 21200
+
+CERTIFICATE PROGRAMMES
+Certificate in Administrative Skills 2650
+Certificate in Information & Communication Technology 2650
+
+BACHELOR'S DEGREE PROGRAMMES
+Bachelor of Computing & Technology 33600
+Bachelor of Interactive Media and Immersive Technology 33600
+Bachelor of Virtual Reality and Augmented Reality 33600
+Bachelor of Computer Games Development 33600
+Bachelor of Business Management 33600
+Bachelor of Digital Marketing 33600
+Bachelor of Human Resource Management 33600
+Bachelor of Tourism & Hospitality 33600
+Bachelor of Accounting & Finance 33600
+Bachelor of Forensic Accounting 33600
+Bachelor of Actuarial Studies 33600
+Bachelor of Banking & Finance 33600
+Bachelor of Financial Technology (FinTech) 33600
+Bachelor of Investment Analytics 33600
+Bachelor of International Relations 33600
+Bachelor of Media & Communication 33600
+Bachelor of Psychology 33600
+Bachelor of Architecture 33600
+Bachelor of Industrial Design 33600
+Bachelor of Visual Effects 33600
+Bachelor of Animation 33600
+Bachelor of Digital Advertising 33600
+Bachelor of Mechatronic Engineering 31600
+Bachelor of Mechanical Engineering 31600
+Bachelor of Computer Engineering 31600
+Bachelor of Electrical & Electronic Engineering 31600
+Bachelor of Petroleum Engineering 31600
+
+RAW_CONTENT_END

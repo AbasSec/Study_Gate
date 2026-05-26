@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Universities | Horizons Global Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "on-surface": "#0b1c30",
+                    "on-surface-variant": "#45464d",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-container": "#00201d",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary": "#000000",
+                    "surface-bright": "#f8f9ff",
+                    "outline": "#76777d",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#131b2e",
+                    "outline-variant": "#c6c6cd",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#dae2fd",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-container": "#7c839b",
+                    "surface-tint": "#565e74",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#0c9488",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-primary": "#bec6e0",
+                    "primary-container": "#131b2e",
+                    "secondary": "#006c49",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#002113",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#00201d",
+                    "surface-variant": "#d3e4fe",
+                    "on-background": "#0b1c30",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed": "#89f5e7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "section-gap": "120px",
+                    "gutter-desktop": "24px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "gutter-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "status-pill": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .university-card {
+            box-shadow: 0 8px 32px 0 rgba(11, 28, 48, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .university-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 12px 40px 0 rgba(11, 28, 48, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .countdown-pulse {
+            animation: soft-pulse 2s infinite;
+        }
+        @keyframes soft-pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight">Horizons</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold text-label-md font-label-md" href="#">Universities</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full border border-outline-variant/50">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md font-label-md w-48" placeholder="Search institutions..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high/50 p-2 rounded-full transition-all">language</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high/50 p-2 rounded-full transition-all">dark_mode</button>
+<div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+<button class="hidden sm:block text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Login</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-label-md font-label-md font-bold transition-all hover:translate-y-[-2px] active:scale-[0.98]">Apply Now</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-desktop py-12">
+<!-- Hero Section -->
+<section class="mb-16">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Discover Your Future</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with world-class institutions and embark on a transformative educational journey tailored to your global ambitions.</p>
+</section>
+<!-- Filters Section -->
+<section class="mb-12 sticky top-24 z-40">
+<div class="glass-panel p-6 rounded-2xl border border-outline-variant/30 shadow-sm flex flex-wrap items-end gap-6">
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Country</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-3 text-body-md focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all outline-none appearance-none">
+<option>All Locations</option>
+<option>United Kingdom</option>
+<option>United States</option>
+<option>Australia</option>
+<option>Canada</option>
+</select>
+</div>
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Subject Area</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-3 text-body-md focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all outline-none appearance-none">
+<option>All Subjects</option>
+<option>Business &amp; Management</option>
+<option>Engineering &amp; Tech</option>
+<option>Medicine &amp; Health</option>
+<option>Arts &amp; Design</option>
+</select>
+</div>
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Ranking Range</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-3 text-body-md focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all outline-none appearance-none">
+<option>Any Ranking</option>
+<option>Top 50 Global</option>
+<option>Top 100 Global</option>
+<option>Top 250 Global</option>
+</select>
+</div>
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2">Intake Month</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-xl px-4 py-3 text-body-md focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all outline-none appearance-none">
+<option>All Intakes</option>
+<option>September 2024</option>
+<option>January 2025</option>
+<option>May 2025</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary h-[50px] px-8 rounded-xl font-bold flex items-center gap-2 hover:bg-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+                    Apply Filters
+                </button>
+</div>
+</section>
+<!-- University Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Card 1 -->
+<div class="university-card bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A grand, historic university campus with gothic architecture and sprawling green lawns under a soft, golden hour sunlight. The atmosphere is prestigious and serene, capturing the essence of a world-class academic institution with students walking along stone paths. The color palette is rich with earth tones, deep greens, and the warm glow of the setting sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVu5RVCbqua0fLge_2OyWsl5WDrBUJZCTEXLpR-wwkoNp08ibpik8B3Jmu541PUlh7axHQMRytGnPHgJRZKTYtisFKQEhDtCFQ1hAXGR2uFjgCSwwf8-7n7mFhEoqHdJmrCjIw8JKPz6b7xIMlgQ05ZbPCo9It-Mppw7DR-BGFGIRvHzZVgGGlPq4icq5zlCKNFyASjfkV40DRQVmSzfAfGaftSAr1Jgdlee-8PPM8RLkOkdffY4e32l7G0VWSvxUG4dFCuq6T6shr"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-secondary/20 shadow-sm">
+<span class="font-status-pill text-status-pill text-on-secondary-container">QS Rank: #12</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Imperial College London</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md">London, United Kingdom</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Courses</span>
+<span class="font-bold text-on-surface">142 Programs</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Next Intake</span>
+<div class="flex items-center gap-1.5 text-secondary font-bold countdown-pulse">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>42 Days</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold transition-all hover:bg-on-surface-variant">View Details</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="university-card bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern, high-tech university campus in Australia with sleek glass buildings and sustainable wooden structures. The bright midday sun creates sharp, clean shadows and highlights the vibrant blue sky. Students are gathered in an open-air plaza with palm trees and contemporary art installations, reflecting a forward-thinking and dynamic learning environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDao0b6NLioDK-3e1g_T4cfM335bbyBOtjxqTqUp8I4JrNJbOD1_PSn2YaugsQ7aRQvJOsMhsAYAwMRTuA2g81aQ2BzPt7s9WNaoxemMko16u2N_nB216IerElUYBwZ0S1oS4SINH-q7VeBkY-lvUy7jbQRJ_A_tkB8XJ_RYPQ4ArkPWT6A83JYnNnAN9dCR9Nb4BpqybZq741Ml04N0drYVXpaquLR_HInfLEglhtuK_iLq_yCRhDOgUcW4I0u5AnpElM31P03X0iw"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-secondary/20 shadow-sm">
+<span class="font-status-pill text-status-pill text-on-secondary-container">QS Rank: #34</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">University of Melbourne</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md">Melbourne, Australia</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Courses</span>
+<span class="font-bold text-on-surface">210 Programs</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Next Intake</span>
+<div class="flex items-center gap-1.5 text-secondary font-bold countdown-pulse">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>18 Days</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold transition-all hover:bg-on-surface-variant">View Details</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="university-card bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A prestigious Ivy League university campus in the United States during the autumn season. The brick buildings are covered in red and orange ivy, and the ground is carpeted with fallen leaves. The lighting is crisp and clear, characteristic of a bright fall day. The scene evokes a sense of deep history, tradition, and academic excellence in a calm, focused atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMKlErkgmzXHxgW6DrkCQ7zbUOqnPjZPaviUomoYr6bX7vSHiVUPk_5qUfwcAAjiRlVFEOdER_Vph-kBPzDXPhSxMLhVVgM1I_8V7ZA__ecoaV9Niz1PMtuMbuJahDcPD5ltRUDgVg6wJtf1wpC2TFv75bti8F3wvsSa-ZVfHc6N-G1Vp1eQnnxIS4Up2X5m9Lr7TZCmEHs0pCw3l77qCf9ItI7S5fRSDrGAM43OgL1EaZzGs_hk2Yl9EcBHG5Beeh4ws9B9ELCAeL"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-secondary/20 shadow-sm">
+<span class="font-status-pill text-status-pill text-on-secondary-container">QS Rank: #02</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Stanford University</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md">Stanford, CA, USA</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Courses</span>
+<span class="font-bold text-on-surface">88 Programs</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Next Intake</span>
+<div class="flex items-center gap-1.5 text-secondary font-bold countdown-pulse">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>65 Days</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold transition-all hover:bg-on-surface-variant">View Details</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="university-card bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A majestic European university in Switzerland nestled against a backdrop of snow-capped mountains and a pristine blue lake. The architecture is a blend of classic stone and modern glass balconies. The lighting is bright and cool, reflecting off the water. The mood is tranquil and inspiring, suggesting a unique balance of nature and high-level scholarship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAPCDHmXPUqpMlOgtB0Wh-e4GA8HxLf8TIvdqUPKw1BkLnQLia3zfsAyo6WYqWgS3c6b7j4lFURhCIecUNN3MymPFP6DDyL4U-xHpku9THec8CnA4YMGdIJWfrO48AFVm39I8AjHPVhcangiTdJw7BS_eG4OChgBDF_Ynf84PnhPmrZcmHJ1ecE_OeCo9xqqftx721TJAoOmi8yl5x7S51tiK71LYYApsDjdiRjo_M8C-qdegDqoAIVjrI1_gpcPdhO4mB-Ary4oxC"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-secondary/20 shadow-sm">
+<span class="font-status-pill text-status-pill text-on-secondary-container">QS Rank: #07</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">ETH Zurich</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md">Zurich, Switzerland</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Courses</span>
+<span class="font-bold text-on-surface">112 Programs</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Next Intake</span>
+<div class="flex items-center gap-1.5 text-secondary font-bold countdown-pulse">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>31 Days</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold transition-all hover:bg-on-surface-variant">View Details</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="university-card bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vibrant university campus in Singapore, characterized by vertical gardens and futuristic, organic architecture. The scene is lush with tropical greenery and bright, humid sunlight filtering through the canopy. The aesthetic is ultra-modern and tech-driven, featuring students working on tablets in open-air, shaded study zones. The colors are predominantly vibrant greens and clean white surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM6nQfJBbtj3ZSfNlvUd6EAg9R9FcoEk53qLdHI3DPaXA9v7opwL_vyfq9TxOnD-Jfun4GbKHxY5Q6HGg8Qv3cxIXzFPq1r10ZTCS2QLXHCkThrPUlTE0o3ra8gL4xDxTMmykFqzNoGWiBir8vaMDQPgnVmN9JZMH7bnzWhdiYNmkRQ90Wko9a1wMqKU085y1BbSiQZmVHzRpVPw8D89uxMSMCjdEMPSRKbsGtBn_kBbzoNj_mZVZqETTuFkSO52GToxJUtcl5omT8"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-secondary/20 shadow-sm">
+<span class="font-status-pill text-status-pill text-on-secondary-container">QS Rank: #11</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">National University of Singapore</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md">Singapore, Singapore</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Courses</span>
+<span class="font-bold text-on-surface">156 Programs</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Next Intake</span>
+<div class="flex items-center gap-1.5 text-secondary font-bold countdown-pulse">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>24 Days</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold transition-all hover:bg-on-surface-variant">View Details</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="university-card bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sophisticated city-based university campus in Toronto, Canada, featuring a mix of restored 19th-century brick buildings and cutting-edge steel and glass skyscrapers. The winter scene is bright with soft snow dusting the ledges and the warm yellow light from the windows contrasting with the cool blue twilight sky. The mood is ambitious and industrious, reflecting a premier urban research hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApuNtl8XHY33nJFrXtHpVrxm_7F2yhhTrDiim6H083jRlsQAENwtQcZlv3MTw3ldAQyOZw53-Wkb2FCsFqMi0PSOp0jUJDJ60-Sf-tg3ZZNHolGYaxfUhkyl15tP19YSRV9DAlQkHSTFu5UPjizOKxVWvpzXaXhG9XZqlUHQTmNh4TAEug0otBrG8OoG-Rap4M16Kf1EL3Se9IcEK01T43oEo5wkxSlJBgwC9rCqW4l4-VTkya986f8nq_jG2VwmwygyEEQ4U9nzIM"/>
+<div class="absolute top-4 left-4 bg-secondary-container/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-secondary/20 shadow-sm">
+<span class="font-status-pill text-status-pill text-on-secondary-container">QS Rank: #21</span>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">University of Toronto</h3>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md">Toronto, Canada</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Courses</span>
+<span class="font-bold text-on-surface">198 Programs</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/20">
+<span class="block text-on-surface-variant text-[12px] uppercase tracking-wider mb-1">Next Intake</span>
+<div class="flex items-center gap-1.5 text-secondary font-bold countdown-pulse">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>56 Days</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-bold transition-all hover:bg-on-surface-variant">View Details</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination -->
+<div class="mt-16 flex items-center justify-center gap-4">
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center bg-primary text-on-primary rounded-xl font-bold">1</button>
+<button class="w-12 h-12 flex items-center justify-center hover:bg-surface-container rounded-xl font-bold transition-all">2</button>
+<button class="w-12 h-12 flex items-center justify-center hover:bg-surface-container rounded-xl font-bold transition-all">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-12 h-12 flex items-center justify-center hover:bg-surface-container rounded-xl font-bold transition-all">12</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/50 rounded-xl text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop max-w-[1440px] mx-auto border-t border-outline-variant/50 bg-surface-container-lowest">
+<div class="md:col-span-1">
+<span class="text-headline-md font-headline-md font-bold text-primary mb-6 block">Horizons</span>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Empowering students worldwide to achieve their academic dreams through personalized mentorship and global institutional partnerships.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-[12px]">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Universities</a></li>
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Scholarships</a></li>
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Visa Support</a></li>
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Success Stories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-[12px]">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Cookie Policy</a></li>
+<li><a class="text-label-md font-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Global Offices</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-[12px]">Newsletter</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Stay updated with the latest intake dates and scholarships.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container border-none rounded-xl px-4 py-2 text-label-md focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary p-2 rounded-xl">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-4 pt-12 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-label-md font-label-md text-on-surface-variant">© 2024 Horizons Educational Agency. All rights reserved.</span>
+<div class="flex gap-8">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">verified</span> ISO Certified 27001</span>
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">eco</span> Carbon Neutral Portal</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the search bar
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('border-secondary', 'ring-4', 'ring-secondary/10');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('border-secondary', 'ring-4', 'ring-secondary/10');
+            });
+        }
+
+        // Add hover lift effect refinement for cards
+        document.querySelectorAll('.university-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.05)';
+                img.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

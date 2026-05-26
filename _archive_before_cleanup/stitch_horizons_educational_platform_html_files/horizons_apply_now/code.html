@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Horizons | Student Application Form</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "on-surface": "#0b1c30",
+                    "on-surface-variant": "#45464d",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-container": "#00201d",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary": "#000000",
+                    "surface-bright": "#f8f9ff",
+                    "outline": "#76777d",
+                    "background": "#f8f9ff",
+                    "on-primary-fixed": "#131b2e",
+                    "outline-variant": "#c6c6cd",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#dae2fd",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-container": "#7c839b",
+                    "surface-tint": "#565e74",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-container": "#0c9488",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-primary": "#bec6e0",
+                    "primary-container": "#131b2e",
+                    "secondary": "#006c49",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#002113",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#00201d",
+                    "surface-variant": "#d3e4fe",
+                    "on-background": "#0b1c30",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed": "#89f5e7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "section-gap": "120px",
+                    "gutter-desktop": "24px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "gutter-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "status-pill": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "status-pill": ["13px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(226, 232, 240, 1);
+        }
+        .step-container { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .step-hidden { opacity: 0; transform: translateY(20px); display: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active { opacity: 1; transform: translateY(0); display: block; }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(111, 251, 190, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm w-full h-20 flex justify-between items-center px-margin-desktop max-w-[1440px] mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-on-surface tracking-tight">Horizons</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Universities</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Courses</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high/50 p-2 rounded-full transition-all">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-high/50 p-2 rounded-full transition-all">dark_mode</span>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-xl font-semibold hover:-translate-y-0.5 transition-transform">Login</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-desktop py-12 md:py-20 flex flex-col items-center">
+<!-- Progress Indicator -->
+<div class="w-full max-w-3xl mb-12">
+<div class="flex justify-between items-center mb-4 px-2">
+<div class="flex flex-col items-center gap-2 group cursor-pointer" onclick="goToStep(1)">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary-container text-on-secondary-container font-bold border-2 border-secondary transition-all" id="dot-1">1</div>
+<span class="text-label-md font-label-md text-primary font-bold" id="label-1">Personal</span>
+</div>
+<div class="flex-1 h-[2px] bg-outline-variant mx-4 mt-[-20px]">
+<div class="h-full bg-secondary w-0 transition-all duration-500" id="progress-line-1"></div>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer" onclick="goToStep(2)">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant font-bold border-2 border-transparent transition-all" id="dot-2">2</div>
+<span class="text-label-md font-label-md text-on-surface-variant" id="label-2">Interest</span>
+</div>
+<div class="flex-1 h-[2px] bg-outline-variant mx-4 mt-[-20px]">
+<div class="h-full bg-secondary w-0 transition-all duration-500" id="progress-line-2"></div>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer" onclick="goToStep(3)">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface-variant font-bold border-2 border-transparent transition-all" id="dot-3">3</div>
+<span class="text-label-md font-label-md text-on-surface-variant" id="label-3">Review</span>
+</div>
+</div>
+</div>
+<!-- Form Container -->
+<div class="w-full max-w-4xl glass-effect rounded-[32px] p-8 md:p-12 shadow-sm relative overflow-hidden">
+<!-- Decorative Accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-full -mr-8 -mt-8"></div>
+<form class="space-y-12" id="application-form">
+<!-- Step 1: Personal Information -->
+<section class="step-container step-active" id="step-1">
+<div class="mb-10">
+<h1 class="text-headline-lg font-headline-lg text-primary mb-2">Personal Information</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Let's start with the basics. This helps us tailor our guidance to your background.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Full Name</label>
+<input class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all placeholder:text-outline/50" placeholder="e.g. Alexander Mitchell" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Date of Birth</label>
+<input class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all" type="date"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Nationality</label>
+<select class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all appearance-none">
+<option>Select Country</option>
+<option>Canada</option>
+<option>Germany</option>
+<option>Singapore</option>
+<option>United Arab Emirates</option>
+<option>United Kingdom</option>
+<option>United States</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Gender</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex items-center justify-center p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-secondary has-[:checked]:bg-secondary-container/30">
+<input class="hidden" name="gender" type="radio"/>
+<span class="text-label-md">Male</span>
+</label>
+<label class="flex items-center justify-center p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-secondary has-[:checked]:bg-secondary-container/30">
+<input class="hidden" name="gender" type="radio"/>
+<span class="text-label-md">Female</span>
+</label>
+<label class="flex items-center justify-center p-4 border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-secondary has-[:checked]:bg-secondary-container/30">
+<input class="hidden" name="gender" type="radio"/>
+<span class="text-label-md">Other</span>
+</label>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-end">
+<button class="group flex items-center gap-2 bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all" onclick="nextStep(2)" type="button">
+                            Continue to Interests
+                            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Step 2: Academic Interest -->
+<section class="step-container step-hidden" id="step-2">
+<div class="mb-10">
+<h1 class="text-headline-lg font-headline-lg text-primary mb-2">Academic Interests</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Where do you see yourself studying? Select your top preferences.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-label-md font-label-md text-on-surface">Preferred Country</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<label class="relative group cursor-pointer">
+<input class="peer absolute opacity-0" name="country" type="radio"/>
+<div class="p-4 rounded-2xl border border-outline-variant bg-surface/50 text-center peer-checked:border-secondary peer-checked:bg-secondary-container/30 transition-all flex flex-col items-center gap-3">
+<img class="w-12 h-8 object-cover rounded-md shadow-sm" data-alt="A clean, high-contrast photograph of the British flag waving gracefully against a clear blue sky, symbolizing international education in the UK. The lighting is bright and modern, emphasizing the rich red and blue colors. The composition is professional and evokes a sense of tradition and prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMPP_5037mG9cJ8SE0aG-cIzljScg649-n2aE0k2BaKAwsYUwA2c1K1GdRw9J111ki2YgIWTpkE1bJ-iaeU6Yj3PQuLYj_lTCW_ywHsvzkbgtv5mLmcN6DkHo08Vb0rj65N7yDP-u5Spf-LLmczqI_ThzJCvUctMBVoBLOqN1RitoEzmXcAXJ8GWUCf83n3QC6eOCHoJ-ZNExQZXOBwLZUfLH-E-MOZX_CNbzhBbDzhq1F855yQvSOMwGSg_bvZRpd40v5G1Y5Yy0m"/>
+<span class="text-label-md">United Kingdom</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer absolute opacity-0" name="country" type="radio"/>
+<div class="p-4 rounded-2xl border border-outline-variant bg-surface/50 text-center peer-checked:border-secondary peer-checked:bg-secondary-container/30 transition-all flex flex-col items-center gap-3">
+<img class="w-12 h-8 object-cover rounded-md shadow-sm" data-alt="A minimalist architectural shot of the Golden Gate Bridge in San Francisco, draped in soft morning mist. The image captures the iconic structure with a sophisticated, professional aesthetic using a muted color palette and soft, diffuse lighting. The mood is ambitious and forward-looking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9RKdmNVXTd8AX6w2mCLE0B0347QDS9oXGaH_ruWxMCeiOZDb4eatR6f0bff3upJvTeLJAvGfp2OMgtrHpLHMcpPMsx1GQPkhX0K0BPRbA75UZCrA-k9kgN_jDdbuzLbnr18ufCR02OxlJXfOYayvP-p0yOMQoGjZhTsXRhOhAhTtoePMn-rnQRtQjtZlIEciJoV9krIVlFQFyWWwNSE-dwuMp8eubUnRCJFuHPz5mjT-QtxMVD_HYqh1aOMAi9qftYA6xRUori_iQ"/>
+<span class="text-label-md">United States</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer absolute opacity-0" name="country" type="radio"/>
+<div class="p-4 rounded-2xl border border-outline-variant bg-surface/50 text-center peer-checked:border-secondary peer-checked:bg-secondary-container/30 transition-all flex flex-col items-center gap-3">
+<img class="w-12 h-8 object-cover rounded-md shadow-sm" data-alt="A high-end travel photography shot of a traditional Japanese torii gate standing serenely against a sunrise. The image uses a warm, golden lighting scheme and a palette of vibrant oranges and soft greys. The style is premium and corporate-modern, reflecting a global perspective on education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaTIVCGWRSnLyzxjRH5KQSUCm93SXXSdUsgEiSzkO4QiU2FM2AjxQOprAFf4cO1WZif4BiYllIGC5f4OOcQ7ThV_r03i-HbzqMvSPWipIHTg33zq87T2Gdd4qYTRALPxpkN881vJUHsv4YKZToT2CQXZ-Nw971KcFUgC1QbnpLx6sxCekNlZ_cSM3_XKKTkCUwtsVAgRUBatJiLhfRvrXMuRWUoOjwCDQ1umFwy14guFnrf5th9pzQuZMhVYIaeUnl7wlRq3Zx4max"/>
+<span class="text-label-md">Japan</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer absolute opacity-0" name="country" type="radio"/>
+<div class="p-4 rounded-2xl border border-outline-variant bg-surface/50 text-center peer-checked:border-secondary peer-checked:bg-secondary-container/30 transition-all flex flex-col items-center gap-3">
+<img class="w-12 h-8 object-cover rounded-md shadow-sm" data-alt="A crisp, professional wide shot of the Australian Opera House at dusk, illuminated by sophisticated urban lighting. The composition is clean and minimalist, using a deep navy and soft white color palette. The mood is serene yet authoritative, representing a top destination for international students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByJx4GYi8qbbBAgIHgwLfGYIO0_vdEBKUh1ihL7DA9Z1q4zp37it4pKaHPpHxg8CJHmyrr7_14JNTt6JVU4mWwuyaJoiUG0FHKKTzgHYTqJ822vLc9JMW4fdQC2JbTXIPnRBbJ_l-zlJBR_VOdldPpquSzwo_sqq1honqcXEU1eKcC2f1O-gCeKYTcoTzlfaY3m7Q2tgKyRdejyjqetsqguiihuWeiYm8pU5ur9nWCM7bJ8pvPMVF1BWhx35FNcyQNR0pxNzmFHezF"/>
+<span class="text-label-md">Australia</span>
+</div>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Target Course</label>
+<input class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all" placeholder="e.g. Computer Science, MBA" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Intake Year</label>
+<select class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all">
+<option>Fall 2024</option>
+<option>Spring 2025</option>
+<option>Fall 2025</option>
+<option>Spring 2026</option>
+</select>
+</div>
+</div>
+<div class="mt-12 flex justify-between items-center">
+<button class="flex items-center gap-2 text-on-surface-variant font-semibold hover:text-primary transition-colors" onclick="nextStep(1)" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                            Back
+                        </button>
+<button class="group flex items-center gap-2 bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all" onclick="nextStep(3)" type="button">
+                            Contact &amp; Documents
+                            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Step 3: Contact Details & Documents -->
+<section class="step-container step-hidden" id="step-3">
+<div class="mb-10">
+<h1 class="text-headline-lg font-headline-lg text-primary mb-2">Final Details</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Almost there. Provide your contact details and upload supporting documents.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop mb-8">
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Email Address</label>
+<input class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all" placeholder="alex@example.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-on-surface">Phone Number</label>
+<input class="w-full p-4 rounded-xl border border-outline-variant bg-surface/50 transition-all" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<!-- File Upload Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+<div class="md:col-span-2 border-2 border-dashed border-outline-variant rounded-[24px] p-8 flex flex-col items-center justify-center gap-4 bg-surface-container-low hover:bg-surface-container-high/50 transition-all cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">upload_file</span>
+</div>
+<div class="text-center">
+<p class="text-label-md font-bold">Upload Academic Transcripts</p>
+<p class="text-body-md text-on-surface-variant text-sm">PDF, JPG or PNG (Max 5MB)</p>
+</div>
+</div>
+<div class="border border-outline-variant rounded-[24px] p-6 flex flex-col justify-between bg-surface/50">
+<div>
+<span class="material-symbols-outlined text-secondary mb-2">verified</span>
+<p class="text-label-md font-bold mb-1">Passport Copy</p>
+<p class="text-body-md text-xs text-on-surface-variant">Required for visa eligibility</p>
+</div>
+<button class="mt-4 text-primary text-label-md font-bold flex items-center gap-1 hover:underline" type="button">
+                                Choose File
+                                <span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container rounded-2xl p-6 mb-10">
+<label class="flex items-start gap-4 cursor-pointer group">
+<div class="relative flex items-center mt-1">
+<input class="peer h-5 w-5 rounded border-outline-variant text-secondary focus:ring-secondary transition-all" type="checkbox"/>
+</div>
+<span class="text-body-md text-on-surface-variant">
+                                I agree to the <a class="text-primary font-bold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-bold hover:underline" href="#">Privacy Policy</a>. I consent to Horizons Educational Agency contacting me regarding my application.
+                            </span>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<button class="flex items-center gap-2 text-on-surface-variant font-semibold hover:text-primary transition-colors" onclick="nextStep(2)" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                            Back
+                        </button>
+<button class="group flex items-center gap-2 bg-secondary text-on-secondary px-12 py-4 rounded-xl font-bold shadow-lg hover:shadow-secondary/20 hover:-translate-y-1 transition-all" type="submit">
+                            Submit Application
+                            <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</section>
+</form>
+</div>
+<!-- Trust Badges -->
+<div class="mt-16 flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all">
+<img class="h-12 object-contain" data-alt="A clean, minimalist logo of a prestigious global academic accreditor. The logo is displayed in high-contrast black and white, against a bright light-mode background. The aesthetic is modern and corporate, suggesting trust and institutional reliability. High-quality professional design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMMXeWw3MDbaI6pZSMtuG9PEIwOU8hCVhYAQ-CR3-fMwYz3ZPAJ9_3mtlNbDjIImb4QdorqSGQTorEJw1Hf7aKoHrCO8abX7TM-nC-D0xugS4BCQBASmUgtMfr1TAqVU-RHcs_hrMEBfIbRFWqOO0XPKNcZ16C0sEi2vqNBlgiLxSSQoVvBMydiXFfmAoOUugNbzz-Yi0nB9NrIatHJsE2hpZqcBPT-pQ9RMRDzdkxrtvDCJmL-jO5zCybxLHTqTdV5KBc5eAmdIR2"/>
+<img class="h-12 object-contain" data-alt="A sophisticated corporate logo representing an international education board. The design is sleek and minimalist, utilizing clean geometric shapes and a professional navy and white color palette. The lighting is soft and even, highlighting the logo's premium quality and global reach." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeK_y0fxNcQk5UDhBJxTWhLPTxO7fKgct1CHGCy9VcwHzYs3e42f8_1JodqZ61iZ1dby6kP8y7HOCISTFKXFeRcMLUwOotNkW72imqx-QBHtSDXLlDaWVx9JmGmSLbr-2VK-2CA09Zh2PEmVycmgYsoQC5YULTmraCyTYWDRoCP_KdvYZqX2QngHk8XkX7eYyjRXEok1_OCdSvgQEjQiWsrYoMcenPW3O7N06PV62ZACsYlsnKwbfTQfoR8K7NpxYVa5vSNbU6UTYF"/>
+<img class="h-12 object-contain" data-alt="A minimalist logo for a world-renowned university partnership program. The visual style is modern and authoritative, with crisp lines and a focus on clarity. The image is set against a clean, bright background, perfectly aligning with a premium educational agency's brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfnYZAqIfN2htcUm1p1iZHcr01pG4akF3AivpBVf69DMNOiN1vUcb_UWd0xFHSZ3DCZrr9Ly5S5bTTAsVX7TYzc6WN3JJhVx_e-2mfAGjjOklWl_5v7iqwxjCG2kvlTKWNI294kVPsCdE2zCGJbMldRO3Vk9GziOH2F7eYalrZypVfJpDchG0_76IqHKRCTftTDJDcnk6mwWLzSV1SIiF31fp__X28ZyB6h97H2fbw2gU_5bPiPcT7IMvim_sWjBUZ1-77PDTRafqE"/>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/50 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md font-bold text-primary mb-6">Horizons</div>
+<p class="text-body-md text-on-surface-variant mb-6">Empowering global ambitions through personalized educational mentorship and institutional partnerships.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-md font-bold text-on-surface uppercase tracking-wider">Quick Links</h4>
+<a class="text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Cookie Policy</a>
+<a class="text-label-md text-on-surface-variant hover:text-primary hover:underline underline-offset-4 transition-all" href="#">Global Offices</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-md font-bold text-on-surface uppercase tracking-wider">Contact</h4>
+<p class="text-label-md text-on-surface-variant">Email: info@horizons-edu.com</p>
+<p class="text-label-md text-on-surface-variant">Phone: +44 20 7946 0958</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">share</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-label-md font-bold text-on-surface uppercase tracking-wider">Newsletter</h4>
+<p class="text-body-md text-on-surface-variant text-sm">Stay updated with the latest visa rules and university intakes.</p>
+<div class="flex gap-2">
+<input class="flex-1 p-3 rounded-lg border border-outline-variant bg-surface text-sm" placeholder="Your email" type="text"/>
+<button class="bg-primary text-on-primary p-3 rounded-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-md text-on-surface-variant">© 2024 Horizons Educational Agency. All rights reserved.</p>
+<div class="flex gap-6">
+<img alt="Visa" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD_KR7_9ASj2mg7YusIPL1MKeqlLNrD8xcdiTRSD9jWM9PVubBlntAXTnnIkADxLqM0sVtyaDrjVvFU5BzKv0ZSsJPdkraWHSl3ztmci2ziAvnFdR_pdCbwIPmdLk_SKaiZ18IBKJufsvk5VO8dENJU_Hd5BqozdmHwRNqwa058IFfTBtkSdYDTZPEv1-jtmaGsZ4W2J5OArKL0YPjjq0_iPyBQFgT03prVlnpwqHNZWoKSPqn7icuWrVMBH9M7QYc5rOgWGiPsj0T"/>
+<img alt="Mastercard" class="h-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwXQfmyPGK3mE-U4qblVSjRmxkYdTSDOclbaU9k--7MHJLhqcXCCnQGAz0hBS5GOOjNwlhXzzOWikRebulUosXuZ7dp_k_sCNA7qFcam1t3olqyooYaiPxTW_jtnUmHV4vCAgTEdRF3zWYOJsgaQKbhSkuj3QRovxKtv9AmqtzTnrhzSL6BdBKsnmo15NnHBxNESZOi9_a9b8_YopektEoeFTAHMEJNSUT-RQI_iDiQT2vXJSNFBgKeRpNWcxP8wXO6hj1GlEfIAZ6"/>
+</div>
+</div>
+</footer>
+<script>
+        let currentStep = 1;
+
+        function updateProgress(step) {
+            const steps = [1, 2, 3];
+            
+            steps.forEach(s => {
+                const dot = document.getElementById(`dot-${s}`);
+                const label = document.getElementById(`label-${s}`);
+                const line = document.getElementById(`progress-line-${s-1}`);
+
+                if (s < step) {
+                    // Completed
+                    dot.classList.remove('bg-surface-container-high', 'bg-secondary-container', 'text-on-surface-variant', 'border-transparent');
+                    dot.classList.add('bg-secondary', 'text-on-secondary', 'border-secondary');
+                    dot.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span>';
+                    label.classList.add('text-primary', 'font-bold');
+                    if (line) line.style.width = '100%';
+                } else if (s === step) {
+                    // Active
+                    dot.classList.remove('bg-surface-container-high', 'bg-secondary', 'text-on-secondary', 'text-on-surface-variant');
+                    dot.classList.add('bg-secondary-container', 'text-on-secondary-container', 'border-secondary');
+                    dot.innerHTML = s;
+                    label.classList.add('text-primary', 'font-bold');
+                    label.classList.remove('text-on-surface-variant');
+                    if (line) line.style.width = '0%';
+                } else {
+                    // Future
+                    dot.classList.remove('bg-secondary-container', 'bg-secondary', 'text-on-secondary', 'text-on-secondary-container', 'border-secondary');
+                    dot.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'border-transparent');
+                    dot.innerHTML = s;
+                    label.classList.remove('text-primary', 'font-bold');
+                    label.classList.add('text-on-surface-variant');
+                    if (line) line.style.width = '0%';
+                }
+            });
+        }
+
+        function goToStep(step) {
+            if (step === currentStep) return;
+            
+            // Show new step
+            const currentSection = document.getElementById(`step-${currentStep}`);
+            const nextSection = document.getElementById(`step-${step}`);
+
+            currentSection.classList.remove('step-active');
+            currentSection.classList.add('step-hidden');
+            
+            setTimeout(() => {
+                nextSection.classList.remove('step-hidden');
+                nextSection.classList.add('step-active');
+                currentStep = step;
+                updateProgress(step);
+            }, 300);
+        }
+
+        function nextStep(step) {
+            goToStep(step);
+        }
+
+        document.getElementById('application-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Application submitted successfully! Redirecting to your dashboard...');
+        });
+
+        // Initialize progress
+        updateProgress(1);
+    </script>
+</body></html>

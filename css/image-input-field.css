@@ -1,0 +1,286 @@
+/* ============================================
+   Image Input Field Component Styles
+   ============================================ */
+
+.image-input-field-wrapper {
+    margin-bottom: 20px;
+}
+
+.image-input-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary, #1e293b);
+    margin-bottom: 10px;
+}
+
+.image-input-label .required {
+    color: #dc2626;
+    margin-left: 2px;
+}
+
+/* Preview Container */
+.image-preview-container {
+    width: 100%;
+    height: 200px;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: 8px;
+    background-color: var(--background-secondary, #f8fafc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.image-preview-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-secondary, #64748b);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image-preview-fallback i {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.image-preview-fallback p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Text Input */
+.image-input-text {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-family: 'Monaco', 'Courier New', monospace;
+    color: var(--text-primary, #1e293b);
+    background-color: var(--background-primary, #ffffff);
+    margin-bottom: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.image-input-text:focus {
+    outline: none;
+    border-color: var(--color-primary, #006c49);
+    box-shadow: 0 0 0 3px rgba(0, 108, 73, 0.1);
+}
+
+.image-input-text:disabled {
+    background-color: var(--background-secondary, #f1f5f9);
+    color: var(--text-tertiary, #94a3b8);
+    cursor: not-allowed;
+}
+
+/* Controls */
+.image-input-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.image-upload-btn,
+.image-clear-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    padding: 8px 12px;
+}
+
+.image-upload-btn:disabled,
+.image-clear-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Suggested Path */
+.image-suggested-path {
+    display: none;
+    background-color: var(--background-secondary, #f0fdf4);
+    border: 1px solid var(--border-color, #bbf7d0);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.suggested-path-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.suggested-label {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary, #64748b);
+}
+
+.suggested-path-box code {
+    display: block;
+    padding: 8px 10px;
+    background-color: var(--background-primary, #ffffff);
+    border: 1px solid var(--border-color, #d1d5db);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: 'Monaco', 'Courier New', monospace;
+    color: var(--color-primary, #006c49);
+    word-break: break-all;
+    overflow-x: auto;
+}
+
+.suggested-path-box .btn {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+}
+
+.suggested-hint {
+    font-size: 0.75rem !important;
+    color: var(--text-secondary, #64748b) !important;
+    margin-top: 8px !important;
+}
+
+/* Current Path Display */
+.image-current-path {
+    margin-bottom: 8px;
+}
+
+.current-path-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.current-path-info small {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.current-path-info code {
+    display: block;
+    padding: 6px 8px;
+    background-color: var(--background-secondary, #f1f5f9);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: 'Monaco', 'Courier New', monospace;
+    color: var(--text-secondary, #64748b);
+    word-break: break-all;
+    overflow-x: auto;
+}
+
+/* Info Text */
+.image-input-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.image-size-info {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #64748b);
+}
+
+.image-input-error {
+    display: none;
+    padding: 10px 12px;
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 6px;
+}
+
+.image-input-help {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+/* Dark Mode Support */
+:root[data-theme="dark"] .image-input-text,
+body.dark-mode .image-input-text {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border-color: #334155;
+}
+
+:root[data-theme="dark"] .image-input-text:focus,
+body.dark-mode .image-input-text:focus {
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+:root[data-theme="dark"] .image-preview-container,
+body.dark-mode .image-preview-container {
+    background-color: #0f172a;
+    border-color: #334155;
+}
+
+:root[data-theme="dark"] .image-preview-fallback,
+body.dark-mode .image-preview-fallback {
+    color: #94a3b8;
+}
+
+:root[data-theme="dark"] .image-suggested-path,
+body.dark-mode .image-suggested-path {
+    background-color: #064e3b;
+    border-color: #047857;
+}
+
+:root[data-theme="dark"] .suggested-path-box code,
+body.dark-mode .suggested-path-box code {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #86efac;
+}
+
+:root[data-theme="dark"] .current-path-info code,
+body.dark-mode .current-path-info code {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .image-input-controls {
+        flex-direction: column;
+    }
+
+    .image-upload-btn,
+    .image-clear-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .image-preview-container {
+        height: 150px;
+    }
+}

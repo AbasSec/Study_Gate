@@ -1,0 +1,240 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ========================================
+    // HELPER FUNCTIONS
+    // ========================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdminUser() {
+      // Admin authorization via Firestore admin document (Spark plan)
+      // Spark plan does not support Cloud Functions or custom claims
+      // Admin check: email-based document in admins collection with role='admin' and status='active'
+      let adminDocPath = /databases/$(database)/documents/admins/$(request.auth.token.email);
+      return request.auth != null &&
+             request.auth.token.email != null &&
+             exists(adminDocPath) &&
+             get(adminDocPath).data.role == 'admin' &&
+             get(adminDocPath).data.status == 'active';
+    }
+
+    function isAgentUser() {
+      return isAuthenticated() &&
+             request.auth.token.email != null &&
+             (resource.data.email == request.auth.token.email ||
+              resource.data.userId == request.auth.uid) &&
+             resource.data.role == 'agent';
+    }
+
+    function isInfluencerUser() {
+      return isAuthenticated() &&
+             resource.data.userId == request.auth.uid &&
+             resource.data.role == 'influencer';
+    }
+
+    // ========================================
+    // PUBLIC WEBSITE CONTENT
+    // Anyone can read, only admins can write
+    // ========================================
+    match /universities/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /courses/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /courseOfferings/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /services/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /testimonials/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /successStories/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /team/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /contactSettings/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /siteSettings/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /settings/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    match /courseFolders/{document} {
+      allow read: if true;
+      allow write: if isAdminUser();
+    }
+
+    // ========================================
+    // APPLICATIONS (Student Submissions)
+    // Anyone can submit, admins can read all, agents can read their own
+    // ========================================
+    match /applications/{document} {
+      allow create: if true;
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      resource.data.agentId != null &&
+                      exists(/databases/$(database)/documents/agents/$(resource.data.agentId)) &&
+                      get(/databases/$(database)/documents/agents/$(resource.data.agentId)).data.userId == request.auth.uid);
+      allow update, delete: if isAdminUser();
+    }
+
+    // ========================================
+    // INQUIRIES (Contact Form Submissions)
+    // Anyone can submit, only admins can read/modify
+    // ========================================
+    match /inquiries/{document} {
+      allow create: if true;
+      allow read, update, delete: if isAdminUser();
+    }
+
+    // ========================================
+    // AGENT/INFLUENCER SYSTEM
+    // ========================================
+
+    // Agent/Influencer Accounts - Admin creates, agents view/update own
+    match /agents/{agentId} {
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      (resource.data.email == request.auth.token.email ||
+                       resource.data.userId == request.auth.uid));
+      allow create, delete: if isAdminUser();
+      allow update: if isAdminUser() ||
+                       (isAuthenticated() &&
+                        (resource.data.email == request.auth.token.email ||
+                         resource.data.userId == request.auth.uid));
+    }
+
+    // Referral Links - Public read (to validate), admins manage
+    match /referralLinks/{linkId} {
+      allow read: if true;
+      allow create, update, delete: if isAdminUser();
+    }
+
+    // Referral Visit Events - Anyone can log, agents can read own, admins can read all
+    match /referralVisits/{visitId} {
+      allow create: if true;
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      exists(/databases/$(database)/documents/agents/$(resource.data.agentId)) &&
+                      get(/databases/$(database)/documents/agents/$(resource.data.agentId)).data.userId == request.auth.uid);
+      allow update, delete: if false;
+    }
+
+    // WhatsApp Click Events - Anyone can log, agents can read own, admins can read all
+    match /whatsappClicks/{clickId} {
+      allow create: if true;
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      exists(/databases/$(database)/documents/agents/$(resource.data.agentId)) &&
+                      get(/databases/$(database)/documents/agents/$(resource.data.agentId)).data.userId == request.auth.uid);
+      allow update, delete: if false;
+    }
+
+    // ========================================
+    // STUDENT MANAGEMENT
+    // ========================================
+
+    // Students - Tracked with their data and agent attribution
+    match /students/{studentId} {
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      exists(/databases/$(database)/documents/agents/$(resource.data.agentId)) &&
+                      get(/databases/$(database)/documents/agents/$(resource.data.agentId)).data.userId == request.auth.uid) ||
+                     (isAuthenticated() && resource.data.email == request.auth.token.email);
+      allow create: if true; // Created during application
+      allow update, delete: if isAdminUser();
+    }
+
+    // Student Status - Admin manages, students can read own
+    match /studentStatus/{statusId} {
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      exists(/databases/$(database)/documents/students/$(resource.data.studentId)) &&
+                      get(/databases/$(database)/documents/students/$(resource.data.studentId)).data.email == request.auth.token.email);
+      allow create, update, delete: if isAdminUser();
+    }
+
+    // Student Status History - For audit trail, students can read own
+    match /studentStatusHistory/{recordId} {
+      allow read: if isAdminUser() ||
+                     (isAuthenticated() &&
+                      exists(/databases/$(database)/documents/students/$(resource.data.studentId)) &&
+                      get(/databases/$(database)/documents/students/$(resource.data.studentId)).data.email == request.auth.token.email);
+      allow create: if isAdminUser();
+      allow update, delete: if false;
+    }
+
+    // Application Status History - Audit trail for application status changes
+    match /applicationStatusHistory/{recordId} {
+      allow read: if isAdminUser();
+      allow create: if isAdminUser();
+      allow update, delete: if false;
+    }
+
+    // ========================================
+    // ADMIN MANAGEMENT
+    // ========================================
+
+    // Admin Accounts - Only admins can manage (uses email as document ID)
+    match /admins/{email} {
+      allow read: if isAdminUser();
+      allow create, update, delete: if isAdminUser();
+    }
+
+    // Roles - Only admins can manage
+    match /roles/{roleId} {
+      allow read: if isAdminUser();
+      allow create, update, delete: if isAdminUser();
+    }
+
+    // Permissions - Only admins can manage
+    match /permissions/{permissionId} {
+      allow read: if isAdminUser();
+      allow create, update, delete: if isAdminUser();
+    }
+
+    // Audit Logs - Only admins can read, auto-created by system
+    match /auditLogs/{logId} {
+      allow read: if isAdminUser();
+      allow create: if isAdminUser();
+      allow update, delete: if false;
+    }
+
+    // ========================================
+    // BLOCK ALL OTHER ACCESS
+    // ========================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

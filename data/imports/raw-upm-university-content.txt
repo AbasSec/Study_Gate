@@ -1,0 +1,100 @@
+UNIVERSITY_NAME: Universiti Putra Malaysia
+SHORT_CODE: UPM
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FACULTY OF AGRICULTURE
+Master in Land Resource Management 40550
+Master in Plantation Management 40550
+
+FACULTY OF COMPUTER SCIENCE AND INFORMATION TECHNOLOGY
+Master of Computer Science 28550
+Master of Information Security 28550
+Master of Software Engineering 28550
+
+FACULTY OF DESIGN AND ARCHITECTURE
+Master of Architecture 35300
+Master of Landscape Architecture 34250
+Master of Tropical Urban Design 27250
+Master in Sustainable Landscape Management 26550
+
+FACULTY OF EDUCATIONAL STUDIES
+Master of Education in Curriculum and Instruction 26550
+Master of Education in Educational Administration 26550
+Master of Education in Educational Psychology 26550
+Master of Education in Instructional Technology and Innovation 26550
+Master of Education in Physical Education 26550
+Master of Education in Sport Science 26550
+Master of Education Teaching of English as a Second Language 26550
+Master of Education in Teaching Malay Language 26550
+Master of Education in Technical and Vocational Education 26550
+Master of Human Resource Development 26550
+Master of Education in Guidance and Counselling 30400
+
+FACULTY OF ENGINEERING
+Master of Communication Engineering 28550
+Master of Emergency Response and Planning 28550
+Master of Engineering Management 28550
+Master of Environment Engineering 28550
+Master of Environment Technology Management 28550
+Master of Highway and Transportation Engineering 28550
+Master of Innovation and Engineering Design 28550
+Master of Manufacturing Systems Engineering 28550
+Master of Process Safety and Loss Prevention 28550
+Master of Remote Sensing and GIS 28550
+Master Structural Engineering and Contractions 28550
+Master of Water Engineering 28550
+Master of Electrical Power Engineering 30550
+
+FACULTY OF FOOD SCIENCE AND TECHNOLOGY
+Master of Food Technology 33050
+Master of Food Safety and Quality Assurance 33550
+
+FACULTY OF FORESTRY AND ENVIRONMENT
+Master of Environment 29200
+
+FACULTY OF MEDICINE AND HEALTH SCIENCES
+Master of Environmental and Occupational Health 36200
+Master in Nutritional Sciences 34550
+Master of Public Health 29200
+
+FACULTY OF MODERN LANGUAGES AND COMMUNICATION
+Master of Applied Linguistics 24550
+Master of Corporate Communication 24550
+Master of Malay Language 24550
+Master of Malay Literature 24550
+Master of World Literature 24550
+
+FACULTY OF SCIENCE
+Master of Applied Statistics 28550
+Master in Analytical Chemistry 32710
+Master in Materials Physics 32550
+Master in Mathematical Sciences 32550
+Master of Tropical Biology 32550
+
+SCHOOL OF BUSINESS AND ECONOMICS
+Master of Economics 39550
+Master of Entrepreneurship 41575
+Master of Finance 39550
+Master of Business Administration 50200
+
+RESEARCH PROGRAMMES - MEDICAL CLUSTER
+Master Medical Cluster 28100
+PhD Medical Cluster 58450
+PhD Industry Medical Cluster 81000
+
+RESEARCH PROGRAMMES - SCIENCE CLUSTER
+Master Science Cluster 27350
+PhD Science Cluster 53200
+PhD Industry Science Cluster 81000
+
+RESEARCH PROGRAMMES - SOCIAL SCIENCE CLUSTER
+Master Social Science Cluster 24600
+PhD Social Science Cluster 40900
+PhD Industry Social Science Cluster 81000
+
+RAW_CONTENT_END

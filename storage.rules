@@ -1,0 +1,55 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // ============================================
+    // STORAGE AUTHORIZATION (Spark Plan)
+    // ============================================
+    // Admin status is checked via explicit UID allowlist
+    // Spark plan: Firebase Storage rules cannot query Firestore or use custom claims
+    // To add admin UIDs: Update the list below and redeploy storage rules
+    // To use dynamic admin check: Upgrade to Blaze plan and use Cloud Functions
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Admin check: Hardcoded UID allowlist (Spark plan - Storage rules cannot query Firestore)
+    // Add admin UIDs to this list to grant upload access to brand assets
+    // First admin: admin.horizons.test@gmail.com (uid: xOlH7JLIAegVHblBngMBF33LdI32)
+    function isAdmin() {
+      return request.auth != null &&
+             request.auth.uid == 'xOlH7JLIAegVHblBngMBF33LdI32';
+    }
+
+    // ============================================
+    // STUDENT DOCUMENT UPLOADS (Applications)
+    // ============================================
+    // Students submit documents when applying
+    // - Write: Any authenticated user (students upload during application)
+    // - Read: Admins only (admins review submitted documents)
+    match /applications/{allPaths=**} {
+      allow write: if isAuthenticated();
+      allow read: if isAdmin();
+    }
+
+    // ============================================
+    // BRAND ASSETS (Logo, Hero Image)
+    // ============================================
+    // Admin-only uploads
+    // - Write: Admins only (custom claim admin == true)
+    // - Read: Public (everyone can view site logo/hero)
+    // Authorization: Server-side via Custom Claims in request.auth.token
+    match /brand/{allPaths=**} {
+      allow write: if isAdmin();
+      allow read: if true;
+    }
+
+    // ============================================
+    // BLOCK ALL OTHER PATHS
+    // ============================================
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

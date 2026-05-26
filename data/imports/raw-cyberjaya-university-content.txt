@@ -1,0 +1,81 @@
+UNIVERSITY_NAME: Cyberjaya University
+SHORT_CODE: CYBERJAYA
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION STUDIES
+Foundation in Science Leading to Medicine & Pharmacy 27400
+Foundation in Allied Science 27400
+Foundation in Arts 26100
+
+DIPLOMA PROGRAMS
+Diploma in Information Technology 39100
+Diploma in Mass Communication 41200
+Diploma in Business Administration 39700
+Diploma in Accounting 39700
+Diploma in Psychology 60700
+Diploma in Occupational Safety & Health 62200
+Diploma in Cosmetics 60700
+Diploma in Early Childhood Education 58000
+Diploma in 3D Animation 46200
+Diploma in Digital Creative Content 46200
+Diploma in Graphic Design 46200
+Diploma in Medical & Health Science 70900
+Diploma in Pharmacy 53900
+Diploma in Nursing 59600
+
+BACHELOR'S DEGREE PROGRAMS
+Bachelor of Business Administration (Hons) 67700
+Bachelor in Business Administration - ODL 45400
+Bachelor of International Business Management (Hons) 67700
+Bachelor of Occupational Safety and Health (Hons) 87700
+Bachelor of Psychology (Hons) 76700
+Bachelor of Information Technology (Hons) 77700
+Bachelor Of Education in Teaching English as A Second Language (Hons) 67700
+Bachelor of Art in Graphic Design (Advertising) (Hons) 82700
+Bachelor of Multimedia in 3D Animation (Hons) 82700
+Bachelor in Creative Multimedia (Hons) 82700
+Bachelor of Education in Early Childhood Education (Hons) 82700
+Degree In Computer Science 72700
+Degree In Software Engineering 77700
+Degree In Integrated Communication 77700
+Degree In Chiropractic 288700
+Bachelor of Accounting and Finance (Hons) 78450
+Bachelor of Biomedical Engineering Technology (Hons) 95700
+Bachelor of Nursing (Hons) 80700
+Bachelor of Physiotherapy (Hons) 108700
+Bachelor of Pharmacy (Hons) 115700
+Bachelor of Dietetics (Hons) 107000
+Bachelor of Homeopathic Medical Science (Hons) 98700
+Bachelor of Medicine & Bachelor of Surgery (MBBS) 408700
+
+POSTGRADUATE PROGRAMS - MASTER'S
+Master in Clinical Pharmacy (By Coursework) 46700
+Master of Science in Public Health (Global Health) 54700
+Master of Business Administration (MBA) 28700
+Master of Business Administration (MBA) - ODL 17800
+Master of Business Data Science 38200
+Master of Business Data Science (ODL) 24700
+Master in Islamic Finance 36200
+Master in Islamic Finance (ODL) 29700
+Master of Physiotherapy 32200
+Master of Clinical Psychology 69450
+Master of Science in Occupational Safety & Health Management 52200
+Master of Pharmaceutical Sciences (By Research) 39700
+Master in Science (By Research) 45900
+Master of Medical Sciences (By Research) 38400
+
+POSTGRADUATE PROGRAMS - DOCTORATE
+Doctor of Business Administration 57700
+Doctor of Business Administration (ODL) 45400
+Doctor of Pharmacy (PHARMD) 59700
+Doctor of Philosophy (PhD) 48700
+Doctor of Philosophy (PhD) in Medical Science 52700
+Doctor of Philosophy (PhD) in Pharmaceutical Sciences 62700
+Doctor of Philosophy (PhD) in Management 52700
+
+RAW_CONTENT_END

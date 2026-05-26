@@ -1,0 +1,14 @@
+{
+  "name": "horizons-educational-agency",
+  "version": "1.0.0",
+  "description": "Educational agency platform with Firebase backend",
+  "main": "index.html",
+  "scripts": {
+    "import:university-content:dry-run": "node scripts/import-university-content.js --input data/imports/raw-university-content.txt --dry-run",
+    "import:university-content:commit": "node scripts/import-university-content.js --input data/imports/raw-university-content.txt --commit"
+  },
+  "dependencies": {
+    "firebase": "^12.13.0",
+    "firebase-admin": "^12.0.0"
+  }
+}

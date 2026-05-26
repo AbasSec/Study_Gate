@@ -1,0 +1,51 @@
+UNIVERSITY_NAME: Universiti Tenaga Nasional
+SHORT_CODE: UNITEN
+LOCATION: Malaysia
+MODE: SINGLE_UNIVERSITY_MERGE_CAMPUSES
+CURRENCY: RM
+OFFER_LETTER_FREE: false
+
+RAW_CONTENT_START
+
+FOUNDATION PROGRAMMES
+Foundation in Engineering 21800
+Foundation in Computer Science 19800
+Foundation in Information Technology 19800
+Foundation in Accounting 19800
+Foundation in Business Administration 19800
+Foundation in Management 19800
+
+DIPLOMA PROGRAMMES
+Diploma in Mechanical Engineering 31800
+Diploma in Electrical Engineering 31800
+Diploma in Computer Science 32800
+Diploma in Business Studies 28800
+Diploma of Accountancy 31800
+Diploma in Digital Business 28900
+Diploma in Financial Technology 28900
+
+BACHELOR'S DEGREE PROGRAMMES
+Bachelor of Electrical and Electronics Engineering (Honours) 98000
+Bachelor of Electrical Power Engineering (Honours) 98000
+Bachelor of Mechanical Engineering (Honours) 98000
+Bachelor of Civil Engineering (Honours) 98000
+Bachelor in Computer Science (Systems and Networking) (Honours) 78000
+Bachelor in Software Engineering (Honours) 78000
+Bachelor in Computer Science (Cyber Security) (Honours) 78000
+Bachelor in Information Systems (Business Analytics) (Honours) 78000
+Bachelor in Information Technology (Graphics and Multimedia) (Honours) 78000
+Bachelor of Economics (Energy) (Honours) 66000
+Bachelor of Business Economics (Honours) 66000
+Bachelor of Accounting (Honours) 85000
+Bachelor of Finance (Honours) 69000
+Bachelor of International Business (Honours) 69000
+Bachelor in Business Administration (Marketing) (Honours) 69000
+Bachelor in Business Administration (Human Resource Management) (Honours) 69000
+Bachelor of Business Administration (Entrepreneurship & Venture Management) (Honours) 69000
+
+ENGLISH LANGUAGE PROGRAMMES
+Test of English Proficiency (TEP) for Foundation 100
+English Short Course (ESC) for Foundation 4664
+Intensive English Programme (IEP) for Bachelor 5600
+
+RAW_CONTENT_END
