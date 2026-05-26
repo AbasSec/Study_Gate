@@ -273,7 +273,15 @@ class ImageInputField {
             </div>
         `;
 
-        // Try to load preview
+        // If a FileReader preview (data URL) is already showing, keep it —
+        // the file was just selected locally and hasn't been deployed yet
+        if (this.previewImg.src && this.previewImg.src.startsWith('data:')) {
+            this.previewImg.style.display = 'block';
+            this.previewFallback.style.display = 'none';
+            return;
+        }
+
+        // Try to load preview from the stored path
         const previewPath = this.normalizePathForPreview(value);
         this.previewImg.src = previewPath;
         this.previewImg.style.display = 'block';
@@ -346,6 +354,10 @@ class ImageInputField {
     }
 
     setValue(value) {
+        // Clear any FileReader data URL so the saved path is loaded fresh
+        if (this.previewImg.src && this.previewImg.src.startsWith('data:')) {
+            this.previewImg.src = '';
+        }
         this.textInput.value = value || '';
         this.updatePreview();
     }
