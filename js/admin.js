@@ -3395,6 +3395,7 @@ async function saveUniversityAndOfferings(universityId, data) {
 
 async function saveItem(e) {
     e.preventDefault();
+    alert('[DEBUG] Save button clicked! Type: ' + editingType);
     try {
     const collectionMap = {
         course: 'courses',
