@@ -2506,12 +2506,12 @@ function initializeImageInputFields(type) {
 }
 
 function updateImageFieldAfterLoad(fieldId, value) {
+    // Always sync the original hidden input so saveItem can read it directly
+    const input = document.getElementById(fieldId);
+    if (input) input.value = value;
+
     if (imageFieldInstances[fieldId]) {
         imageFieldInstances[fieldId].setValue(value);
-    } else {
-        // Fallback: just set the hidden input value
-        const input = document.getElementById(fieldId);
-        if (input) input.value = value;
     }
 }
 
@@ -3436,7 +3436,7 @@ async function saveItem(e) {
                 totalSemesters: Number.isFinite(totalSemesters) && totalSemesters > 0 ? totalSemesters : null,
                 duration: durationLabel || (Number.isFinite(baseDurationYears) && baseDurationYears > 0 ? `${baseDurationYears} years` : ''),
                 credits: document.getElementById('itemCredits').value,
-                image: document.getElementById('itemImage').value,
+                image: imageFieldInstances['itemImage'] ? imageFieldInstances['itemImage'].getValue() : (document.getElementById('itemImage')?.value ?? ''),
                 description: document.getElementById('itemDescription').value
             };
             break;
@@ -3458,8 +3458,8 @@ async function saveItem(e) {
                 ranking: parseInt(document.getElementById('itemRanking').value) || null,
                 intro: document.getElementById('itemIntro').value,
                 aboutContent: document.getElementById('itemAboutContent').value,
-                logo: document.getElementById('itemLogo').value,
-                campusImage: document.getElementById('itemCampusImage').value,
+                logo: imageFieldInstances['itemLogo'] ? imageFieldInstances['itemLogo'].getValue() : (document.getElementById('itemLogo')?.value ?? ''),
+                campusImage: imageFieldInstances['itemCampusImage'] ? imageFieldInstances['itemCampusImage'].getValue() : (document.getElementById('itemCampusImage')?.value ?? ''),
                 youtubeVideo: document.getElementById('itemYouTube').value,
                 nextIntakeDate: nextIntakeDate,
                 intakeMonths: intakeMonths,
@@ -3487,7 +3487,7 @@ async function saveItem(e) {
                 role: document.getElementById('itemRole').value,
                 order: parseInt(document.getElementById('itemOrder').value) || 1,
                 bio: document.getElementById('itemBio').value,
-                photoPath: document.getElementById('itemPhoto').value,
+                photoPath: imageFieldInstances['itemPhoto'] ? imageFieldInstances['itemPhoto'].getValue() : (document.getElementById('itemPhoto')?.value ?? ''),
                 whatsappNumber: whatsappNumber,
                 active: document.getElementById('itemActive').checked
             };
@@ -3500,7 +3500,7 @@ async function saveItem(e) {
                 country: document.getElementById('itemCountry').value,
                 status: document.getElementById('itemStatus').value,
                 quote: document.getElementById('itemQuote').value,
-                photoPath: document.getElementById('itemPhoto').value,
+                photoPath: imageFieldInstances['itemPhoto'] ? imageFieldInstances['itemPhoto'].getValue() : (document.getElementById('itemPhoto')?.value ?? ''),
                 featured: document.getElementById('itemFeatured').checked,
                 active: document.getElementById('itemActive').checked
             };
