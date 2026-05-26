@@ -3688,6 +3688,13 @@ async function saveItem(e) {
     } // end switch
 
     try {
+        // Pre-check Firestore 1MB document limit before attempting write
+        const dataJson = JSON.stringify(data);
+        if (dataJson.length > 900000) {
+            alert(`Cannot save: data is too large (${Math.round(dataJson.length / 1024)}KB). Images must be under 350KB each. Please compress your images and try again.`);
+            return;
+        }
+
         if (editingType === 'university') {
             await saveUniversityAndOfferings(editingId, data);
         } else if (editingId) {
@@ -3699,7 +3706,6 @@ async function saveItem(e) {
         closeModal();
         loadSectionData(currentSection);
 
-        // Refresh courses cache
         if (editingType === 'course') {
             loadAvailableCourses();
         }
@@ -3707,7 +3713,7 @@ async function saveItem(e) {
         alert('Saved successfully!');
     } catch (error) {
         console.error('Error saving:', error);
-        alert('Error saving. Please try again.');
+        alert('Error saving: ' + (error.message || error));
     }
 }
 
