@@ -25,12 +25,16 @@ function normalizeAssetPath(path) {
         return value;
     }
 
+    // Allow embedded data URLs (base64 images stored in Firestore)
+    if (value.startsWith('data:')) {
+        return value;
+    }
+
     // Reject Firebase Storage, admin paths, and dangerous protocols
     if (
         value.startsWith('gs://') ||
         value.startsWith('firebase-storage://') ||
         value.startsWith('javascript:') ||
-        value.startsWith('data:') ||
         value.startsWith('brand/hero') ||
         value.startsWith('brand/logo')
     ) {
