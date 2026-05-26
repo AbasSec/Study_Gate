@@ -2681,7 +2681,7 @@ function getCourseForm() {
                 </div>
                 <div class="form-group">
                     <label>Total Semesters</label>
-                    <input type="number" id="itemTotalSemesters" min="1" step="1" placeholder="6">
+                    <input type="number" id="itemTotalSemesters" step="1" placeholder="6">
                 </div>
             </div>
             <div class="form-row">
@@ -2707,7 +2707,7 @@ function getCourseForm() {
             <div class="form-row">
                 <div class="form-group">
                     <label>Base Duration (Years)</label>
-                    <input type="number" id="itemBaseDurationYears" min="0.5" step="0.5" placeholder="3">
+                    <input type="number" id="itemBaseDurationYears" step="0.5" placeholder="3">
                 </div>
                 <div class="form-group">
                     <label>Duration Label</label>
@@ -2744,7 +2744,7 @@ function getUniversityForm() {
                 </div>
                 <div class="form-group">
                     <label>Order</label>
-                    <input type="number" id="itemOrder" value="1" min="1">
+                    <input type="number" id="itemOrder" value="1" min="0">
                 </div>
             </div>
             <div class="form-group">
@@ -3049,7 +3049,7 @@ function getTeamForm() {
                 </div>
                 <div class="form-group">
                     <label>Order</label>
-                    <input type="number" id="itemOrder" value="1" min="1">
+                    <input type="number" id="itemOrder" value="1" min="0">
                 </div>
             </div>
             <div class="form-group">
@@ -3133,7 +3133,7 @@ function getServiceForm() {
                 </div>
                 <div class="form-group">
                     <label>Order</label>
-                    <input type="number" id="itemOrder" value="1" min="1">
+                    <input type="number" id="itemOrder" value="1" min="0">
                 </div>
             </div>
             <div class="form-group">
