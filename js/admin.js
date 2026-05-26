@@ -3395,7 +3395,6 @@ async function saveUniversityAndOfferings(universityId, data) {
 
 async function saveItem(e) {
     e.preventDefault();
-    alert('[DEBUG] Save button clicked! Type: ' + editingType);
     try {
     const collectionMap = {
         course: 'courses',
@@ -4167,11 +4166,11 @@ function renderPickerFolder(folder, courses) {
                     </div>
                     <div class="mini-field">
                         <label>Duration (Years)</label>
-                        <input type="number" value="${durationVal}" min="0.5" max="10" step="0.5" ${isSelected ? '' : 'disabled'} onchange="updateCourseDurationById('${c.id}', this.value)">
+                        <input type="number" value="${durationVal}" step="0.5" ${isSelected ? '' : 'disabled'} onchange="updateCourseDurationById('${c.id}', this.value)">
                     </div>
                     <div class="mini-field">
                         <label>Semesters</label>
-                        <input type="number" value="${semestersVal}" min="1" max="20" step="1" ${isSelected ? '' : 'disabled'} onchange="updateCourseSemestersById('${c.id}', this.value)">
+                        <input type="number" value="${semestersVal}" step="1" ${isSelected ? '' : 'disabled'} onchange="updateCourseSemestersById('${c.id}', this.value)">
                     </div>
                 </div>
                 <div class="picker-course-row-actions ${isSelected ? '' : 'hidden'}">
