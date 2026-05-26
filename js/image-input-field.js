@@ -190,6 +190,11 @@ class ImageInputField {
         // Generate suggested path
         const suggestedPath = this.generateSuggestedPath(file.name);
 
+        // Auto-fill the path immediately so Save always captures it,
+        // even if the user never clicks "Use This Path"
+        this.textInput.value = suggestedPath;
+        if (this.onChange) this.onChange(suggestedPath);
+
         // Show suggested path
         this.suggestedPathDiv.innerHTML = `
             <div class="suggested-path-box">
