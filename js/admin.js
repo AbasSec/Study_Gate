@@ -3395,7 +3395,7 @@ async function saveUniversityAndOfferings(universityId, data) {
 
 async function saveItem(e) {
     e.preventDefault();
-    
+    try {
     const collectionMap = {
         course: 'courses',
         university: 'universities',
@@ -3687,30 +3687,29 @@ async function saveItem(e) {
         }
     } // end switch
 
-    try {
-        // Pre-check Firestore 1MB document limit before attempting write
-        const dataJson = JSON.stringify(data);
-        if (dataJson.length > 900000) {
-            alert(`Cannot save: data is too large (${Math.round(dataJson.length / 1024)}KB). Images must be under 350KB each. Please compress your images and try again.`);
-            return;
-        }
+    // Pre-check Firestore 1MB document limit before attempting write
+    const dataJson = JSON.stringify(data);
+    if (dataJson.length > 900000) {
+        alert(`Cannot save: data is too large (${Math.round(dataJson.length / 1024)}KB). Images must be under 350KB each. Please compress your images and try again.`);
+        return;
+    }
 
-        if (editingType === 'university') {
-            await saveUniversityAndOfferings(editingId, data);
-        } else if (editingId) {
-            await updateDocument(collectionMap[editingType], editingId, data);
-        } else {
-            await addDocument(collectionMap[editingType], data);
-        }
+    if (editingType === 'university') {
+        await saveUniversityAndOfferings(editingId, data);
+    } else if (editingId) {
+        await updateDocument(collectionMap[editingType], editingId, data);
+    } else {
+        await addDocument(collectionMap[editingType], data);
+    }
 
-        closeModal();
-        loadSectionData(currentSection);
+    closeModal();
+    loadSectionData(currentSection);
 
-        if (editingType === 'course') {
-            loadAvailableCourses();
-        }
+    if (editingType === 'course') {
+        loadAvailableCourses();
+    }
 
-        alert('Saved successfully!');
+    alert('Saved successfully!');
     } catch (error) {
         console.error('Error saving:', error);
         alert('Error saving: ' + (error.message || error));
