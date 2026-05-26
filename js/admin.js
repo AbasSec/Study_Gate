@@ -2278,6 +2278,7 @@ function isValidImageUrl(url) {
     const trimmed = url.trim();
     if (trimmed.startsWith('https://') || trimmed.startsWith('http://')) return true;
     if (trimmed.startsWith('assets/') || trimmed.startsWith('/assets/')) return true;
+    if (trimmed.startsWith('data:')) return true;
     return false;
 }
 

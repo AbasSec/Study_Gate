@@ -149,7 +149,7 @@ async function loadUniversity() {
         if (logoEl) {
             const logoValue = getUniversityLogoValue(uni);
             if (logoValue) {
-                const logoPath = logoValue.startsWith('../') || logoValue.startsWith('http') ? logoValue : '../' + logoValue;
+                const logoPath = logoValue.startsWith('data:') || logoValue.startsWith('../') || logoValue.startsWith('http') ? logoValue : '../' + logoValue;
                 logoEl.innerHTML = `<img src="${logoPath}" alt="${uni.name}">`;
             } else {
                 const initials = uni.shortCode || (uni.name || '').split(' ').map(w => w[0]).slice(0, 3).join('').toUpperCase();

@@ -316,7 +316,7 @@ function renderTeamMemberCard(m) {
     const role = m.role || '';
     const bio = m.bio || '';
     const photoPath = m.photoPath || m.photo || m.image || '';
-    const photo = photoPath ? (photoPath.startsWith('http') ? photoPath : '../' + photoPath.replace(/^\//, '')) : '../assets/team/profile-placeholder.webp';
+    const photo = photoPath ? (photoPath.startsWith('data:') || photoPath.startsWith('http') ? photoPath : '../' + photoPath.replace(/^\//, '')) : '../assets/team/profile-placeholder.webp';
     const whatsappNum = m.whatsappNumber || m.whatsapp || '';
 
     const whatsappHtml = whatsappNum ? `

@@ -187,13 +187,12 @@ class ImageInputField {
         // Clear previous errors
         this.clearError();
 
-        // Generate suggested path
-        const suggestedPath = this.generateSuggestedPath(file.name);
-
-        // Auto-fill the path immediately so Save always captures it,
-        // even if the user never clicks "Use This Path"
-        this.textInput.value = suggestedPath;
-        if (this.onChange) this.onChange(suggestedPath);
+        // Enforce 300KB limit so base64 data URL stays under Firestore 1MB doc limit
+        const maxBytes = 300 * 1024;
+        if (file.size > maxBytes) {
+            this.showError(`File too large for embedded storage: ${(file.size / 1024).toFixed(0)}KB. Max: 300KB`);
+            return;
+        }
 
         // Show suggested path
         this.suggestedPathDiv.innerHTML = `
@@ -210,10 +209,14 @@ class ImageInputField {
         `;
         this.suggestedPathDiv.style.display = 'block';
 
-        // Show preview from file
+        // Read file as data URL and store it directly — no server upload needed
         const reader = new FileReader();
         reader.onload = (e) => {
-            this.previewImg.src = e.target.result;
+            const dataUrl = e.target.result;
+            this.textInput.value = dataUrl;
+            if (this.onChange) this.onChange(dataUrl);
+            this.suggestedPathDiv.style.display = 'none';
+            this.previewImg.src = dataUrl;
             this.previewImg.style.display = 'block';
             this.previewFallback.style.display = 'none';
         };
@@ -274,13 +277,13 @@ class ImageInputField {
         this.currentPathDiv.innerHTML = `
             <div class="current-path-info">
                 <small style="color: #64748b;">Saved path:</small>
-                <code>${this.escapeHtml(value)}</code>
+                <code>${value.startsWith('data:') ? 'Embedded image' : this.escapeHtml(value)}</code>
             </div>
         `;
 
-        // If a FileReader preview (data URL) is already showing, keep it —
-        // the file was just selected locally and hasn't been deployed yet
-        if (this.previewImg.src && this.previewImg.src.startsWith('data:')) {
+        // If the stored value is a data URL, load it directly (embedded image)
+        if (value.startsWith('data:')) {
+            this.previewImg.src = value;
             this.previewImg.style.display = 'block';
             this.previewFallback.style.display = 'none';
             return;
@@ -359,10 +362,6 @@ class ImageInputField {
     }
 
     setValue(value) {
-        // Clear any FileReader data URL so the saved path is loaded fresh
-        if (this.previewImg.src && this.previewImg.src.startsWith('data:')) {
-            this.previewImg.src = '';
-        }
         this.textInput.value = value || '';
         this.updatePreview();
     }

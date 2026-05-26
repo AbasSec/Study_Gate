@@ -289,7 +289,7 @@ let currentCourse = null;
 
 function fixPath(path) {
     if (!path) return '';
-    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('../')) return path;
+    if (path.startsWith('data:') || path.startsWith('http://') || path.startsWith('https://') || path.startsWith('../')) return path;
     return `../${path.replace(/^\/+/, '')}`;
 }
 

@@ -449,7 +449,7 @@ const uniId = urlParams.get('id');
 
 const fixPath = (path) => {
     if (!path) return null;
-    if (path.startsWith('../') || path.startsWith('http')) return path;
+    if (path.startsWith('data:') || path.startsWith('../') || path.startsWith('http')) return path;
     return '../' + path;
 };
 
