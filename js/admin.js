@@ -2171,19 +2171,24 @@ async function loadSettings() {
 async function handleSaveSettings(e) {
     e.preventDefault();
 
-    const logoUrl = document.getElementById('logoUrl')?.value || '';
-    const heroImageUrl = document.getElementById('heroImageUrl')?.value || '';
+    // Prefer ImageInputField instance value (holds live data URL); fall back to raw input
+    const getImgVal = (id) =>
+        (imageFieldInstances[id] ? imageFieldInstances[id].getValue() : null)
+        ?? document.getElementById(id)?.value ?? '';
+
+    const logoUrl = getImgVal('logoUrl');
+    const heroImageUrl = getImgVal('heroImageUrl');
 
     // Collect page-specific hero image URLs
     const pageHeroUrls = {
-        universitiesHeroImageUrl: document.getElementById('universitiesHeroImageUrl')?.value || '',
-        universityDetailHeroImageUrl: document.getElementById('universityDetailHeroImageUrl')?.value || '',
-        coursesHeroImageUrl: document.getElementById('coursesHeroImageUrl')?.value || '',
-        courseDetailHeroImageUrl: document.getElementById('courseDetailHeroImageUrl')?.value || '',
-        servicesHeroImageUrl: document.getElementById('servicesHeroImageUrl')?.value || '',
-        teamHeroImageUrl: document.getElementById('teamHeroImageUrl')?.value || '',
-        contactHeroImageUrl: document.getElementById('contactHeroImageUrl')?.value || '',
-        applyHeroImageUrl: document.getElementById('applyHeroImageUrl')?.value || ''
+        universitiesHeroImageUrl: getImgVal('universitiesHeroImageUrl'),
+        universityDetailHeroImageUrl: getImgVal('universityDetailHeroImageUrl'),
+        coursesHeroImageUrl: getImgVal('coursesHeroImageUrl'),
+        courseDetailHeroImageUrl: getImgVal('courseDetailHeroImageUrl'),
+        servicesHeroImageUrl: getImgVal('servicesHeroImageUrl'),
+        teamHeroImageUrl: getImgVal('teamHeroImageUrl'),
+        contactHeroImageUrl: getImgVal('contactHeroImageUrl'),
+        applyHeroImageUrl: getImgVal('applyHeroImageUrl')
     };
 
     if (logoUrl && !isValidImageUrl(logoUrl)) {

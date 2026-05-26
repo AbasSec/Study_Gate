@@ -109,7 +109,7 @@ class ImageInputField {
         // File size info
         const sizeInfo = document.createElement('small');
         sizeInfo.className = 'image-size-info';
-        sizeInfo.textContent = `Max file size: ${this.maxSizeMB}MB. Allowed: ${this.allowedTypes.join(', ').toUpperCase()}`;
+        sizeInfo.textContent = `Max file size: 350KB. Allowed: ${this.allowedTypes.join(', ').toUpperCase()}`;
 
         // Validation error
         const errorMsg = document.createElement('div');
@@ -194,6 +194,9 @@ class ImageInputField {
             return;
         }
 
+        // Build suggested path label (shown briefly; hidden once FileReader completes)
+        const suggestedPath = this.generateSuggestedPath(file.name);
+
         // Show suggested path
         this.suggestedPathDiv.innerHTML = `
             <div class="suggested-path-box">
@@ -233,14 +236,6 @@ class ImageInputField {
             };
         }
 
-        // Check size
-        const sizeMB = file.size / (1024 * 1024);
-        if (sizeMB > this.maxSizeMB) {
-            return {
-                valid: false,
-                error: `File too large: ${sizeMB.toFixed(2)}MB. Max: ${this.maxSizeMB}MB`
-            };
-        }
 
         return { valid: true };
     }
