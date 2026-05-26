@@ -3186,7 +3186,6 @@ async function loadItemForEdit(type, id) {
                 document.getElementById('itemDuration').value = doc.duration || '';
                 document.getElementById('itemCredits').value = doc.credits || '';
                 updateImageFieldAfterLoad('itemImage', doc.image || '');
-                document.getElementById('itemImage').value = doc.image || '';
                 document.getElementById('itemDescription').value = doc.description || '';
                 break;
                 
