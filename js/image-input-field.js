@@ -187,10 +187,10 @@ class ImageInputField {
         // Clear previous errors
         this.clearError();
 
-        // Enforce 300KB limit so base64 data URL stays under Firestore 1MB doc limit
-        const maxBytes = 300 * 1024;
+        // Enforce 350KB limit so base64 data URL stays under Firestore 1MB doc limit
+        const maxBytes = 350 * 1024;
         if (file.size > maxBytes) {
-            this.showError(`File too large for embedded storage: ${(file.size / 1024).toFixed(0)}KB. Max: 300KB`);
+            this.showError(`File too large for embedded storage: ${(file.size / 1024).toFixed(0)}KB. Max: 350KB`);
             return;
         }
 
