@@ -344,6 +344,12 @@ function toggleMobileNav() {
 let allCourses = [];
 let filteredCourses = [];
 
+function fixPath(path) {
+    if (!path) return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('../') || path.startsWith('data:')) return path;
+    return '../' + path.replace(/^\/+/, '');
+}
+
 function renderCourseCard(course) {
     const universityCount = course.universities ? course.universities.length : 0;
     const degreeLabelMap = { 'bachelor': 'Bachelors', 'master': "Master's", 'phd': 'PhD' };
@@ -355,7 +361,7 @@ function renderCourseCard(course) {
     return `
         <div class="course-card group overflow-hidden flex flex-col cursor-pointer hover:scale-105" onclick="window.location.href='${courseDetailUrl}'">
             <div class="relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br ${bgGradient}">
-                <img alt="${course.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="${course.image || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22224%22%3E%3Crect fill=%22%23e0e0e0%22 width=%22400%22 height=%22224%22/%3E%3C/svg%3E'}">
+                <img alt="${course.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="${fixPath(course.image) || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22224%22%3E%3Crect fill=%22%23e0e0e0%22 width=%22400%22 height=%22224%22/%3E%3C/svg%3E'}">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div class="absolute top-3 left-3 flex gap-2">
                     ${degreeBadge}

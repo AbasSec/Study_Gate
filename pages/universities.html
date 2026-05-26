@@ -400,6 +400,12 @@ function calculateDaysToIntake(intakeDate) {
     return diff > 0 ? diff : null;
 }
 
+function fixPath(path) {
+    if (!path) return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('../') || path.startsWith('data:')) return path;
+    return '../' + path.replace(/^\/+/, '');
+}
+
 function renderUniversityCard(uni, index) {
     const nextIntakeText = getNextIntakeText(uni);
     const coursesCount = uni.coursesCount || 0;
@@ -410,7 +416,7 @@ function renderUniversityCard(uni, index) {
         <div class="premium-card group overflow-hidden flex flex-col cursor-pointer" onclick="window.location.href='../pages/university-detail.html?id=${uni.id}'">
             <div class="relative h-48 overflow-hidden bg-gradient-to-br from-secondary/10 to-tertiary/10">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                     src="${uni.campusImage || uni.campusImageUrl || uni.image || ''}"
+                     src="${fixPath(uni.campusImage || uni.campusImageUrl || uni.image)}"
                      alt="${uni.name}"
                      onerror="this.style.display='none'">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -297,13 +297,13 @@ class ImageInputField {
             return value;
         }
 
-        // Local asset paths: prepend '../' for relative from admin.html
+        // admin.html is at site root, so assets/ paths are correct as-is
         if (value.startsWith('assets/')) {
-            return '../' + value;
+            return value;
         }
 
         if (value.startsWith('/assets/')) {
-            return '..' + value;
+            return value.slice(1);
         }
 
         // Already relative with ../, keep as-is
@@ -311,8 +311,7 @@ class ImageInputField {
             return value;
         }
 
-        // Default: prepend ../
-        return '../' + value;
+        return value;
     }
 
     showError(message) {
